@@ -1,26 +1,97 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-bg: #0f0e0e;
+  --color-fg: #f7f7f7;
+  --color-fg-muted: #6e6e63;
+  --color-surface-warm: #fbf7f0;
+  --color-accent-yellow: #f5ff4d;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--color-bg);
+  --color-foreground: var(--color-fg);
+  --color-foreground-muted: var(--color-fg-muted);
+  --color-surface-warm: var(--color-surface-warm);
+  --color-accent-yellow: var(--color-accent-yellow);
+
+  /* Per-project accent colors */
+  --color-boldin-teal: #0d3f4a;
+  --color-boldin-green: #04b477;
+  --color-boldin-orange: #e14805;
+  --color-boldin-gold: #ffc453;
+  --color-blockfi-blue: #0032eb;
+  --color-blockfi-navy: #001180;
+  --color-blockfi-midnight: #001435;
+  --color-jetblue-blue: #0d99ff;
+  --color-jetblue-light: #d7f6ff;
+  --color-ubs-red: #c70039;
+  --color-kidventure-green: #d4edc8;
+  --color-kidventure-peach: #fce7d6;
+
+  /* Font families */
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+
+  /* Typography scale */
+  --text-display-xl: 180px;
+  --text-display-xl--line-height: 180px;
+  --text-display-xl--letter-spacing: -14.4px;
+
+  --text-display-lg: 120px;
+  --text-display-lg--line-height: 120px;
+  --text-display-lg--letter-spacing: -9.6px;
+
+  --text-display-md: 77px;
+  --text-display-md--line-height: 92.4px;
+  --text-display-md--letter-spacing: -3.08px;
+
+  --text-display-sm: 64px;
+  --text-display-sm--line-height: 67.2px;
+  --text-display-sm--letter-spacing: -2.24px;
+
+  --text-heading: 59px;
+  --text-heading--line-height: 58.88px;
+  --text-heading--letter-spacing: -4.12px;
+
+  --text-body-lg: 28px;
+  --text-body-lg--line-height: 33.6px;
+  --text-body-lg--letter-spacing: -0.56px;
+
+  --text-body-md: 26px;
+  --text-body-md--line-height: 30.91px;
+  --text-body-md--letter-spacing: -0.52px;
+
+  --text-body: 18px;
+  --text-body--line-height: 21.6px;
+  --text-body--letter-spacing: -0.36px;
+
+  --text-body-sm: 12px;
+  --text-body-sm--line-height: 14.4px;
+  --text-body-sm--letter-spacing: -0.12px;
+
+  --text-body-xs: 11px;
+  --text-body-xs--line-height: 13.25px;
+  --text-body-xs--letter-spacing: -0.11px;
+
+  /* Layout */
+  --max-width-content: 1800px;
+  --spacing-sidebar: 48px;
+  --spacing-gutter: 60px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-accent-yellow);
+  color: var(--color-bg);
 }
