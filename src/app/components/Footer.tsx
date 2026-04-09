@@ -1,8 +1,8 @@
 import CezLogo from "@/components/ui/cez-logo";
 
-export default function Footer() {
+export default function Footer({ transparent = false }: { transparent?: boolean }) {
   return (
-    <footer className="relative w-full overflow-hidden bg-[#0032eb] text-white">
+    <footer className={`relative w-full overflow-hidden ${transparent ? "text-white" : "bg-[#0032eb] text-white"}`}>
       <div className="relative">
         <div className="w-full text-white">
           <CezLogo className="w-full h-auto" />

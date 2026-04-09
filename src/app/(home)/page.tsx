@@ -1,5 +1,7 @@
 import Link from "next/link";
 import ScrollFade, { ScrollTrigger } from "../components/ScrollFade";
+import ScrollFadeBlue, { BlueTrigger } from "../components/ScrollFadeBlue";
+import Footer from "../components/Footer";
 
 /* ------------------------------------------------------------------ */
 /*  Project card data enriched with homepage-specific fields           */
@@ -83,11 +85,15 @@ export default function Home() {
       {/* ========== PROJECTS ========== */}
       <ProjectsSection />
 
-      {/* ========== SERVICES / PHILOSOPHY ========== */}
-      <ServicesSection />
+      {/* ========== SERVICES / PHILOSOPHY → BLUE ========== */}
+      <ScrollFadeBlue>
+        <ServicesTopSection />
+        <ServicesBottomSection />
 
-      {/* ========== CONTACT CTA ========== */}
-      <ContactCTA />
+        {/* ========== CONTACT CTA ========== */}
+        <ContactCTA />
+        <Footer transparent />
+      </ScrollFadeBlue>
     </ScrollFade>
   );
 }
@@ -98,7 +104,7 @@ export default function Home() {
 
 function HeroSection() {
   return (
-    <section className="relative flex min-h-screen flex-col justify-end overflow-hidden pb-24">
+    <section className="relative flex min-h-screen flex-col justify-end overflow-hidden pb-48">
       {/* Content wrapper */}
       <div className="mx-auto w-full max-w-(--max-width-content) px-(--spacing-gutter)">
         {/* Hero headline */}
@@ -131,7 +137,7 @@ function HeroSection() {
         </div>
 
         {/* Info row below headline */}
-        <div className="flex gap-12 pl-(--spacing-sidebar) pt-24">
+        <div className="flex gap-12 pl-(--spacing-sidebar) pt-40">
           {/* Location */}
           <div>
             <p className="font-(family-name:--font-display) text-body-sm font-medium uppercase tracking-wide">
@@ -160,16 +166,25 @@ function HeroSection() {
 
 function ProjectsSection() {
   return (
-    <section className="relative py-24">
+    <section className="relative pt-48 pb-24">
       <div className="mx-auto max-w-(--max-width-content) px-(--spacing-gutter)">
-        <div>
+        <div className="mx-auto max-w-[1281px]">
           {/* Project cards */}
-          <div className="mx-auto flex max-w-[1281px] flex-col gap-10">
-            {homeProjects.map((project) => (
-              <ProjectCard key={project.slug} project={project} />
-            ))}
+          {homeProjects.map((project, index) => (
+            <div
+              key={project.slug}
+              className="sticky pb-10"
+              style={{ top: `${40 + index * 20}px` }}
+            >
+              <ProjectCard project={project} />
+            </div>
+          ))}
 
-            {/* Explore All Projects card */}
+          {/* Explore All Projects card */}
+          <div
+            className="sticky pb-10"
+            style={{ top: `${40 + homeProjects.length * 20}px` }}
+          >
             <ScrollTrigger />
             <ExploreAllCard />
           </div>
@@ -189,7 +204,7 @@ function ProjectCard({ project }: { project: HomeProject }) {
   return (
     <Link href={`/work/${project.slug}`} className="group block">
       <div
-        className={`${project.accentBg} overflow-hidden rounded-3xl p-11 shadow-[0px_1px_20px_0px_rgba(15,14,14,0.5)] ${isDark ? "text-background" : "text-foreground"}`}
+        className={`${project.accentBg} overflow-hidden rounded-3xl p-11 shadow-[0px_1px_10px_0px_rgba(15,14,14,0.15)] ${isDark ? "text-background" : "text-foreground"}`}
       >
         <div className="grid h-[700px] grid-cols-2 gap-0">
           {/* Left side — info */}
@@ -339,9 +354,9 @@ function ExploreAllCard() {
 /*  Services / Philosophy Section                                      */
 /* ------------------------------------------------------------------ */
 
-function ServicesSection() {
+function ServicesTopSection() {
   return (
-    <section className="relative py-32">
+    <section className="relative pt-32 pb-16">
       <div className="mx-auto max-w-(--max-width-content) px-(--spacing-gutter)">
         <div className="mx-auto max-w-[1200px]">
           {/* Title + subtitle */}
@@ -380,7 +395,6 @@ function ServicesSection() {
               Brands i&apos;ve partnered with
             </p>
             <div className="flex items-center gap-12 pl-20 opacity-40">
-              {/* Placeholder brand logos — replaced in Phase 3 */}
               {[
                 "M1",
                 "UBS",
@@ -406,6 +420,26 @@ function ServicesSection() {
             </p>
           </div>
 
+          {/* Values list */}
+          <div className="mb-20 pl-20">
+            <div className="flex flex-col gap-1">
+              {[
+                "Form over function",
+                "Future proof design",
+                "Design should delight",
+                "Design is iterative",
+                "Craft with purpose",
+              ].map((value) => (
+                <h5
+                  key={value}
+                  className="font-(family-name:--font-body) text-[56px] font-semibold leading-[1.1] tracking-tight opacity-20"
+                >
+                  {value}
+                </h5>
+              ))}
+            </div>
+          </div>
+
           {/* Philosophy statement */}
           <div className="mb-20 flex justify-end">
             <div className="max-w-[430px]">
@@ -422,8 +456,19 @@ function ServicesSection() {
               </p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
+function ServicesBottomSection() {
+  return (
+    <section className="relative py-32">
+      <div className="mx-auto max-w-(--max-width-content) px-(--spacing-gutter)">
+        <div className="mx-auto max-w-[1200px]">
           {/* Driven by clarity and intent label */}
+          <BlueTrigger />
           <div className="mb-6 pl-20">
             <p className="text-body-sm font-medium uppercase tracking-wider opacity-50">
               Driven by clarity and intent{" "}
@@ -460,32 +505,6 @@ function ServicesSection() {
                 insights and stronger products.
               </p>
             </div>
-          </div>
-
-          {/* Values list */}
-          <div className="mb-20 pl-20">
-            <div className="flex flex-col gap-1">
-              {[
-                "Form over function",
-                "Future proof design",
-                "Design should delight",
-                "Design is iterative",
-              ].map((value) => (
-                <h5
-                  key={value}
-                  className="font-(family-name:--font-display) text-display-sm font-medium uppercase leading-tight opacity-20"
-                >
-                  {value}
-                </h5>
-              ))}
-            </div>
-          </div>
-
-          {/* Craft with purpose */}
-          <div className="pl-20">
-            <h5 className="font-(family-name:--font-display) text-heading font-medium uppercase opacity-20">
-              Craft with purpose
-            </h5>
           </div>
         </div>
       </div>
