@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ScrollFade, { ScrollTrigger } from "../components/ScrollFade";
 
 /* ------------------------------------------------------------------ */
 /*  Project card data enriched with homepage-specific fields           */
@@ -12,6 +13,7 @@ interface HomeProject {
   tags: string[];
   accentBg: string;
   textColor: "light" | "dark";
+  image?: string;
 }
 
 const homeProjects: HomeProject[] = [
@@ -23,6 +25,7 @@ const homeProjects: HomeProject[] = [
     tags: ["Fintech", "SaaS", "Product & Brand Design"],
     accentBg: "bg-surface-warm",
     textColor: "dark",
+    image: "/images/boldin-wo/card-preview.png",
   },
   {
     slug: "blockfi",
@@ -32,6 +35,7 @@ const homeProjects: HomeProject[] = [
     tags: ["Crypto", "App", "Product Design"],
     accentBg: "bg-blockfi-blue",
     textColor: "light",
+    image: "/images/blockfi/card-preview.png",
   },
   {
     slug: "jetblue",
@@ -41,6 +45,7 @@ const homeProjects: HomeProject[] = [
     tags: ["Travel", "Web", "Product Design"],
     accentBg: "bg-blockfi-navy",
     textColor: "light",
+    image: "/images/jetblue/card-preview.png",
   },
   {
     slug: "ubs",
@@ -50,6 +55,7 @@ const homeProjects: HomeProject[] = [
     tags: ["Fintech", "App", "Product Design"],
     accentBg: "bg-[#e8cfc0]",
     textColor: "dark",
+    image: "/images/ubs/card-preview.png",
   },
   {
     slug: "kidventure-hub",
@@ -60,6 +66,7 @@ const homeProjects: HomeProject[] = [
     tags: ["Parenting", "Web App", "Product Design"],
     accentBg: "bg-kidventure-green",
     textColor: "dark",
+    image: "/images/kidventure/card-preview.png",
   },
 ];
 
@@ -69,7 +76,7 @@ const homeProjects: HomeProject[] = [
 
 export default function Home() {
   return (
-    <div>
+    <ScrollFade>
       {/* ========== HERO ========== */}
       <HeroSection />
 
@@ -81,7 +88,7 @@ export default function Home() {
 
       {/* ========== CONTACT CTA ========== */}
       <ContactCTA />
-    </div>
+    </ScrollFade>
   );
 }
 
@@ -94,8 +101,37 @@ function HeroSection() {
     <section className="relative flex min-h-screen flex-col justify-end overflow-hidden pb-24">
       {/* Content wrapper */}
       <div className="mx-auto w-full max-w-(--max-width-content) px-(--spacing-gutter)">
-        {/* Top info row */}
-        <div className="mb-auto flex gap-12 pb-60 pl-(--spacing-sidebar) pt-[40vh]">
+        {/* Hero headline */}
+        <div className="flex items-center justify-center pt-[40vh]">
+          <h1 className="text-center font-(family-name:--font-display) text-display-sm font-medium uppercase leading-[0.85] tracking-tight md:text-display-md lg:text-display-lg">
+            I turn messy{" "}
+            <img
+              src="/images/home/inline-messy.gif"
+              alt=""
+              className="inline-block h-[0.6em] w-auto rounded-md object-cover align-middle"
+            />{" "}
+            problems into simple,
+            <br />
+            delightful{" "}
+            <img
+              src="/images/home/inline-delightful.gif"
+              alt=""
+              className="inline-block h-[0.6em] w-auto rounded-md object-cover align-middle"
+            />
+            , and
+            <br />
+            useful{" "}
+            <img
+              src="/images/home/inline-useful.gif"
+              alt=""
+              className="inline-block h-[0.6em] w-auto rounded-md object-cover align-middle"
+            />{" "}
+            designs.
+          </h1>
+        </div>
+
+        {/* Info row below headline */}
+        <div className="flex gap-12 pl-(--spacing-sidebar) pt-24">
           {/* Location */}
           <div>
             <p className="font-(family-name:--font-display) text-body-sm font-medium uppercase tracking-wide">
@@ -106,29 +142,12 @@ function HeroSection() {
             </p>
           </div>
           {/* Bio */}
-          <p className="max-w-[480px] text-body text-foreground-muted">
+          <p className="max-w-[480px] text-body opacity-50">
             I&apos;m a New York–based Staff Product Designer originally from
             Sydney, with over a decade of experience across apps, web, consumer,
             and SaaS, weaving AI into my process to move faster and design
             smarter.
           </p>
-        </div>
-
-        {/* Hero headline */}
-        <div className="flex items-center justify-center">
-          <h1 className="text-center font-(family-name:--font-display) text-display-sm font-medium uppercase leading-tight tracking-tight md:text-display-md lg:text-display-lg">
-            I turn messy{" "}
-            <span className="inline-block h-[0.6em] w-[0.8em] rounded-sm bg-foreground-muted/20" />{" "}
-            problems into simple,
-            <br />
-            delightful{" "}
-            <span className="inline-block h-[0.6em] w-[0.8em] rounded-sm bg-foreground-muted/20" />
-            , and
-            <br />
-            useful{" "}
-            <span className="inline-block h-[0.6em] w-[0.8em] rounded-sm bg-foreground-muted/20" />{" "}
-            designs.
-          </h1>
         </div>
       </div>
     </section>
@@ -143,14 +162,15 @@ function ProjectsSection() {
   return (
     <section className="relative py-24">
       <div className="mx-auto max-w-(--max-width-content) px-(--spacing-gutter)">
-        <div className="pl-(--spacing-sidebar)">
+        <div>
           {/* Project cards */}
-          <div className="flex flex-col gap-10">
+          <div className="mx-auto flex max-w-[1281px] flex-col gap-10">
             {homeProjects.map((project) => (
               <ProjectCard key={project.slug} project={project} />
             ))}
 
             {/* Explore All Projects card */}
+            <ScrollTrigger />
             <ExploreAllCard />
           </div>
         </div>
@@ -169,17 +189,17 @@ function ProjectCard({ project }: { project: HomeProject }) {
   return (
     <Link href={`/work/${project.slug}`} className="group block">
       <div
-        className={`${project.accentBg} overflow-hidden rounded-2xl ${isDark ? "text-background" : "text-foreground"}`}
+        className={`${project.accentBg} overflow-hidden rounded-3xl p-11 shadow-[0px_1px_20px_0px_rgba(15,14,14,0.5)] ${isDark ? "text-background" : "text-foreground"}`}
       >
-        <div className="grid grid-cols-2 gap-0">
+        <div className="grid h-[700px] grid-cols-2 gap-0">
           {/* Left side — info */}
-          <div className="flex flex-col justify-between p-12">
+          <div className="flex flex-col justify-between pr-11">
             {/* Tags */}
             <div className="flex flex-wrap gap-2">
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className={`rounded-full border px-4 py-2 text-body-xs font-medium uppercase tracking-wide ${
+                  className={`rounded-full border px-4 py-1.5 text-body-xs font-semibold uppercase tracking-wide ${
                     isDark
                       ? "border-background/30"
                       : "border-foreground/30"
@@ -191,52 +211,59 @@ function ProjectCard({ project }: { project: HomeProject }) {
             </div>
 
             {/* Title + description */}
-            <div className="mt-auto">
-              <h3 className="font-(family-name:--font-display) text-heading font-medium uppercase">
+            <div className="mt-auto pb-11">
+              <h3 className="font-(family-name:--font-display) text-heading font-medium uppercase leading-none tracking-tight">
                 {project.headline}
               </h3>
               <p
-                className={`mt-2 text-body-lg ${isDark ? "text-background/70" : "text-foreground/70"}`}
+                className={`mt-2 text-body-md ${isDark ? "text-background/40" : "text-foreground/40"}`}
               >
                 {project.description}
               </p>
+            </div>
 
-              {/* See Project link */}
-              <div className="mt-8">
-                <span
-                  className={`inline-flex items-center gap-2 rounded-full px-6 py-2.5 text-body-sm font-medium uppercase tracking-wide ${
-                    isDark
-                      ? "bg-background text-foreground"
-                      : "bg-foreground text-background"
-                  }`}
+            {/* See Project link */}
+            <div>
+              <span
+                className={`inline-flex items-center gap-2 rounded-full px-6 py-2.5 text-body-xs font-semibold uppercase tracking-wide ${
+                  isDark
+                    ? "bg-background text-foreground"
+                    : "bg-foreground text-background"
+                }`}
+              >
+                See Project
+                <svg
+                  width="8"
+                  height="8"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                  className="inline-block"
                 >
-                  See Project
-                  <svg
-                    width="10"
-                    height="10"
-                    viewBox="0 0 10 10"
-                    fill="none"
-                    className="inline-block"
-                  >
-                    <path
-                      d="M1 9L9 1M9 1H2M9 1V8"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-              </div>
+                  <path
+                    d="M1 9L9 1M9 1H2M9 1V8"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
             </div>
           </div>
 
-          {/* Right side — image placeholder */}
-          <div className="relative min-h-[500px]">
-            <div
-              className={`absolute inset-0 ${isDark ? "bg-background/5" : "bg-foreground/5"}`}
-            />
-            {/* Placeholder for project image — replaced in Phase 3 */}
+          {/* Right side — image */}
+          <div className="relative overflow-hidden rounded-lg">
+            {project.image ? (
+              <img
+                src={project.image}
+                alt={`${project.company} project preview`}
+                className="absolute inset-0 h-full w-full object-cover object-left-top"
+              />
+            ) : (
+              <div
+                className={`absolute inset-0 ${isDark ? "bg-background/5" : "bg-foreground/5"}`}
+              />
+            )}
           </div>
         </div>
       </div>
@@ -324,7 +351,7 @@ function ServicesSection() {
               <br />
               product designer
             </h2>
-            <p className="mt-4 max-w-[450px] text-body-md text-foreground-muted">
+            <p className="mt-4 max-w-[450px] text-body-md opacity-50">
               Currenty shaping financial experiences at M1 Finance
             </p>
           </div>
@@ -332,14 +359,14 @@ function ServicesSection() {
           {/* About / description block */}
           <div className="mb-32 flex justify-end">
             <div className="max-w-[430px]">
-              <p className="text-body text-foreground-muted">
+              <p className="text-body opacity-50">
                 I design user-centered systems that scale — blending strategy,
                 research, and visual design to solve complex problems with
                 clarity. My work focuses on translating business goals into
                 meaningful product experiences that feel effortless for users and
                 valuable for organizations.
               </p>
-              <p className="mt-5 text-body text-foreground-muted">
+              <p className="mt-5 text-body opacity-50">
                 From high-fidelity prototyping to shaping design systems and
                 AI-driven tools, I lead initiatives that bring alignment across
                 teams and deliver impact at scale.
@@ -364,7 +391,7 @@ function ServicesSection() {
               ].map((brand) => (
                 <span
                   key={brand}
-                  className="font-(family-name:--font-display) text-body-lg font-medium uppercase tracking-wide text-foreground-muted"
+                  className="font-(family-name:--font-display) text-body-lg font-medium uppercase tracking-wide opacity-50"
                 >
                   {brand}
                 </span>
@@ -374,7 +401,7 @@ function ServicesSection() {
 
           {/* Design Philosophy section label */}
           <div className="mb-6 pl-20">
-            <p className="text-body-sm font-medium uppercase tracking-wider text-foreground-muted">
+            <p className="text-body-sm font-medium uppercase tracking-wider opacity-50">
               Design Philosophy and values <span className="ml-1">&#x21B4;</span>
             </p>
           </div>
@@ -382,12 +409,12 @@ function ServicesSection() {
           {/* Philosophy statement */}
           <div className="mb-20 flex justify-end">
             <div className="max-w-[430px]">
-              <p className="text-body text-foreground-muted">
+              <p className="text-body opacity-50">
                 Design should be timeless, functional, and human. I believe in
                 creating work that not only solves problems but feels inevitable
                 once it exists. Good design evolves, adapts, and delights.
               </p>
-              <p className="mt-5 text-body text-foreground-muted">
+              <p className="mt-5 text-body opacity-50">
                 I think in systems, work collaboratively, and strive for
                 simplicity without losing depth. Every project is a chance to
                 connect form with purpose, logic with emotion, and leave things
@@ -398,7 +425,7 @@ function ServicesSection() {
 
           {/* Driven by clarity and intent label */}
           <div className="mb-6 pl-20">
-            <p className="text-body-sm font-medium uppercase tracking-wider text-foreground-muted">
+            <p className="text-body-sm font-medium uppercase tracking-wider opacity-50">
               Driven by clarity and intent{" "}
               <span className="ml-1">&#x21B4;</span>
             </p>
@@ -407,28 +434,28 @@ function ServicesSection() {
           {/* Three-column philosophy values */}
           <div className="mb-20 grid grid-cols-3 gap-8 pl-20">
             <div>
-              <h4 className="mb-3 text-body font-semibold text-foreground">
+              <h4 className="mb-3 text-body font-semibold">
                 Design + UX
               </h4>
-              <p className="text-body-sm leading-relaxed text-foreground-muted">
+              <p className="text-body-sm leading-relaxed opacity-50">
                 Rooted in visual clarity and user empathy. I craft intuitive,
                 accessible experiences that balance beauty and purpose.
               </p>
             </div>
             <div>
-              <h4 className="mb-3 text-body font-semibold text-foreground">
+              <h4 className="mb-3 text-body font-semibold">
                 Leader + Collaborator
               </h4>
-              <p className="text-body-sm leading-relaxed text-foreground-muted">
+              <p className="text-body-sm leading-relaxed opacity-50">
                 I mentor, align, and empower teams to move fast with focus.
                 Strong partnerships drive meaningful outcomes.
               </p>
             </div>
             <div>
-              <h4 className="mb-3 text-body font-semibold text-foreground">
+              <h4 className="mb-3 text-body font-semibold">
                 Iterative Process
               </h4>
-              <p className="text-body-sm leading-relaxed text-foreground-muted">
+              <p className="text-body-sm leading-relaxed opacity-50">
                 Design, test, refine, repeat. Every cycle brings sharper
                 insights and stronger products.
               </p>
@@ -446,7 +473,7 @@ function ServicesSection() {
               ].map((value) => (
                 <h5
                   key={value}
-                  className="font-(family-name:--font-display) text-display-sm font-medium uppercase leading-tight text-foreground/20"
+                  className="font-(family-name:--font-display) text-display-sm font-medium uppercase leading-tight opacity-20"
                 >
                   {value}
                 </h5>
@@ -456,7 +483,7 @@ function ServicesSection() {
 
           {/* Craft with purpose */}
           <div className="pl-20">
-            <h5 className="font-(family-name:--font-display) text-heading font-medium uppercase text-foreground/20">
+            <h5 className="font-(family-name:--font-display) text-heading font-medium uppercase opacity-20">
               Craft with purpose
             </h5>
           </div>
@@ -476,7 +503,7 @@ function ContactCTA() {
       <div className="mx-auto max-w-(--max-width-content) px-(--spacing-gutter)">
         <div className="pl-(--spacing-sidebar)">
           {/* Label */}
-          <p className="mb-4 text-body-sm font-medium uppercase tracking-wider text-foreground-muted">
+          <p className="mb-4 text-body-sm font-medium uppercase tracking-wider opacity-50">
             Contact <span className="ml-1">&#x21B4;</span>
           </p>
 

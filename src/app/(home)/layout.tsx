@@ -1,3 +1,4 @@
+import Header from "../components/Header";
 import SidebarNav from "../components/SidebarNav";
 import Footer from "../components/Footer";
 
@@ -8,6 +9,7 @@ export default function HomeLayout({
 }) {
   return (
     <>
+      <Header />
       <SidebarNav />
       <main>{children}</main>
       <Footer />
