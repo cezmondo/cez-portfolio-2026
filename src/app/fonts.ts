@@ -1,12 +1,14 @@
-import { Barlow_Condensed, Instrument_Sans } from "next/font/google";
+import localFont from "next/font/local";
+import { Instrument_Sans } from "next/font/google";
 
-// Display font — Barlow Condensed as stand-in for Onsra TRIAL
-// TODO: Replace with next/font/local when Onsra .woff2 files are available
-export const displayFont = Barlow_Condensed({
-  subsets: ["latin"],
+export const displayFont = localFont({
+  src: [
+    { path: "./fonts/onsratrial-regular.otf", weight: "400", style: "normal" },
+    { path: "./fonts/onsratrial-medium.otf", weight: "500", style: "normal" },
+    { path: "./fonts/onsratrial-bold.otf", weight: "700", style: "normal" },
+  ],
   variable: "--font-display",
   display: "swap",
-  weight: ["400", "500", "700"],
 });
 
 export const bodyFont = Instrument_Sans({
