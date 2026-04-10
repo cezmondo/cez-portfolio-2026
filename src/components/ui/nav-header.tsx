@@ -18,7 +18,7 @@ const navItems: NavItem[] = [
   { label: "Say G'day", href: "/contact" },
 ];
 
-function NavHeader() {
+function NavHeader({ isLight = false }: { isLight?: boolean }) {
   const [position, setPosition] = useState({
     left: 0,
     width: 0,
@@ -30,7 +30,11 @@ function NavHeader() {
 
   return (
     <ul
-      className="relative mx-auto flex w-fit rounded-full border border-foreground/10 bg-foreground/5 p-1 backdrop-blur-md"
+      className={`relative mx-auto flex w-fit rounded-full border p-1 backdrop-blur-md transition-colors duration-300 ${
+        isLight
+          ? "border-black/10 bg-black/5"
+          : "border-foreground/10 bg-foreground/5"
+      }`}
       onMouseLeave={() => {
         setPosition((pv) => ({ ...pv, opacity: 0 }));
         setHoveredHref(null);
@@ -46,6 +50,7 @@ function NavHeader() {
               : pathname.startsWith(item.href)
           }
           isHovered={hoveredHref === item.href}
+          isLight={isLight}
           setPosition={setPosition}
           setHoveredHref={setHoveredHref}
         >
@@ -53,7 +58,7 @@ function NavHeader() {
         </Tab>
       ))}
 
-      <Cursor position={position} />
+      <Cursor position={position} isLight={isLight} />
     </ul>
   );
 }
@@ -63,6 +68,7 @@ const Tab = ({
   href,
   isActive,
   isHovered,
+  isLight,
   setPosition,
   setHoveredHref,
 }: {
@@ -70,6 +76,7 @@ const Tab = ({
   href: string;
   isActive: boolean;
   isHovered: boolean;
+  isLight: boolean;
   setPosition: React.Dispatch<
     React.SetStateAction<{ left: number; width: number; opacity: number }>
   >;
@@ -82,7 +89,6 @@ const Tab = ({
       ref={ref}
       onMouseEnter={() => {
         if (!ref.current) return;
-
         const { width } = ref.current.getBoundingClientRect();
         setPosition({
           width,
@@ -91,15 +97,23 @@ const Tab = ({
         });
         setHoveredHref(href);
       }}
-      className="relative z-10 block"
+      className={`relative z-10 block rounded-full transition-colors duration-300 ${
+        isActive
+          ? isLight
+            ? "bg-black/15 ring-1 ring-black/20 backdrop-blur-sm"
+            : "bg-white/15 ring-1 ring-white/20 backdrop-blur-sm"
+          : ""
+      }`}
     >
       <Link
         href={href}
         className={`block cursor-pointer px-3 py-1.5 text-body-xs font-medium uppercase tracking-wide transition-colors duration-150 md:px-5 md:py-3 ${
           isHovered
-            ? "text-black"
-            : isActive
-              ? "text-[#F5FF4D]"
+            ? isLight
+              ? "text-white"
+              : "text-black"
+            : isLight
+              ? "text-black"
               : "text-foreground"
         }`}
       >
@@ -111,14 +125,18 @@ const Tab = ({
 
 const Cursor = ({
   position,
+  isLight,
 }: {
   position: { left: number; width: number; opacity: number };
+  isLight: boolean;
 }) => {
   return (
     <motion.li
       animate={position}
       transition={{ type: "spring", stiffness: 500, damping: 35 }}
-      className="absolute top-1 bottom-1 z-0 rounded-full bg-foreground"
+      className={`absolute top-1 bottom-1 z-0 rounded-full transition-colors duration-300 ${
+        isLight ? "bg-black" : "bg-foreground"
+      }`}
     />
   );
 };

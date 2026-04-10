@@ -15,5 +15,5 @@ export const bodyFont = Instrument_Sans({
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
-  weight: ["400", "600", "700"],
+  weight: ["400", "500", "600", "700"],
 });

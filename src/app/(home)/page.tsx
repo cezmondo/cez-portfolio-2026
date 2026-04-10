@@ -2,6 +2,7 @@ import Link from "next/link";
 import ScrollFade, { ScrollTrigger } from "../components/ScrollFade";
 import ScrollFadeBlue, { BlueTrigger } from "../components/ScrollFadeBlue";
 import Footer from "../components/Footer";
+import LiveClock from "../components/LiveClock";
 
 /* ------------------------------------------------------------------ */
 /*  Project card data enriched with homepage-specific fields           */
@@ -104,11 +105,12 @@ export default function Home() {
 
 function HeroSection() {
   return (
-    <section className="relative flex min-h-screen flex-col justify-end overflow-hidden pb-48">
+    <section className="relative flex min-h-screen flex-col justify-end overflow-hidden pb-24 md:pb-48">
       {/* Content wrapper */}
       <div className="mx-auto w-full max-w-(--max-width-content) px-(--spacing-gutter)">
         {/* Hero headline */}
-        <div className="flex items-center justify-center pt-[40vh]">
+        <div className="flex flex-col items-center gap-6 pt-[40vh]">
+          <LiveClock />
           <h1 className="text-center font-(family-name:--font-display) text-display-sm font-medium uppercase leading-[0.85] tracking-tight md:text-display-md lg:text-display-lg">
             I turn messy{" "}
             <img
@@ -137,18 +139,18 @@ function HeroSection() {
         </div>
 
         {/* Info row below headline */}
-        <div className="flex gap-12 pl-(--spacing-sidebar) pt-40">
+        <div className="flex flex-col gap-6 pt-16 md:flex-row md:items-baseline md:gap-12 md:pl-(--spacing-sidebar) md:pt-40">
           {/* Location */}
           <div>
-            <p className="font-(family-name:--font-display) text-body-sm font-medium uppercase tracking-wide">
+            <p className="font-(family-name:--font-body) text-body-sm font-medium uppercase tracking-wide">
               New York
             </p>
-            <p className="font-(family-name:--font-display) text-body-sm font-medium uppercase tracking-wide">
+            <p className="font-(family-name:--font-body) text-body-sm font-medium uppercase tracking-wide">
               Sydney
             </p>
           </div>
           {/* Bio */}
-          <p className="max-w-[480px] text-body opacity-50">
+          <p className="max-w-[480px] text-body text-white">
             I&apos;m a New York–based Staff Product Designer originally from
             Sydney, with over a decade of experience across apps, web, consumer,
             and SaaS, weaving AI into my process to move faster and design
@@ -166,14 +168,14 @@ function HeroSection() {
 
 function ProjectsSection() {
   return (
-    <section className="relative pt-48 pb-24">
+    <section className="relative pt-24 pb-12 md:pt-48 md:pb-24">
       <div className="mx-auto max-w-(--max-width-content) px-(--spacing-gutter)">
-        <div className="mx-auto max-w-[1281px]">
+        <div className="mx-auto w-full lg:max-w-[960px]">
           {/* Project cards */}
           {homeProjects.map((project, index) => (
             <div
               key={project.slug}
-              className="sticky pb-10"
+              className="sticky pb-4 md:pb-10"
               style={{ top: `${40 + index * 20}px` }}
             >
               <ProjectCard project={project} />
@@ -182,7 +184,7 @@ function ProjectsSection() {
 
           {/* Explore All Projects card */}
           <div
-            className="sticky pb-10"
+            className="sticky pb-4 md:pb-10"
             style={{ top: `${40 + homeProjects.length * 20}px` }}
           >
             <ScrollTrigger />
@@ -204,11 +206,11 @@ function ProjectCard({ project }: { project: HomeProject }) {
   return (
     <Link href={`/work/${project.slug}`} className="group block">
       <div
-        className={`${project.accentBg} overflow-hidden rounded-3xl p-11 shadow-[0px_1px_10px_0px_rgba(15,14,14,0.15)] ${isDark ? "text-background" : "text-foreground"}`}
+        className={`${project.accentBg} overflow-hidden rounded-3xl p-6 shadow-[0px_1px_10px_0px_rgba(15,14,14,0.15)] md:p-11 ${isDark ? "text-background" : "text-foreground"}`}
       >
-        <div className="grid h-[700px] grid-cols-2 gap-0">
+        <div className="grid grid-cols-1 gap-0 md:grid-cols-2 md:h-[clamp(380px,55vh,700px)]">
           {/* Left side — info */}
-          <div className="flex flex-col justify-between pr-11">
+          <div className="flex flex-col justify-between md:pr-11">
             {/* Tags */}
             <div className="flex flex-wrap gap-2">
               {project.tags.map((tag) => (
@@ -226,7 +228,7 @@ function ProjectCard({ project }: { project: HomeProject }) {
             </div>
 
             {/* Title + description */}
-            <div className="mt-auto pb-11">
+            <div className="mt-6 pb-6 md:mt-auto md:pb-11">
               <h3 className="font-(family-name:--font-display) text-heading font-medium uppercase leading-none tracking-tight">
                 {project.headline}
               </h3>
@@ -267,7 +269,7 @@ function ProjectCard({ project }: { project: HomeProject }) {
           </div>
 
           {/* Right side — image */}
-          <div className="relative overflow-hidden rounded-lg">
+          <div className="relative mt-6 h-52 overflow-hidden rounded-lg md:mt-0 md:h-auto">
             {project.image ? (
               <img
                 src={project.image}
@@ -294,9 +296,9 @@ function ExploreAllCard() {
   return (
     <Link href="/work" className="group block">
       <div className="overflow-hidden rounded-2xl bg-background text-foreground ring-1 ring-white/10">
-        <div className="grid grid-cols-2 gap-0">
+        <div className="grid grid-cols-1 gap-0 md:grid-cols-2">
           {/* Left side */}
-          <div className="flex flex-col justify-between p-12">
+          <div className="flex flex-col justify-between p-6 md:p-12">
             {/* Tags */}
             <div className="flex flex-wrap gap-2">
               {["Product Design", "Design Systems", "Branding and social"].map(
@@ -312,7 +314,7 @@ function ExploreAllCard() {
             </div>
 
             {/* Title */}
-            <div className="mt-auto">
+            <div className="mt-6 md:mt-auto">
               <h3 className="font-(family-name:--font-display) text-heading font-medium uppercase leading-tight">
                 Explore all
                 <br />
@@ -338,7 +340,7 @@ function ExploreAllCard() {
           </div>
 
           {/* Right side — abstract visual placeholder */}
-          <div className="relative min-h-[500px] bg-background">
+          <div className="relative min-h-[200px] bg-background md:min-h-[500px]">
             <div className="absolute inset-0 flex items-center justify-center">
               {/* Glowing orb placeholder — replaced in Phase 3 */}
               <div className="h-64 w-64 rounded-full bg-gradient-to-br from-blue-600 to-blue-900 opacity-80 blur-xl" />
@@ -356,23 +358,23 @@ function ExploreAllCard() {
 
 function ServicesTopSection() {
   return (
-    <section className="relative pt-32 pb-16">
+    <section className="relative pt-20 pb-16 md:pt-32">
       <div className="mx-auto max-w-(--max-width-content) px-(--spacing-gutter)">
         <div className="mx-auto max-w-[1200px]">
           {/* Title + subtitle */}
-          <div className="mb-40 pl-20">
-            <h2 className="font-(family-name:--font-display) text-display-md font-medium uppercase leading-tight text-[#0032eb]">
+          <div className="mb-16 md:mb-40 md:pl-20">
+            <h2 className="font-(family-name:--font-display) text-display-sm font-medium uppercase leading-tight text-[#0032eb] md:text-display-md">
               staff-level
               <br />
               product designer
             </h2>
-            <p className="mt-4 max-w-[450px] text-body-md opacity-50">
+            <p className="mt-4 max-w-[450px] text-body-md text-black">
               Currenty shaping financial experiences at M1 Finance
             </p>
           </div>
 
           {/* About / description block */}
-          <div className="mb-32 flex justify-end">
+          <div className="mb-16 flex md:mb-32 md:justify-end">
             <div className="max-w-[430px]">
               <p className="text-body opacity-50">
                 I design user-centered systems that scale — blending strategy,
@@ -390,11 +392,11 @@ function ServicesTopSection() {
           </div>
 
           {/* Brands I've partnered with — logo strip */}
-          <div className="mb-32">
-            <p className="mb-6 pl-20 text-body-sm font-medium uppercase tracking-wide text-[#0032eb]">
+          <div className="mb-16 md:mb-32">
+            <p className="mb-6 font-(family-name:--font-body) text-body-lg font-medium text-[#0032eb] md:pl-20">
               Brands i&apos;ve partnered with
             </p>
-            <div className="flex items-center gap-12 pl-20 opacity-40">
+            <div className="flex flex-wrap items-center gap-6 opacity-40 md:gap-12 md:pl-20">
               {[
                 "M1",
                 "UBS",
@@ -414,14 +416,14 @@ function ServicesTopSection() {
           </div>
 
           {/* Design Philosophy section label */}
-          <div className="mb-6 pl-20">
-            <p className="text-body-sm font-medium uppercase tracking-wider opacity-50">
+          <div className="mb-6 md:pl-20">
+            <p className="font-(family-name:--font-body) text-body-lg font-medium text-[#0032eb]">
               Design Philosophy and values <span className="ml-1">&#x21B4;</span>
             </p>
           </div>
 
           {/* Values list */}
-          <div className="mb-20 pl-20">
+          <div className="mb-12 md:mb-20 md:pl-20">
             <div className="flex flex-col gap-1">
               {[
                 "Form over function",
@@ -432,7 +434,7 @@ function ServicesTopSection() {
               ].map((value) => (
                 <h5
                   key={value}
-                  className="font-(family-name:--font-body) text-[56px] font-semibold leading-[1.1] tracking-tight opacity-20"
+                  className="font-(family-name:--font-body) text-[28px] font-semibold leading-[1.1] tracking-tight text-black md:text-[56px]"
                 >
                   {value}
                 </h5>
@@ -441,7 +443,7 @@ function ServicesTopSection() {
           </div>
 
           {/* Philosophy statement */}
-          <div className="mb-20 flex justify-end">
+          <div className="mb-12 flex md:mb-20 md:justify-end">
             <div className="max-w-[430px]">
               <p className="text-body opacity-50">
                 Design should be timeless, functional, and human. I believe in
@@ -464,25 +466,32 @@ function ServicesTopSection() {
 
 function ServicesBottomSection() {
   return (
-    <section className="relative py-32">
+    <section className="relative py-16 md:py-32">
       <div className="mx-auto max-w-(--max-width-content) px-(--spacing-gutter)">
         <div className="mx-auto max-w-[1200px]">
-          {/* Driven by clarity and intent label */}
           <BlueTrigger />
-          <div className="mb-6 pl-20">
-            <p className="text-body-sm font-medium uppercase tracking-wider opacity-50">
-              Driven by clarity and intent{" "}
-              <span className="ml-1">&#x21B4;</span>
+
+          {/* Driven by clarity and intent label */}
+          <div className="mb-6 md:pl-20">
+            <p className="font-(family-name:--font-body) text-body-lg font-medium text-[#0032eb]">
+              Driven by clarity and intent <span className="ml-1">&#x21B4;</span>
             </p>
           </div>
 
+          {/* Large heading */}
+          <div className="mb-16 md:pl-20">
+            <h3 className="font-(family-name:--font-body) text-[clamp(40px,6vw,80px)] font-semibold leading-tight tracking-tight">
+              Craft with purpose
+            </h3>
+          </div>
+
           {/* Three-column philosophy values */}
-          <div className="mb-20 grid grid-cols-3 gap-8 pl-20">
+          <div className="mb-12 grid grid-cols-1 gap-8 md:mb-20 md:grid-cols-3 md:pl-20">
             <div>
               <h4 className="mb-3 text-body font-semibold">
                 Design + UX
               </h4>
-              <p className="text-body-sm leading-relaxed opacity-50">
+              <p className="text-body opacity-50">
                 Rooted in visual clarity and user empathy. I craft intuitive,
                 accessible experiences that balance beauty and purpose.
               </p>
@@ -491,7 +500,7 @@ function ServicesBottomSection() {
               <h4 className="mb-3 text-body font-semibold">
                 Leader + Collaborator
               </h4>
-              <p className="text-body-sm leading-relaxed opacity-50">
+              <p className="text-body opacity-50">
                 I mentor, align, and empower teams to move fast with focus.
                 Strong partnerships drive meaningful outcomes.
               </p>
@@ -500,7 +509,7 @@ function ServicesBottomSection() {
               <h4 className="mb-3 text-body font-semibold">
                 Iterative Process
               </h4>
-              <p className="text-body-sm leading-relaxed opacity-50">
+              <p className="text-body opacity-50">
                 Design, test, refine, repeat. Every cycle brings sharper
                 insights and stronger products.
               </p>
@@ -518,9 +527,9 @@ function ServicesBottomSection() {
 
 function ContactCTA() {
   return (
-    <section className="py-24">
+    <section className="py-16 md:py-24">
       <div className="mx-auto max-w-(--max-width-content) px-(--spacing-gutter)">
-        <div className="pl-(--spacing-sidebar)">
+        <div className="flex flex-col items-center text-center">
           {/* Label */}
           <p className="mb-4 text-body-sm font-medium uppercase tracking-wider opacity-50">
             Contact <span className="ml-1">&#x21B4;</span>
@@ -528,7 +537,7 @@ function ContactCTA() {
 
           {/* Large CTA headline */}
           <Link href="/contact" className="group block">
-            <h2 className="font-(family-name:--font-display) text-display-lg font-medium uppercase leading-none tracking-tight transition-colors group-hover:text-accent-yellow">
+            <h2 className="font-(family-name:--font-display) text-display-md font-medium uppercase leading-none tracking-tight transition-colors group-hover:text-accent-yellow md:text-display-lg">
               Let&apos;s collab.
             </h2>
           </Link>

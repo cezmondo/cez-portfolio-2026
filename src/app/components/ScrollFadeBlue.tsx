@@ -7,7 +7,8 @@ import {
   useCallback,
   useState,
 } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll, useTransform } from "framer-motion";
+import { useHeaderTheme } from "./HeaderThemeContext";
 
 const BlueTriggerContext = createContext<(node: HTMLDivElement | null) => void>(
   () => {}
@@ -25,6 +26,7 @@ export default function ScrollFadeBlue({
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [triggerRef, setTriggerRef] = useState<HTMLDivElement | null>(null);
+  const { setTheme } = useHeaderTheme();
 
   const triggerCallbackRef = useCallback((node: HTMLDivElement | null) => {
     setTriggerRef(node);
@@ -46,6 +48,12 @@ export default function ScrollFadeBlue({
     [0, 1],
     ["#0f0e0e", "#ffffff"]
   );
+
+  useMotionValueEvent(scrollYProgress, "change", (v) => {
+    if (v > 0.35) {
+      setTheme("dark");
+    }
+  });
 
   return (
     <BlueTriggerContext.Provider value={triggerCallbackRef}>

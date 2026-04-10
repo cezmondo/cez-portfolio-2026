@@ -7,7 +7,8 @@ import {
   useCallback,
   useState,
 } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll, useTransform } from "framer-motion";
+import { useHeaderTheme } from "./HeaderThemeContext";
 
 const TriggerContext = createContext<(node: HTMLDivElement | null) => void>(
   () => {}
@@ -25,6 +26,7 @@ export default function ScrollFade({
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [triggerRef, setTriggerRef] = useState<HTMLDivElement | null>(null);
+  const { setTheme } = useHeaderTheme();
 
   const triggerCallbackRef = useCallback((node: HTMLDivElement | null) => {
     setTriggerRef(node);
@@ -46,6 +48,14 @@ export default function ScrollFade({
     [0, 1],
     ["#f7f7f7", "#0f0e0e"]
   );
+
+  useMotionValueEvent(scrollYProgress, "change", (v) => {
+    if (v > 0.4) {
+      setTheme("light");
+    } else {
+      setTheme("dark");
+    }
+  });
 
   return (
     <TriggerContext.Provider value={triggerCallbackRef}>

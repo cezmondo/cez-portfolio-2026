@@ -1,14 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { useState } from "react";
 import NavHeader from "@/components/ui/nav-header";
 import CezLogo from "@/components/ui/cez-logo";
+import { useHeaderTheme } from "./HeaderThemeContext";
 
 export default function Header() {
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
+  const { theme } = useHeaderTheme();
+  const isLight = theme === "light";
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() ?? 0;
@@ -26,11 +29,14 @@ export default function Header() {
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
       <div className="mx-auto flex max-w-(--max-width-content) flex-col items-center px-(--spacing-gutter) pt-6 pb-4">
-        <Link href="/" className="text-foreground">
+        <Link
+          href="/"
+          className={`transition-colors duration-300 ${isLight ? "text-black" : "text-foreground"}`}
+        >
           <CezLogo className="w-[160px] h-auto" />
         </Link>
         <nav className="mt-3">
-          <NavHeader />
+          <NavHeader isLight={isLight} />
         </nav>
       </div>
     </motion.header>
