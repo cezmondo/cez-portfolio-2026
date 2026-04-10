@@ -48,24 +48,6 @@ const brandSystemItems = [
   },
 ];
 
-const nextProjects = [
-  {
-    slug: "boldin-withdrawal-order",
-    label: "Boldin",
-    bg: "bg-boldin-teal",
-  },
-  {
-    slug: "boldin-design-system",
-    label: "Boldin",
-    bg: "bg-boldin-green",
-  },
-  {
-    slug: "blockfi",
-    label: "BlockFi",
-    bg: "bg-blockfi-blue",
-  },
-];
-
 /* ------------------------------------------------------------------ */
 /*  Page                                                               */
 /* ------------------------------------------------------------------ */
@@ -77,7 +59,7 @@ export default function BoldinBrandSocial() {
       <ContentSection />
 
       {/* ========== NEXT PROJECTS ========== */}
-      <NextProjectsSection />
+      <NextMarquee />
       <Footer transparent />
     </div>
   );
@@ -414,44 +396,30 @@ function ContentSection() {
 /*  Next Projects Section                                              */
 /* ------------------------------------------------------------------ */
 
-function NextProjectsSection() {
+function NextMarquee() {
+  const items = Array.from({ length: 6 });
   return (
-    <section className="relative py-24">
-      <div className="mx-auto w-full max-w-(--max-width-content) px-(--spacing-gutter)">
-        <div className="flex">
-          {/* Left sidebar spacer */}
-          <div className="w-(--spacing-sidebar) shrink-0" />
-
-          <div className="flex-1">
-            <p className="mb-8 text-body-sm uppercase tracking-wider text-foreground-muted">
-              Next
-            </p>
-
-            <div className="grid grid-cols-3 gap-6">
-              {nextProjects.map((project) => (
-                <Link
-                  key={project.slug}
-                  href={`/work/${project.slug}`}
-                  className="group block"
-                >
-                  <div
-                    className={`${project.bg} flex aspect-[4/3] flex-col justify-between overflow-hidden rounded-2xl p-8 transition-opacity group-hover:opacity-90`}
-                  >
-                    <p className="font-(family-name:--font-display) text-display-md font-medium uppercase leading-none tracking-tight text-foreground/20">
-                      NEXT
-                    </p>
-                    <div>
-                      <span className="inline-block rounded-full bg-foreground/10 px-4 py-1.5 text-body-sm font-medium uppercase tracking-wide text-foreground">
-                        {project.label}
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
+    <Link href="/work/boldin-withdrawal-order" className="block">
+      <section className="relative overflow-hidden bg-[#0d0d0d] py-12 cursor-pointer transition-opacity hover:opacity-90">
+        <div
+          className="flex items-center gap-8 whitespace-nowrap"
+          style={{ animation: "marquee 20s linear infinite" }}
+        >
+          {items.map((_, i) => <MarqueeItem key={i} />)}
+          {items.map((_, i) => <MarqueeItem key={`dup-${i}`} />)}
         </div>
-      </div>
-    </section>
+      </section>
+    </Link>
+  );
+}
+
+function MarqueeItem() {
+  return (
+    <>
+      <div className="h-[80px] w-[80px] flex-shrink-0 rounded-2xl bg-[#0d3f4a]" />
+      <span className="flex-shrink-0 font-(family-name:--font-display) text-[80px] font-medium uppercase leading-none tracking-tight text-foreground md:text-[120px]">
+        NEXT
+      </span>
+    </>
   );
 }

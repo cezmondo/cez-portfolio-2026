@@ -28,7 +28,7 @@ export default function UBS() {
     <div>
       <HeroSection />
       <ContentSection />
-      <NextSection />
+      <NextMarquee />
       <Footer transparent />
     </div>
   );
@@ -429,54 +429,30 @@ function ContentSection() {
 /*  Next Project                                                        */
 /* ------------------------------------------------------------------ */
 
-function NextSection() {
+function NextMarquee() {
+  const items = Array.from({ length: 6 });
   return (
-    <section className="py-24">
-      <div className="mx-auto max-w-(--max-width-content) px-(--spacing-gutter)">
-        <div className="flex">
-          <div className="w-(--spacing-sidebar) shrink-0" />
-          <div className="flex-1">
-            <p className="mb-6 text-body-sm font-semibold uppercase tracking-wide text-white/40">
-              More work
-            </p>
-            <div className="grid grid-cols-3 gap-6">
-              <Link
-                href="/work/kidventure-hub"
-                className="group block overflow-hidden rounded-2xl bg-kidventure-green p-8 text-background transition-opacity hover:opacity-90"
-              >
-                <p className="font-(family-name:--font-display) text-display-sm font-medium uppercase leading-none tracking-tight">
-                  NEXT
-                </p>
-                <p className="mt-3 text-body-sm font-medium uppercase tracking-wide">
-                  Kidventure Hub
-                </p>
-              </Link>
-              <Link
-                href="/work/boldin-withdrawal-order"
-                className="group block overflow-hidden rounded-2xl bg-boldin-teal p-8 text-foreground transition-opacity hover:opacity-90"
-              >
-                <p className="font-(family-name:--font-display) text-display-sm font-medium uppercase leading-none tracking-tight">
-                  NEXT
-                </p>
-                <p className="mt-3 text-body-sm font-medium uppercase tracking-wide">
-                  Boldin
-                </p>
-              </Link>
-              <Link
-                href="/work/blockfi"
-                className="group block overflow-hidden rounded-2xl bg-blockfi-blue p-8 text-foreground transition-opacity hover:opacity-90"
-              >
-                <p className="font-(family-name:--font-display) text-display-sm font-medium uppercase leading-none tracking-tight">
-                  NEXT
-                </p>
-                <p className="mt-3 text-body-sm font-medium uppercase tracking-wide">
-                  BlockFi
-                </p>
-              </Link>
-            </div>
-          </div>
+    <Link href="/work/kidventure-hub" className="block">
+      <section className="relative overflow-hidden bg-[#0d0d0d] py-12 cursor-pointer transition-opacity hover:opacity-90">
+        <div
+          className="flex items-center gap-8 whitespace-nowrap"
+          style={{ animation: "marquee 20s linear infinite" }}
+        >
+          {items.map((_, i) => <MarqueeItem key={i} />)}
+          {items.map((_, i) => <MarqueeItem key={`dup-${i}`} />)}
         </div>
-      </div>
-    </section>
+      </section>
+    </Link>
+  );
+}
+
+function MarqueeItem() {
+  return (
+    <>
+      <div className="h-[80px] w-[80px] flex-shrink-0 rounded-2xl bg-kidventure-green" />
+      <span className="flex-shrink-0 font-(family-name:--font-display) text-[80px] font-medium uppercase leading-none tracking-tight text-foreground md:text-[120px]">
+        NEXT
+      </span>
+    </>
   );
 }

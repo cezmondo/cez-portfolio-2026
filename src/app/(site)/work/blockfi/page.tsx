@@ -27,7 +27,7 @@ export default function BlockFi() {
     <div>
       <HeroSection />
       <ContentSection />
-      <NextSection />
+      <NextMarquee />
       <Footer transparent />
     </div>
   );
@@ -392,64 +392,30 @@ function ContentSection() {
 /*  Next Project                                                        */
 /* ------------------------------------------------------------------ */
 
-function NextSection() {
+function NextMarquee() {
+  const items = Array.from({ length: 6 });
   return (
-    <section className="border-t border-white/10 py-24">
-      <div className="mx-auto max-w-(--max-width-content) px-(--spacing-gutter)">
-        <div className="flex">
-          <div className="w-(--spacing-sidebar) shrink-0" />
-          <div className="flex-1">
-            <div className="grid grid-cols-3 gap-6">
-              {[
-                {
-                  slug: "jetblue",
-                  label: "JetBlue",
-                  bg: "bg-jetblue-blue",
-                  dark: false,
-                },
-                {
-                  slug: "ubs",
-                  label: "UBS",
-                  bg: "bg-[#e8cfc0]",
-                  dark: true,
-                },
-                {
-                  slug: "kidventure-hub",
-                  label: "Kidventure Hub",
-                  bg: "bg-kidventure-green",
-                  dark: true,
-                },
-              ].map((project) => (
-                <Link
-                  key={project.slug}
-                  href={`/work/${project.slug}`}
-                  className="group block"
-                >
-                  <div
-                    className={`${project.bg} flex flex-col justify-between overflow-hidden rounded-2xl p-8 ${
-                      project.dark ? "text-background" : "text-foreground"
-                    }`}
-                    style={{ minHeight: 280 }}
-                  >
-                    <p className="font-(family-name:--font-display) text-display-sm font-medium uppercase leading-none tracking-tight transition-opacity group-hover:opacity-70">
-                      Next
-                    </p>
-                    <p
-                      className={`text-body-sm font-medium uppercase tracking-wide ${
-                        project.dark
-                          ? "text-background/60"
-                          : "text-foreground/60"
-                      }`}
-                    >
-                      {project.label}
-                    </p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
+    <Link href="/work/jetblue" className="block">
+      <section className="relative overflow-hidden bg-[#0d0d0d] py-12 cursor-pointer transition-opacity hover:opacity-90">
+        <div
+          className="flex items-center gap-8 whitespace-nowrap"
+          style={{ animation: "marquee 20s linear infinite" }}
+        >
+          {items.map((_, i) => <MarqueeItem key={i} />)}
+          {items.map((_, i) => <MarqueeItem key={`dup-${i}`} />)}
         </div>
-      </div>
-    </section>
+      </section>
+    </Link>
+  );
+}
+
+function MarqueeItem() {
+  return (
+    <>
+      <div className="h-[80px] w-[80px] flex-shrink-0 rounded-2xl bg-jetblue-blue" />
+      <span className="flex-shrink-0 font-(family-name:--font-display) text-[80px] font-medium uppercase leading-none tracking-tight text-foreground md:text-[120px]">
+        NEXT
+      </span>
+    </>
   );
 }

@@ -794,22 +794,24 @@ function FinalSolutionSection() {
 function NextMarquee() {
   const items = Array.from({ length: 6 });
   return (
-    <section className="relative overflow-hidden bg-[#0d0d0d] py-12">
-      <div
-        className="flex items-center gap-8 whitespace-nowrap"
-        style={{
-          animation: "marquee 20s linear infinite",
-        }}
-      >
-        {items.map((_, i) => (
-          <MarqueeItem key={i} />
-        ))}
-        {/* Duplicate for seamless loop */}
-        {items.map((_, i) => (
-          <MarqueeItem key={`dup-${i}`} />
-        ))}
-      </div>
-    </section>
+    <Link href="/work/blockfi" className="block">
+      <section className="relative overflow-hidden bg-[#0d0d0d] py-12 cursor-pointer transition-opacity hover:opacity-90">
+        <div
+          className="flex items-center gap-8 whitespace-nowrap"
+          style={{
+            animation: "marquee 20s linear infinite",
+          }}
+        >
+          {items.map((_, i) => (
+            <MarqueeItem key={i} />
+          ))}
+          {/* Duplicate for seamless loop */}
+          {items.map((_, i) => (
+            <MarqueeItem key={`dup-${i}`} />
+          ))}
+        </div>
+      </section>
+    </Link>
   );
 }
 
