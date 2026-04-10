@@ -44,8 +44,14 @@ function HeroSection() {
         <div className="flex">
           <div className="hidden w-(--spacing-sidebar) shrink-0 md:block" />
           <div className="flex-1">
-            {/* Hero image placeholder */}
-            <div className="aspect-[1704/864] w-full overflow-hidden rounded-3xl bg-blockfi-blue/20" />
+            <div className="overflow-hidden rounded-3xl">
+              <img
+                src="/images/blockfi/hero-header.png"
+                alt="BlockFi mobile app screens"
+                className="w-full block"
+                fetchPriority="high"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -92,7 +98,7 @@ function ContentSection() {
             {/* Main content */}
             <div className="flex-1">
               {/* Page info */}
-              <div className="mb-16 pb-16">
+              <div className="mb-4 pb-4">
                 <div className="mb-10 flex flex-wrap gap-x-16 gap-y-4">
                   <div>
                     <p className="mb-1 text-[12px] font-semibold uppercase tracking-[-0.12px] text-foreground/40">Role</p>
@@ -130,22 +136,30 @@ function ContentSection() {
                   before they can even add money to the platform.
                 </p>
 
-                {/* Business value callout */}
-                <div className="mt-12 rounded-2xl bg-blockfi-blue p-10">
-                  <p className="mb-3 text-body-sm font-semibold uppercase tracking-wide text-white/60">
-                    Business value
-                  </p>
-                  <p className="max-w-[600px] text-body text-white">
-                    Increase # of clients who can immediately begin using our
-                    services. Drives 925K new accounts. Add $1.5M in revenue for
-                    newly acquired US clients. Save $76K on FTE headcount for
-                    manual KYC reviews. Estimate 10%+ increase in conversion for
-                    US.
-                  </p>
+                <div className="mt-6 max-w-[700px] space-y-2 text-[18px] leading-[1.4] text-foreground/50">
+                  <p>Business value: Increase # of clients who can immediately begin using our services.</p>
+                  <p>• Drives 925K new accounts.</p>
+                  <p>• Add $1.5M in revenue for newly acquired US clients.</p>
+                  <p>• Save $76K on FTE headcount for manual KYC reviews by decreasing # of manual workflow events.</p>
+                  <p>• Estimate 10%+ increase in conversion for US.</p>
                 </div>
 
-                {/* Drop-off funnel analysis image placeholder */}
-                <div className="mt-12 aspect-[16/9] w-full rounded-2xl bg-blockfi-blue/10" />
+
+                <div className="mt-10 overflow-hidden rounded-2xl">
+                  <img
+                    src="/images/blockfi/challenge-flows.png"
+                    alt="BlockFi onboarding flows — Signup, Onboarding, Risk, KYC"
+                    className="w-full"
+                  />
+                </div>
+
+                <div className="mt-6 overflow-hidden rounded-2xl">
+                  <img
+                    src="/images/blockfi/conversion-funnel.png"
+                    alt="BlockFi mobile full conversion funnel chart"
+                    className="w-full"
+                  />
+                </div>
               </div>
 
               {/* 02. Metrics of success & impact */}
@@ -226,9 +240,16 @@ function ContentSection() {
                   ].map((quote) => (
                     <div
                       key={quote}
-                      className="flex flex-col justify-center rounded-2xl border-l-4 border-blockfi-blue bg-white/5 p-8"
+                      className="flex flex-col items-center justify-center gap-4 rounded-2xl bg-[#faa9d2] p-10 text-center"
                     >
-                      <p className="text-[18px] leading-[1.4] italic text-foreground/50">{quote}</p>
+                      <p className="text-[14px] leading-[1.6] text-[#0f0e0e]">{quote}</p>
+                      <div className="flex gap-1 text-[20px]">
+                        <span className="text-[#ee1e87]">★</span>
+                        <span className="text-[#ee1e87]/30">★</span>
+                        <span className="text-[#ee1e87]/30">★</span>
+                        <span className="text-[#ee1e87]/30">★</span>
+                        <span className="text-[#ee1e87]/30">★</span>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -412,7 +433,11 @@ function NextMarquee() {
 function MarqueeItem() {
   return (
     <>
-      <div className="h-[80px] w-[80px] flex-shrink-0 rounded-2xl bg-jetblue-blue" />
+      <img
+        src="/images/blockfi/jetblue-icon.png"
+        alt="JetBlue"
+        className="h-[80px] w-[80px] flex-shrink-0 rounded-2xl"
+      />
       <span className="flex-shrink-0 font-(family-name:--font-display) text-[80px] font-medium uppercase leading-none tracking-tight text-foreground md:text-[120px]">
         NEXT
       </span>
