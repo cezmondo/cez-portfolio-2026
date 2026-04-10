@@ -799,7 +799,7 @@ function NextMarquee() {
         <div
           className="flex items-center gap-8 whitespace-nowrap"
           style={{
-            animation: "marquee 20s linear infinite",
+            animation: "marquee-ltr 30s linear infinite",
           }}
         >
           {items.map((_, i) => (

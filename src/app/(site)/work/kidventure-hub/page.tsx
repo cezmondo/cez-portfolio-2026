@@ -281,7 +281,7 @@ function NextMarquee() {
       <section className="relative overflow-hidden bg-[#0d0d0d] py-12 cursor-pointer transition-opacity hover:opacity-90">
         <div
           className="flex items-center gap-8 whitespace-nowrap"
-          style={{ animation: "marquee 20s linear infinite" }}
+          style={{ animation: "marquee-ltr 30s linear infinite" }}
         >
           {items.map((_, i) => <MarqueeItem key={i} />)}
           {items.map((_, i) => <MarqueeItem key={`dup-${i}`} />)}
