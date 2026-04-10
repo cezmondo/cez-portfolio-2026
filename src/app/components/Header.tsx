@@ -28,14 +28,14 @@ export default function Header() {
       animate={{ y: hidden ? "-100%" : "0%" }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
-      <div className="mx-auto flex max-w-(--max-width-content) flex-col items-center px-(--spacing-gutter) pt-6 pb-4">
+      <div className="mx-auto flex max-w-(--max-width-content) flex-col items-center px-(--spacing-gutter) pt-8 pb-6">
         <Link
           href="/"
           className={`transition-colors duration-300 ${isLight ? "text-black" : "text-foreground"}`}
         >
-          <CezLogo className="w-[160px] h-auto" />
+          <CezLogo className="w-[180px] h-auto" />
         </Link>
-        <nav className="mt-3">
+        <nav className="mt-4">
           <NavHeader isLight={isLight} />
         </nav>
       </div>

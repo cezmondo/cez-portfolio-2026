@@ -164,7 +164,7 @@ function ContentSection() {
             {/* Main content sections */}
             <div className="flex-1">
               {/* Page info */}
-              <div className="mb-16 pb-16">
+              <div className="mb-4 pb-4">
                 <div className="mb-10 flex flex-wrap gap-x-16 gap-y-4">
                   <MetaEntry label="Role" value="Design Lead" />
                   <MetaEntry label="Squad" value="Marketing" />
@@ -173,14 +173,9 @@ function ContentSection() {
                     value={`Marketing director,\ngrowth marketing manager,\nhead of design`}
                   />
                 </div>
-                <h1 className="mb-6 font-(family-name:--font-body) text-[28px] font-semibold leading-[1.2] tracking-[-0.8px] text-foreground md:text-[40px]">
-                  Boldin
+                <h1 className="font-(family-name:--font-body) text-[28px] font-semibold leading-[1.2] tracking-[-0.8px] text-foreground md:text-[40px]">
+                  Evolving the Boldin brand
                 </h1>
-                <p className="max-w-[700px] text-[18px] leading-[1.4] text-foreground/50">
-                  Boldin is a retirement and financial planning platform that
-                  empowers users to make smarter decisions about their savings,
-                  investments, and income strategies.
-                </p>
               </div>
 
               {/* ===== 01. Introduction ===== */}
@@ -202,23 +197,32 @@ function ContentSection() {
                     one cohesive vision.
                   </p>
                 </div>
+
+                <div className="mt-8 overflow-hidden rounded-2xl">
+                  <img
+                    src="/images/boldin-bs/introduction.svg"
+                    alt="Boldin brand introduction"
+                    className="w-full"
+                  />
+                </div>
+
+                <div className="mt-6 overflow-hidden rounded-2xl">
+                  <img
+                    src="/images/boldin-bs/rebrand-manifesto.svg"
+                    alt="Boldin rebrand and manifesto"
+                    className="w-full"
+                  />
+                </div>
+
+                <div className="mt-6 overflow-hidden rounded-2xl">
+                  <img
+                    src="/images/boldin-bs/rebrand-diagram.svg"
+                    alt="Boldin rebrand diagram"
+                    className="w-full"
+                  />
+                </div>
               </div>
 
-              {/* Legacy vs New logo placeholders */}
-              <div className="mb-20 grid grid-cols-2 gap-6">
-                <div className="flex aspect-[4/3] flex-col items-center justify-center overflow-hidden rounded-2xl bg-foreground-muted/10">
-                  <p className="mb-2 text-body-sm uppercase tracking-wider text-foreground-muted">
-                    Legacy logo
-                  </p>
-                  {/* Placeholder for legacy logo -- replaced in Phase 3 */}
-                </div>
-                <div className="flex aspect-[4/3] flex-col items-center justify-center overflow-hidden rounded-2xl bg-foreground-muted/10">
-                  <p className="mb-2 text-body-sm uppercase tracking-wider text-foreground-muted">
-                    New logo
-                  </p>
-                  {/* Placeholder for new logo -- replaced in Phase 3 */}
-                </div>
-              </div>
 
               {/* ===== 02. Rebrand and manifesto ===== */}
               <div className="pb-16 md:pb-28" id="rebrand">
@@ -237,33 +241,16 @@ function ContentSection() {
                     decision they make.
                   </p>
                 </div>
+
+                <div className="mt-8 overflow-hidden rounded-2xl">
+                  <img
+                    src="/images/boldin-bs/manifesto-img.png"
+                    alt="Boldin manifesto — people living boldly"
+                    className="w-full"
+                  />
+                </div>
               </div>
 
-              {/* Typography showcase */}
-              <div className="mb-8 overflow-hidden rounded-2xl bg-foreground/5 p-10">
-                <p className="mb-4 text-body-sm uppercase tracking-wider text-foreground-muted">
-                  Primary typeface
-                </p>
-                <p className="font-(family-name:--font-display) text-display-md font-medium uppercase leading-tight tracking-tight text-foreground">
-                  ES Klarheit
-                  <br />
-                  Grotesk
-                </p>
-                <p className="mt-6 font-(family-name:--font-display) text-body-lg font-medium uppercase tracking-wide text-foreground-muted">
-                  ABCDEFGHIJKLMNOPQRSTUVWXYZ
-                </p>
-                <p className="mt-2 font-(family-name:--font-display) text-body-lg font-medium tracking-wide text-foreground-muted">
-                  abcdefghijklmnopqrstuvwxyz
-                </p>
-                <p className="mt-2 font-(family-name:--font-display) text-body-lg font-medium tracking-wide text-foreground-muted">
-                  0123456789
-                </p>
-              </div>
-
-              {/* Image placeholder */}
-              <div className="mb-20 aspect-[16/9] w-full overflow-hidden rounded-2xl">
-                <div className="h-full w-full bg-foreground-muted/10" />
-              </div>
 
               {/* ===== 03. Brand system and assets ===== */}
               <div className="pb-16 md:pb-28" id="brand-system">
@@ -292,25 +279,16 @@ function ContentSection() {
                     </div>
                   ))}
                 </div>
+
+                <div className="overflow-hidden rounded-2xl">
+                  <img
+                    src="/images/boldin-bs/brand-system-assets.png"
+                    alt="Boldin brand system — typography, logo, icons, and patterns"
+                    className="w-full"
+                  />
+                </div>
               </div>
 
-              {/* Image placeholders -- brand assets grid */}
-              <div className="mb-8 grid grid-cols-2 gap-6">
-                <div className="aspect-[4/3] overflow-hidden rounded-2xl">
-                  <div className="h-full w-full bg-foreground-muted/10" />
-                </div>
-                <div className="aspect-[4/3] overflow-hidden rounded-2xl">
-                  <div className="h-full w-full bg-foreground-muted/10" />
-                </div>
-              </div>
-              <div className="mb-20 grid grid-cols-2 gap-6">
-                <div className="aspect-[4/3] overflow-hidden rounded-2xl">
-                  <div className="h-full w-full bg-foreground-muted/10" />
-                </div>
-                <div className="aspect-[4/3] overflow-hidden rounded-2xl">
-                  <div className="h-full w-full bg-foreground-muted/10" />
-                </div>
-              </div>
 
               {/* ===== 04. Illustration and AI ===== */}
               <div className="pb-16 md:pb-28" id="illustration">
@@ -333,24 +311,13 @@ function ContentSection() {
                     Each illustration was built around narrative themes like
                     Confidence, not confusion.
                   </p>
-                </div>
-              </div>
-
-              {/* Image placeholders -- illustration grid */}
-              <div className="mb-8 grid grid-cols-2 gap-6">
-                <div className="aspect-[4/3] overflow-hidden rounded-2xl">
-                  <div className="h-full w-full bg-foreground-muted/10" />
-                </div>
-                <div className="aspect-[4/3] overflow-hidden rounded-2xl">
-                  <div className="h-full w-full bg-foreground-muted/10" />
-                </div>
-              </div>
-              <div className="mb-20 grid grid-cols-2 gap-6">
-                <div className="aspect-[4/3] overflow-hidden rounded-2xl">
-                  <div className="h-full w-full bg-foreground-muted/10" />
-                </div>
-                <div className="aspect-[4/3] overflow-hidden rounded-2xl">
-                  <div className="h-full w-full bg-foreground-muted/10" />
+                  <div className="mt-8 overflow-hidden rounded-2xl">
+                    <img
+                      src="/images/boldin-bs/illustration-ai.png"
+                      alt="Boldin illustration style — warm, aspirational scenes"
+                      className="w-full"
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -359,31 +326,19 @@ function ContentSection() {
                 <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
                   05. Paid social
                 </p>
+                <p className="max-w-[740px] text-[18px] leading-[1.4] text-foreground/50">
+                  We extended the new identity across paid social, podcasts, and marketing campaigns translating brand principles into motion and storytelling. Campaigns centered on financial empowerment and trust, using bold color, expressive typography, and optimistic messaging to stand out in a traditionally sterile category. On platforms like Facebook, LinkedIn and Reddit, Boldin&apos;s social creative became a showcase of clarity, warmth, and confidence — turning complex financial ideas into approachable, human stories.
+                </p>
+
+                <div className="mt-8 overflow-hidden rounded-2xl">
+                  <img
+                    src="/images/boldin-bs/paid-social.png"
+                    alt="Boldin paid social campaign creative"
+                    className="w-full"
+                  />
+                </div>
               </div>
 
-              {/* Image placeholders -- social campaign grid */}
-              <div className="mb-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
-                <div className="aspect-square overflow-hidden rounded-2xl">
-                  <div className="h-full w-full bg-foreground-muted/10" />
-                </div>
-                <div className="aspect-square overflow-hidden rounded-2xl">
-                  <div className="h-full w-full bg-foreground-muted/10" />
-                </div>
-                <div className="aspect-square overflow-hidden rounded-2xl">
-                  <div className="h-full w-full bg-foreground-muted/10" />
-                </div>
-              </div>
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-                <div className="aspect-square overflow-hidden rounded-2xl">
-                  <div className="h-full w-full bg-foreground-muted/10" />
-                </div>
-                <div className="aspect-square overflow-hidden rounded-2xl">
-                  <div className="h-full w-full bg-foreground-muted/10" />
-                </div>
-                <div className="aspect-square overflow-hidden rounded-2xl">
-                  <div className="h-full w-full bg-foreground-muted/10" />
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -399,7 +354,7 @@ function ContentSection() {
 function NextMarquee() {
   const items = Array.from({ length: 6 });
   return (
-    <Link href="/work/boldin-withdrawal-order" className="block">
+    <Link href="/work/blockfi" className="block">
       <section className="relative overflow-hidden bg-[#0d0d0d] py-12 cursor-pointer transition-opacity hover:opacity-90">
         <div
           className="flex items-center gap-8 whitespace-nowrap"
@@ -416,7 +371,11 @@ function NextMarquee() {
 function MarqueeItem() {
   return (
     <>
-      <div className="h-[80px] w-[80px] flex-shrink-0 rounded-2xl bg-[#0d3f4a]" />
+      <img
+        src="/images/boldin-wo/blockfi-icon.png"
+        alt="BlockFi"
+        className="h-[80px] w-[80px] flex-shrink-0 rounded-2xl"
+      />
       <span className="flex-shrink-0 font-(family-name:--font-display) text-[80px] font-medium uppercase leading-none tracking-tight text-foreground md:text-[120px]">
         NEXT
       </span>

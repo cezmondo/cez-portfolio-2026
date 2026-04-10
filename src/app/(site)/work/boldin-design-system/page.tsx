@@ -133,20 +133,15 @@ function ContentSection() {
             {/* Main content sections */}
             <div className="flex-1">
               {/* Page info */}
-              <div className="mb-16 pb-16">
+              <div className="mb-4 pb-4">
                 <div className="mb-10 flex flex-wrap gap-x-16 gap-y-4">
                   <MetaEntry label="Role" value="Design Lead" />
                   <MetaEntry label="Squad" value="Design System" />
                   <MetaEntry label="Team" value="Engineering (FE), QA" />
                 </div>
-                <h1 className="mb-6 font-(family-name:--font-body) text-[28px] font-semibold leading-[1.2] tracking-[-0.8px] text-foreground md:text-[40px]">
-                  Boldin
+                <h1 className="font-(family-name:--font-body) text-[28px] font-semibold leading-[1.2] tracking-[-0.8px] text-foreground md:text-[40px]">
+                  The design system
                 </h1>
-                <p className="max-w-[700px] text-[18px] leading-[1.4] text-foreground/50">
-                  Boldin is a retirement and financial planning platform that
-                  empowers users to make smarter decisions about their savings,
-                  investments, and income strategies.
-                </p>
               </div>
 
               {/* ===== 01. The system ===== */}
@@ -166,17 +161,16 @@ function ContentSection() {
                     needs.
                   </p>
                 </div>
+
+                <div className="mt-8 overflow-hidden rounded-2xl">
+                  <img
+                    src="/images/boldin-ds/design-system-overview.svg"
+                    alt="Boldin design system overview"
+                    className="w-full"
+                  />
+                </div>
               </div>
 
-              {/* Image placeholders -- typography specimen */}
-              <div className="mb-8 aspect-[16/9] w-full overflow-hidden rounded-2xl">
-                <div className="h-full w-full bg-foreground-muted/10" />
-              </div>
-
-              {/* Image placeholder -- component library */}
-              <div className="mb-20 aspect-[16/9] w-full overflow-hidden rounded-2xl">
-                <div className="h-full w-full bg-foreground-muted/10" />
-              </div>
 
               {/* ===== 02. Enterprise solutions ===== */}
               <div className="pb-16 md:pb-28" id="enterprise-solutions">
@@ -201,15 +195,23 @@ function ContentSection() {
                     the ground up, introduced custom tools like the Financial
                     Blueprint Summary, and now supports 32,000+ plan users.
                   </p>
+                  <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
+                    <div className="overflow-hidden rounded-2xl">
+                      <img
+                        src="/images/boldin-ds/enterprise-1.svg"
+                        alt="Boldin enterprise design system — partner brand example"
+                        className="w-full"
+                      />
+                    </div>
+                    <div className="overflow-hidden rounded-2xl">
+                      <img
+                        src="/images/boldin-ds/enterprise-2.svg"
+                        alt="Boldin enterprise design system — white-label layout"
+                        className="w-full"
+                      />
+                    </div>
+                  </div>
                 </div>
-              </div>
-
-              {/* Image placeholders -- partner brand examples */}
-              <div className="mb-8 aspect-[16/9] w-full overflow-hidden rounded-2xl">
-                <div className="h-full w-full bg-foreground-muted/10" />
-              </div>
-              <div className="mb-20 aspect-[16/9] w-full overflow-hidden rounded-2xl">
-                <div className="h-full w-full bg-foreground-muted/10" />
               </div>
 
               {/* ===== 03. Documentation ===== */}
@@ -225,15 +227,25 @@ function ContentSection() {
                     and clear usage guidelines.
                   </p>
                 </div>
+
+                <div className="mt-8 flex flex-col gap-4">
+                  <div className="overflow-hidden rounded-2xl">
+                    <img
+                      src="/images/boldin-ds/documentation-1.svg"
+                      alt="Boldin design system documentation"
+                      className="w-full"
+                    />
+                  </div>
+                  <div className="overflow-hidden rounded-2xl">
+                    <img
+                      src="/images/boldin-ds/documentation-2.svg"
+                      alt="Boldin design system documentation"
+                      className="w-full"
+                    />
+                  </div>
+                </div>
               </div>
 
-              {/* Image placeholders -- Storybook/docs screenshots */}
-              <div className="mb-8 aspect-[16/9] w-full overflow-hidden rounded-2xl">
-                <div className="h-full w-full bg-foreground-muted/10" />
-              </div>
-              <div className="aspect-[16/9] w-full overflow-hidden rounded-2xl">
-                <div className="h-full w-full bg-foreground-muted/10" />
-              </div>
             </div>
           </div>
         </div>
@@ -249,7 +261,7 @@ function ContentSection() {
 function NextMarquee() {
   const items = Array.from({ length: 6 });
   return (
-    <Link href="/work/boldin-brand-social" className="block">
+    <Link href="/work/blockfi" className="block">
       <section className="relative overflow-hidden bg-[#0d0d0d] py-12 cursor-pointer transition-opacity hover:opacity-90">
         <div
           className="flex items-center gap-8 whitespace-nowrap"
@@ -266,7 +278,11 @@ function NextMarquee() {
 function MarqueeItem() {
   return (
     <>
-      <div className="h-[80px] w-[80px] flex-shrink-0 rounded-2xl bg-[#ff6a00]" />
+      <img
+        src="/images/boldin-wo/blockfi-icon.png"
+        alt="BlockFi"
+        className="h-[80px] w-[80px] flex-shrink-0 rounded-2xl"
+      />
       <span className="flex-shrink-0 font-(family-name:--font-display) text-[80px] font-medium uppercase leading-none tracking-tight text-foreground md:text-[120px]">
         NEXT
       </span>
