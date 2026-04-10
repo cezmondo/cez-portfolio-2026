@@ -112,10 +112,10 @@ function ContentSection() {
 
 function HeroSection() {
   return (
-    <section className="relative pt-[140px]">
+    <section className="relative pt-[80px] md:pt-[140px]">
       <div className="mx-auto w-full max-w-(--max-width-content) px-(--spacing-gutter)">
         <div className="flex">
-          <div className="w-(--spacing-sidebar) shrink-0" />
+          <div className="hidden w-(--spacing-sidebar) shrink-0 md:block" />
           <div className="flex-1">
             <div className="overflow-hidden rounded-[24px] bg-[#0d3f4a]">
               <img
@@ -150,7 +150,7 @@ function DescriptionSection() {
       </div>
 
       {/* Main heading */}
-      <h1 className="mb-6 font-(family-name:--font-body) text-[40px] font-semibold leading-[1.2] tracking-[-0.8px] text-foreground">
+      <h1 className="mb-6 font-(family-name:--font-body) text-[28px] font-semibold leading-[1.2] tracking-[-0.8px] text-foreground md:text-[40px]">
         Withdrawal order
       </h1>
 
@@ -192,9 +192,9 @@ function MetaEntry({ label, value }: { label: string; value: string | string[] }
 
 function ResultsSection() {
   return (
-    <div id="results" className="scroll-mt-10 pb-28">
+    <div id="results" className="scroll-mt-10 pb-16 md:pb-28">
       {/* Section label */}
-      <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+      <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
         02. The results: Impact at a glance
       </p>
 
@@ -226,11 +226,11 @@ function ResultsSection() {
 
 function StatCard({ value, description }: { value: string; description: string }) {
   return (
-    <div className="flex flex-col justify-center rounded-2xl bg-[#fbf7f0] px-10 py-[72px]">
-      <p className="text-[52px] font-medium leading-[1.2] tracking-[-1.04px] text-[#0f0e0e]">
+    <div className="flex flex-col justify-center rounded-2xl bg-[#fbf7f0] px-6 py-12 md:px-10 md:py-[72px]">
+      <p className="text-[36px] font-medium leading-[1.2] tracking-[-1.04px] text-[#0f0e0e] md:text-[52px]">
         {value}
       </p>
-      <p className="mt-5 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-black">
+      <p className="mt-3 text-[18px] font-normal leading-[1.2] tracking-[-0.56px] text-black md:mt-5 md:text-[28px]">
         {description}
       </p>
     </div>
@@ -243,9 +243,9 @@ function StatCard({ value, description }: { value: string; description: string }
 
 function PainPointsSection() {
   return (
-    <div id="pain-points" className="scroll-mt-10 pb-28">
+    <div id="pain-points" className="scroll-mt-10 pb-16 md:pb-28">
       {/* Section label */}
-      <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+      <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
         03. Persona and identifying user painpoints
       </p>
 
@@ -333,9 +333,9 @@ function StarRow({ count }: { count: number }) {
 
 function ConceptSection1a() {
   return (
-    <div id="concept-1a" className="scroll-mt-10 pb-28">
+    <div id="concept-1a" className="scroll-mt-10 pb-16 md:pb-28">
       {/* Section label */}
-      <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+      <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
         04. Design concept 1a: Dynamic Solver
       </p>
 
@@ -436,9 +436,9 @@ function ConceptSection1a() {
 
 function ConceptSection1b() {
   return (
-    <div id="concept-1b" className="scroll-mt-10 pb-28">
+    <div id="concept-1b" className="scroll-mt-10 pb-16 md:pb-28">
       {/* Section label */}
-      <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+      <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
         04. Design concept 1b: Explorer
       </p>
 
@@ -500,8 +500,8 @@ function ConceptSection1b() {
       </div>
 
       {/* Explorer chart panel (cream) */}
-      <div className="w-full overflow-hidden rounded-2xl bg-[#fbf7f0] px-10 pt-10 pb-5">
-        <div className="mb-4 flex items-center justify-between border-b border-[#0f0e0e]/10 pb-3">
+      <div className="w-full overflow-hidden rounded-2xl bg-[#fbf7f0] px-6 pb-5 pt-6 md:px-10 md:pt-10">
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-2 border-b border-[#0f0e0e]/10 pb-3">
           <div className="flex items-center gap-3">
             <button className="rounded-full bg-[#0f0e0e]/5 p-1.5"><span className="block h-3 w-3">✕</span></button>
             <p className="text-[14px] font-medium text-[#0f0e0e]">Withdrawal Order Explorer</p>
@@ -512,9 +512,9 @@ function ConceptSection1b() {
           </div>
         </div>
 
-        <div className="flex gap-8">
+        <div className="flex flex-col gap-6 md:flex-row md:gap-8">
           {/* Sidebar */}
-          <div className="w-[160px] shrink-0">
+          <div className="w-full md:w-[160px] md:shrink-0">
             <p className="mb-2 text-[11px] font-semibold uppercase tracking-wide text-[#0f0e0e]/40">Forecast</p>
             <div className="mb-6 rounded-lg border border-[#0f0e0e]/15 px-3 py-2 text-[13px] text-[#0f0e0e]">
               Optimistic ▾
@@ -551,7 +551,7 @@ function ConceptSection1b() {
 
         <div className="mt-8 border-t border-[#0f0e0e]/10 pt-6">
           <p className="mb-4 text-[14px] font-medium text-[#0f0e0e]">Choose up to 3 strategies you want to compare</p>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
             {["Traditional", "Reverse-Traditional", "Proportional"].map((s, i) => (
               <div key={i} className="rounded-xl border border-[#0f0e0e]/15 p-4">
                 <div className="mb-1 flex items-center justify-between">
@@ -575,9 +575,9 @@ function ConceptSection1b() {
 
 function ConceptSection2() {
   return (
-    <div id="concept-2" className="scroll-mt-10 pb-28">
+    <div id="concept-2" className="scroll-mt-10 pb-16 md:pb-28">
       {/* Section label */}
-      <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+      <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
         04. Design concept 2: User control
       </p>
 
@@ -660,8 +660,8 @@ function ConceptSection2() {
 
 function UserTestingSection() {
   return (
-    <div id="testing" className="scroll-mt-10 pb-28">
-      <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+    <div id="testing" className="scroll-mt-10 pb-16 md:pb-28">
+      <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
         05. Insights from user testing
       </p>
       <div className="max-w-[700px] space-y-5 text-[18px] leading-[1.4] text-foreground/50">
@@ -702,8 +702,8 @@ function UserTestingSection() {
 
 function FinalSolutionSection() {
   return (
-    <div id="final" className="scroll-mt-10 pb-28">
-      <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+    <div id="final" className="scroll-mt-10 pb-16 md:pb-28">
+      <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
         06. Final solution
       </p>
       <p className="mb-10 max-w-[700px] text-[18px] leading-[1.4] text-foreground/50">
@@ -713,10 +713,10 @@ function FinalSolutionSection() {
       </p>
 
       {/* Final solution mockups — cream background with overlapping screens */}
-      <div className="relative overflow-hidden rounded-2xl bg-[#ebf8f2] px-10 pt-10 pb-0 min-h-[520px]">
-        <div className="relative flex items-end justify-center gap-[-40px]">
+      <div className="relative overflow-hidden rounded-2xl bg-[#ebf8f2] px-6 pt-8 pb-0 md:px-10 md:pt-10">
+        <div className="relative flex flex-col gap-4 md:flex-row md:items-end md:justify-center md:gap-0">
           {/* Back screen (slightly offset) */}
-          <div className="relative z-10 -mb-1 mr-[-60px] w-[55%] max-w-[520px] overflow-hidden rounded-2xl shadow-2xl">
+          <div className="relative z-10 w-full overflow-hidden rounded-2xl shadow-2xl md:-mb-1 md:mr-[-60px] md:w-[55%] md:max-w-[520px]">
             <div className="bg-white p-4">
               <div className="mb-3 flex items-center justify-between border-b border-[#0f0e0e]/8 pb-3">
                 <div className="flex items-center gap-2">
@@ -748,7 +748,7 @@ function FinalSolutionSection() {
           </div>
 
           {/* Front screen */}
-          <div className="relative z-20 w-[55%] max-w-[520px] overflow-hidden rounded-2xl shadow-2xl">
+          <div className="relative z-20 w-full overflow-hidden rounded-2xl shadow-2xl md:w-[55%] md:max-w-[520px]">
             <div className="bg-white p-4">
               <div className="mb-3 flex items-center gap-2 border-b border-[#0f0e0e]/8 pb-3">
                 <div className="h-5 w-5 rounded-md bg-[#04b477]" />
