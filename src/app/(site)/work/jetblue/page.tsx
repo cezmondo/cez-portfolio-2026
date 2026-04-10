@@ -106,27 +106,24 @@ function ContentSection() {
                     <p className="text-[12px] font-semibold uppercase tracking-[-0.12px] text-foreground">Product Owners. Work produced at Big Spaceship.</p>
                   </div>
                 </div>
-                <h1 className="font-(family-name:--font-display) text-display-lg font-medium uppercase leading-none tracking-tight">
+                <h1 className="mb-6 font-(family-name:--font-body) text-[40px] font-semibold leading-[1.2] tracking-[-0.8px] text-foreground">
                   JetBlue
                 </h1>
-                <p className="mt-4 max-w-[720px] text-body-lg text-white/50">
+                <p className="max-w-[700px] text-[18px] leading-[1.4] text-foreground/50">
                   Born in 1999, JetBlue is a global, award-winning travel company.
                 </p>
               </div>
 
               {/* 01. The challenge */}
-              <div id="challenge" className="scroll-mt-10">
-                <h2 className="text-body-lg font-medium text-foreground">
-                  Redesigning JetBlue booking
-                </h2>
-                <p className="mt-1 text-body-sm text-white/40">
+              <div id="challenge" className="scroll-mt-10 pb-28">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
                   01. The challenge
                 </p>
-                <p className="mt-8 max-w-[800px] text-body text-white/50">
+                <p className="max-w-[700px] text-[18px] leading-[1.4] text-foreground/50">
                   Redesign the booking experience to reduce the number of
                   decisions and friction in the flow.
                 </p>
-                <p className="mt-5 max-w-[800px] text-body font-semibold text-foreground">
+                <p className="mt-5 max-w-[700px] text-[18px] leading-[1.4] font-semibold text-foreground">
                   Business value: To increase booking conversion.
                 </p>
                 {/* Image placeholder */}
@@ -134,10 +131,10 @@ function ContentSection() {
               </div>
 
               {/* 02. Metrics of success and impact */}
-              <div id="metrics" className="mt-[120px] scroll-mt-10">
-                <h2 className="text-body-lg font-medium text-foreground">
+              <div id="metrics" className="scroll-mt-10 pb-28">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
                   02. Metrics of success and impact
-                </h2>
+                </p>
                 <div className="mt-8 grid grid-cols-3 gap-6">
                   {[
                     "Conversion for Trueblue (Loyalty Program)",
@@ -157,11 +154,11 @@ function ContentSection() {
               </div>
 
               {/* 03. Personas */}
-              <div id="personas" className="mt-[120px] scroll-mt-10">
-                <h2 className="text-body-lg font-medium text-foreground">
+              <div id="personas" className="scroll-mt-10 pb-28">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
                   03. Personas
-                </h2>
-                <p className="mt-8 max-w-[800px] text-body text-white/50">
+                </p>
+                <p className="mt-8 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
                   The project was seen through the lens of 3 different personas.
                   Design decisions were based on their motivations to help
                   personalize the experience.
@@ -171,11 +168,11 @@ function ContentSection() {
               </div>
 
               {/* 04. Legacy audit */}
-              <div id="legacy-audit" className="mt-[120px] scroll-mt-10">
-                <h2 className="text-body-lg font-medium text-foreground">
+              <div id="legacy-audit" className="scroll-mt-10 pb-28">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
                   04. Legacy audit
-                </h2>
-                <p className="mt-8 max-w-[800px] text-body text-white/50">
+                </p>
+                <p className="mt-8 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
                   In order to redesign the experience, I first needed to audit
                   the existing system to create a streamlined experience. Below
                   is the legacy system and some highlighted painpoints.
@@ -185,11 +182,11 @@ function ContentSection() {
               </div>
 
               {/* 05. Design concepts */}
-              <div id="concepts" className="mt-[120px] scroll-mt-10">
-                <h2 className="text-body-lg font-medium text-foreground">
+              <div id="concepts" className="scroll-mt-10 pb-28">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
                   05. Design concepts
-                </h2>
-                <p className="mt-8 max-w-[800px] text-body text-white/50">
+                </p>
+                <p className="mt-8 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
                   Users could enter through the homepage or enter through an OTA
                   (online travel agency, Kayak, Google Flights).
                 </p>
@@ -212,10 +209,10 @@ function ContentSection() {
               </div>
 
               {/* 06. Insights from user testing */}
-              <div id="testing" className="mt-[120px] scroll-mt-10">
-                <h2 className="text-body-lg font-medium text-foreground">
+              <div id="testing" className="scroll-mt-10 pb-28">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
                   06. Insights from user testing
-                </h2>
+                </p>
 
                 <div className="mt-8 max-w-[800px]">
                   <p className="mb-4 text-body font-semibold text-foreground">
@@ -229,14 +226,14 @@ function ContentSection() {
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-3">
                         <span className="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-jetblue-blue" />
-                        <span className="text-body text-white/50">{item}</span>
+                        <span className="text-[18px] leading-[1.4] text-foreground/50">{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
                 <div className="mt-8 max-w-[800px] rounded-2xl border-l-4 border-jetblue-blue bg-white/5 p-8">
-                  <p className="text-body text-white/50">
+                  <p className="text-[18px] leading-[1.4] text-foreground/50">
                     Filter navigation was the preferred direction. Users
                     described it as &ldquo;clean, concise, easy to navigate, and
                     efficient.&rdquo;
@@ -245,11 +242,11 @@ function ContentSection() {
               </div>
 
               {/* 07. Final solution */}
-              <div id="solution" className="mt-[120px] scroll-mt-10">
-                <h2 className="text-body-lg font-medium text-foreground">
+              <div id="solution" className="scroll-mt-10 pb-28">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
                   07. Final solution
-                </h2>
-                <p className="mt-8 max-w-[800px] text-body text-white/50">
+                </p>
+                <p className="mt-8 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
                   Filter navigation was the preferred UX design direction among
                   users.
                 </p>
@@ -275,7 +272,7 @@ function ContentSection() {
                   ].map((feature) => (
                     <li key={feature.title} className="flex items-start gap-3">
                       <span className="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-jetblue-blue" />
-                      <span className="text-body text-white/50">
+                      <span className="text-[18px] leading-[1.4] text-foreground/50">
                         <span className="font-semibold text-foreground">
                           {feature.title}
                         </span>
@@ -290,10 +287,10 @@ function ContentSection() {
               </div>
 
               {/* 08. Parallel work streams */}
-              <div id="parallel" className="mt-[120px] scroll-mt-10">
-                <h2 className="text-body-lg font-medium text-foreground">
+              <div id="parallel" className="scroll-mt-10 pb-28">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
                   08. Parallel work streams
-                </h2>
+                </p>
                 <div className="mt-12 grid grid-cols-2 gap-6">
                   {[
                     {

@@ -100,10 +100,10 @@ function ContentSection() {
                     <p className="text-[12px] font-semibold uppercase tracking-[-0.12px] text-foreground">Sole designer and builder</p>
                   </div>
                 </div>
-                <h1 className="font-(family-name:--font-display) text-display-lg font-medium uppercase leading-none tracking-tight">
+                <h1 className="mb-6 font-(family-name:--font-body) text-[40px] font-semibold leading-[1.2] tracking-[-0.8px] text-foreground">
                   Kidventure Hub
                 </h1>
-                <p className="mt-4 max-w-[720px] text-body-lg text-white/50">
+                <p className="max-w-[700px] text-[18px] leading-[1.4] text-foreground/50">
                   An evergreen guide for families, designed and vibe-coded to reimagine how parents find, filter, and enjoy city adventures with their kids.
                 </p>
                 <div className="mt-6 flex gap-3">
@@ -116,11 +116,11 @@ function ContentSection() {
               </div>
 
               {/* 02. The problem */}
-              <div id="problem" className="mt-[120px] scroll-mt-10">
-                <h2 className="text-body-lg font-medium text-foreground">
+              <div id="problem" className="scroll-mt-10 pb-28">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
                   02. The problem
-                </h2>
-                <p className="mt-8 max-w-[800px] text-body text-white/50">
+                </p>
+                <p className="mt-8 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
                   Parenting guides and listicles constantly go out of date,
                   while blog posts drown you in sponsored lists and
                   half-working links. Parents need something evergreen &mdash;
@@ -132,10 +132,10 @@ function ContentSection() {
               </div>
 
               {/* 03. Vision */}
-              <div id="vision" className="mt-[120px] scroll-mt-10">
-                <h2 className="text-body-lg font-medium text-foreground">
+              <div id="vision" className="scroll-mt-10 pb-28">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
                   03. Vision
-                </h2>
+                </p>
                 <div className="mt-8 flex gap-4">
                   {["design clarity", "curation", "delight"].map((word) => (
                     <span
@@ -146,7 +146,7 @@ function ContentSection() {
                     </span>
                   ))}
                 </div>
-                <p className="mt-6 max-w-[800px] text-body text-white/50">
+                <p className="mt-6 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
                   Like a modern kids&apos; museum &mdash; alive, with timeless
                   listings and minimal upkeep.
                 </p>
@@ -155,11 +155,11 @@ function ContentSection() {
               </div>
 
               {/* 04. Exploration process */}
-              <div id="exploration" className="mt-[120px] scroll-mt-10">
-                <h2 className="text-body-lg font-medium text-foreground">
+              <div id="exploration" className="scroll-mt-10 pb-28">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
                   04. Exploration process
-                </h2>
-                <p className="mt-8 max-w-[800px] text-body text-white/50">
+                </p>
+                <p className="mt-8 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
                   The process started with mood, rhythm, and color &mdash;
                   following the feeling first. Proving that intuition can be
                   the entry point to precision, blending artistry and
@@ -173,21 +173,21 @@ function ContentSection() {
               </div>
 
               {/* 05. System thinking */}
-              <div id="system" className="mt-[120px] scroll-mt-10">
-                <h2 className="text-body-lg font-medium text-foreground">
+              <div id="system" className="scroll-mt-10 pb-28">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
                   05. System thinking
-                </h2>
-                <p className="mt-8 max-w-[800px] text-body text-white/50">
+                </p>
+                <p className="mt-8 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
                   Behind the expressive UI, I built a light but extensible
                   system:
                 </p>
-                <ul className="mt-4 max-w-[800px] space-y-2 text-body text-white/50">
+                <ul className="mt-4 max-w-[800px] space-y-2 text-[18px] leading-[1.4] text-foreground/50">
                   <li>&bull; Supabase for backend</li>
                   <li>&bull; Amenity filters</li>
                   <li>&bull; Figma tokens</li>
                   <li>&bull; Componentized listing cards</li>
                 </ul>
-                <p className="mt-6 max-w-[800px] text-body text-white/50">
+                <p className="mt-6 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
                   The result: a playground-finder that feels effortless on the
                   surface but scalable underneath.
                 </p>
@@ -196,14 +196,14 @@ function ContentSection() {
               </div>
 
               {/* 06. Brand identity */}
-              <div id="brand" className="mt-[120px] scroll-mt-10">
-                <h2 className="text-body-lg font-medium text-foreground">
+              <div id="brand" className="scroll-mt-10 pb-28">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
                   06. Brand identity
-                </h2>
-                <p className="mt-1 text-body-sm text-white/40">
+                </p>
+                <p className="mb-4 text-[18px] leading-[1.4] text-foreground/50">
                   Neo-Brutalism
                 </p>
-                <p className="mt-8 max-w-[800px] text-body text-white/50">
+                <p className="mt-8 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
                   Neo-Brutalism aesthetic conveying confidence, discovery, and
                   belonging.
                 </p>
@@ -216,11 +216,11 @@ function ContentSection() {
               </div>
 
               {/* 07. Outcome and reflection */}
-              <div id="outcome" className="mt-[120px] scroll-mt-10">
-                <h2 className="text-body-lg font-medium text-foreground">
+              <div id="outcome" className="scroll-mt-10 pb-28">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
                   07. Outcome and reflection
-                </h2>
-                <p className="mt-8 max-w-[800px] text-body text-white/50">
+                </p>
+                <p className="mt-8 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
                   The MVP prototype now includes:
                 </p>
                 <div className="mt-8 grid grid-cols-3 gap-6">
@@ -253,7 +253,7 @@ function ContentSection() {
                     </div>
                   ))}
                 </div>
-                <p className="mt-10 max-w-[800px] text-body font-medium text-white/70">
+                <p className="mt-10 max-w-[700px] text-[18px] leading-[1.4] font-medium text-foreground/70">
                   AI + design workflow &mdash; following instinct to reveal
                   structure.
                 </p>

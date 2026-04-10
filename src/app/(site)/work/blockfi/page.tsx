@@ -108,10 +108,10 @@ function ContentSection() {
                     <p className="text-[12px] font-semibold uppercase tracking-[-0.12px] text-foreground">Research, Content Strategist, QA</p>
                   </div>
                 </div>
-                <h1 className="font-(family-name:--font-display) text-display-lg font-medium uppercase leading-none tracking-tight">
+                <h1 className="mb-4 font-(family-name:--font-body) text-[40px] font-semibold leading-[1.2] tracking-[-0.8px] text-foreground">
                   BlockFi
                 </h1>
-                <p className="mt-4 max-w-[720px] text-body-lg text-white/50">
+                <p className="max-w-[700px] text-[18px] leading-[1.4] text-foreground/50">
                   BlockFi is a platform that redefines the future of banking where
                   users can earn interest, borrow cash, and trade crypto from
                   financial services providers.
@@ -119,14 +119,11 @@ function ContentSection() {
               </div>
 
               {/* 01. The challenge */}
-              <div id="challenge" className="scroll-mt-10">
-                <h2 className="text-body-lg font-medium text-foreground">
-                  Streamlining onboarding
-                </h2>
-                <p className="mt-1 text-body-sm text-white/40">
+              <div id="challenge" className="scroll-mt-10 pb-28">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
                   01. The challenge
                 </p>
-                <p className="mt-8 max-w-[800px] text-body text-white/50">
+                <p className="max-w-[700px] text-[18px] leading-[1.4] text-foreground/50">
                   Clients today experience onboarding as &ldquo;a necessary
                   evil&rdquo; to endure vs an experience that supports their
                   investment goals. Users have to go through over 20 screens
@@ -152,11 +149,11 @@ function ContentSection() {
               </div>
 
               {/* 02. Metrics of success & impact */}
-              <div id="metrics" className="mt-[120px] scroll-mt-10">
-                <h2 className="text-body-lg font-medium text-foreground">
+              <div id="metrics" className="scroll-mt-10 pb-28">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
                   02. Metrics of success and impact
-                </h2>
-                <p className="mt-8 max-w-[800px] text-body text-white/50">
+                </p>
+                <p className="mt-8 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
                   The redesign streamlined BlockFi&apos;s onboarding and
                   verification flows, improving both user experience and
                   operational efficiency.
@@ -217,10 +214,10 @@ function ContentSection() {
               </div>
 
               {/* 03. User pain points */}
-              <div id="pain-points" className="mt-[120px] scroll-mt-10">
-                <h2 className="text-body-lg font-medium text-foreground">
+              <div id="pain-points" className="scroll-mt-10 pb-28">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
                   03. User pain points
-                </h2>
+                </p>
                 <div className="mt-8 grid grid-cols-3 gap-6">
                   {[
                     `"Invasive as hell. They want to know everything about me before I could even browse the app. Felt like it was a cult leader or the DMV questioning me."`,
@@ -231,23 +228,23 @@ function ContentSection() {
                       key={quote}
                       className="flex flex-col justify-center rounded-2xl border-l-4 border-blockfi-blue bg-white/5 p-8"
                     >
-                      <p className="text-body italic text-white/50">{quote}</p>
+                      <p className="text-[18px] leading-[1.4] italic text-foreground/50">{quote}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* 04. Approach */}
-              <div id="approach" className="mt-[120px] scroll-mt-10">
-                <h2 className="text-body-lg font-medium text-foreground">
+              <div id="approach" className="scroll-mt-10 pb-28">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
                   04. Approach &mdash; Experience deep dive
-                </h2>
-                <p className="mt-8 max-w-[800px] text-body text-white/50">
+                </p>
+                <p className="mt-8 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
                   To overhaul the onboarding experience, I started by completing
                   a full UX audit, scrutinizing every screen and taking note of
                   potential opportunities for improvement.
                 </p>
-                <p className="mt-5 max-w-[800px] text-body text-white/50">
+                <p className="mt-5 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
                   I worked closely with product managers and engineers to develop
                   a detailed map documenting all the different touchpoints in the
                   customer journey.
@@ -260,17 +257,17 @@ function ContentSection() {
               </div>
 
               {/* 05. Design concepts */}
-              <div id="concepts" className="mt-[120px] scroll-mt-10">
-                <h2 className="text-body-lg font-medium text-foreground">
+              <div id="concepts" className="scroll-mt-10 pb-28">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
                   05. Design concepts &mdash; Architecting a new future
-                </h2>
+                </p>
 
                 {/* Happy path */}
                 <div className="mt-10">
                   <h3 className="text-body font-semibold text-foreground">
                     The happy path flow
                   </h3>
-                  <p className="mt-3 max-w-[800px] text-body text-white/50">
+                  <p className="mt-3 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
                     The end result was an easy, quick, streamlined, personalized
                     experience that set clients up for success by only asking for
                     necessary info, using geo-location, and prefilled form
@@ -289,7 +286,7 @@ function ContentSection() {
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-3">
                         <span className="mt-2 block h-1.5 w-1.5 shrink-0 rounded-full bg-blockfi-blue" />
-                        <span className="text-body text-white/50">{item}</span>
+                        <span className="text-[18px] leading-[1.4] text-foreground/50">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -303,7 +300,7 @@ function ContentSection() {
                   <h3 className="text-body font-semibold text-foreground">
                     The unhappy path flow
                   </h3>
-                  <p className="mt-3 max-w-[800px] text-body text-white/50">
+                  <p className="mt-3 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
                     By replacing Persona and integrating with 3rd party vendors,
                     Telesign, Lexisnexis, and Sentilink, our verification process
                     becomes more seamless with only 10% of users going through
@@ -316,19 +313,19 @@ function ContentSection() {
               </div>
 
               {/* 06. User testing */}
-              <div id="testing" className="mt-[120px] scroll-mt-10">
-                <h2 className="text-body-lg font-medium text-foreground">
+              <div id="testing" className="scroll-mt-10 pb-28">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
                   06. Insights from user testing
-                </h2>
+                </p>
                 <div className="mt-8 flex max-w-[800px] flex-col gap-5">
-                  <p className="text-body text-white/50">
+                  <p className="text-[18px] leading-[1.4] text-foreground/50">
                     The experience was considered standard by most participants
                     and the length of the flow was as expected.
                   </p>
-                  <p className="text-body text-white/50">
+                  <p className="text-[18px] leading-[1.4] text-foreground/50">
                     No major usability or comprehension challenges were observed.
                   </p>
-                  <p className="text-body text-white/50">
+                  <p className="text-[18px] leading-[1.4] text-foreground/50">
                     Since Trust was a point users called out during testing we
                     added a Trust value prop to the carousel on the splash
                     screen.
@@ -337,10 +334,10 @@ function ContentSection() {
               </div>
 
               {/* 07. Parallel work streams */}
-              <div id="parallel" className="mt-[120px] scroll-mt-10">
-                <h2 className="text-body-lg font-medium text-foreground">
+              <div id="parallel" className="scroll-mt-10 pb-28">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
                   07. Parallel work streams
-                </h2>
+                </p>
                 <div className="mt-12 grid grid-cols-2 gap-6">
                   {[
                     {

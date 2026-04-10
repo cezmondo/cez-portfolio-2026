@@ -112,23 +112,20 @@ function ContentSection() {
                     <p className="text-[12px] font-semibold uppercase tracking-[-0.12px] text-foreground">3 Workstreams, 3 Product Owners</p>
                   </div>
                 </div>
-                <h1 className="font-(family-name:--font-display) text-display-lg font-medium uppercase leading-none tracking-tight">
+                <h1 className="mb-6 font-(family-name:--font-body) text-[40px] font-semibold leading-[1.2] tracking-[-0.8px] text-foreground">
                   UBS
                 </h1>
-                <p className="mt-4 max-w-[720px] text-body-lg text-white/50">
+                <p className="max-w-[700px] text-[18px] leading-[1.4] text-foreground/50">
                   UBS Wealthway is a wealth management product app for high net worth individuals.
                 </p>
               </div>
 
               {/* 01. The challenge */}
-              <div id="challenge" className="scroll-mt-10">
-                <h2 className="text-body-lg font-medium text-foreground">
-                  Redesigning the UBS Online Services Platform
-                </h2>
-                <p className="mt-1 text-body-sm text-white/40">
+              <div id="challenge" className="scroll-mt-10 pb-28">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
                   01. The challenge
                 </p>
-                <p className="mt-8 max-w-[800px] text-body text-white/50">
+                <p className="max-w-[700px] text-[18px] leading-[1.4] text-foreground/50">
                   To redesign UBS&apos;s digital services and create an iPad
                   experience that engages high-net-worth clients in a more
                   elevated, human conversation about their wealth, building
@@ -142,10 +139,10 @@ function ContentSection() {
               </div>
 
               {/* 02. Metrics of success & impact */}
-              <div id="metrics" className="mt-[120px] scroll-mt-10">
-                <h2 className="text-body-lg font-medium text-foreground">
+              <div id="metrics" className="scroll-mt-10 pb-28">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
                   02. Metrics of success &amp; impact
-                </h2>
+                </p>
                 <div className="mt-8 grid grid-cols-3 gap-6">
                   {[
                     {
@@ -176,7 +173,7 @@ function ContentSection() {
                     </div>
                   ))}
                 </div>
-                <p className="mt-10 max-w-[800px] text-body text-white/50">
+                <p className="mt-10 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
                   Story point capacity has steadily trended upward over 16
                   two-week sprints. Built organizational confidence both in the
                   product and the process. Praised as a role model for future
@@ -185,11 +182,11 @@ function ContentSection() {
               </div>
 
               {/* 03. Personas */}
-              <div id="personas" className="mt-[120px] scroll-mt-10">
-                <h2 className="text-body-lg font-medium text-foreground">
+              <div id="personas" className="scroll-mt-10 pb-28">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
                   03. Personas
-                </h2>
-                <p className="mt-8 max-w-[800px] text-body text-white/50">
+                </p>
+                <p className="mt-8 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
                   Jim represents a near-retirement household persona used to
                   guide design decisions around financial planning behavior. At
                   61, he&apos;s a seasoned executive balancing wealth
@@ -205,11 +202,11 @@ function ContentSection() {
               </div>
 
               {/* 04. Define MVP scope */}
-              <div id="mvp" className="mt-[120px] scroll-mt-10">
-                <h2 className="text-body-lg font-medium text-foreground">
+              <div id="mvp" className="scroll-mt-10 pb-28">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
                   04. Defining the MVP scope
-                </h2>
-                <p className="mt-8 max-w-[800px] text-body text-white/50">
+                </p>
+                <p className="mt-8 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
                   Feature set and site map &mdash; Through the workshop and
                   audit of the old experiences, the team was able to hone in on
                   the particular areas of the MVP that was most feasible for
@@ -220,17 +217,17 @@ function ContentSection() {
               </div>
 
               {/* 05. Design concepts */}
-              <div id="concepts" className="mt-[120px] scroll-mt-10">
-                <h2 className="text-body-lg font-medium text-foreground">
+              <div id="concepts" className="scroll-mt-10 pb-28">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
                   05. Design concepts
-                </h2>
+                </p>
 
                 {/* Sub-section: Initial dashboard iterations */}
                 <div className="mt-10">
                   <h3 className="text-body font-semibold text-foreground">
                     Initial dashboard iterations and explorations
                   </h3>
-                  <p className="mt-3 max-w-[800px] text-body text-white/50">
+                  <p className="mt-3 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
                     The early concepts relied heavily on charts and graphs to
                     visualize wealth.
                   </p>
@@ -246,23 +243,23 @@ function ContentSection() {
                   <h3 className="text-body font-semibold text-foreground">
                     Revised dashboards
                   </h3>
-                  <p className="mt-3 max-w-[800px] text-body text-white/50">
+                  <p className="mt-3 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
                     Through collaboration with product owners, the vision
                     evolved into something far more meaningful.
                   </p>
-                  <p className="mt-5 max-w-[800px] text-body text-white/50">
+                  <p className="mt-5 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
                     The experience shifted from graphical to conversational
                     &mdash; moving beyond numbers to spark engagement and
                     reflection. Contextual insights now surface dynamically,
                     prompting users to take action and explore their goals.
                   </p>
-                  <p className="mt-5 max-w-[800px] text-body text-white/50">
+                  <p className="mt-5 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
                     The redesigned dashboard became more human, personalized,
                     and educational, helping clients see their total wealth not
                     just as assets, but as a foundation for their life
                     milestones and future plans.
                   </p>
-                  <p className="mt-5 max-w-[800px] text-body font-medium text-white/70">
+                  <p className="mt-5 max-w-[700px] text-[18px] leading-[1.4] font-medium text-foreground/70">
                     Action cards &amp; insights: Action and relevant insight
                     cards surface to the user. These action cards prompt the
                     user to think about their wealth, and relevant statistics
@@ -278,11 +275,11 @@ function ContentSection() {
               </div>
 
               {/* 06. User testing dashboard */}
-              <div id="testing" className="mt-[120px] scroll-mt-10">
-                <h2 className="text-body-lg font-medium text-foreground">
+              <div id="testing" className="scroll-mt-10 pb-28">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
                   06. User testing the dashboard
-                </h2>
-                <p className="mt-8 max-w-[800px] text-body text-white/50">
+                </p>
+                <p className="mt-8 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
                   Through user testing the dashboard experience resonated with
                   UBS clients on four key themes:
                 </p>
@@ -325,11 +322,11 @@ function ContentSection() {
               </div>
 
               {/* 07. Final solution */}
-              <div id="solution" className="mt-[120px] scroll-mt-10">
-                <h2 className="text-body-lg font-medium text-foreground">
+              <div id="solution" className="scroll-mt-10 pb-28">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
                   07. Final solution
-                </h2>
-                <p className="mt-8 max-w-[800px] text-body text-white/50">
+                </p>
+                <p className="mt-8 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
                   What is total wealth? The digital experience evolved from a
                   transactional app to a compelling and engaging digital
                   conversation. A cube was created to embody the idea that
@@ -355,7 +352,7 @@ function ContentSection() {
                     </div>
                   ))}
                 </div>
-                <p className="mt-8 max-w-[800px] text-body text-white/50">
+                <p className="mt-8 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
                   The features enabled clients to share different aspects of
                   their financial life with UBS and the advisors, while using
                   engaging and intuitive tools to define their goals.
@@ -370,10 +367,10 @@ function ContentSection() {
               </div>
 
               {/* 08. Parallel work streams */}
-              <div id="parallel" className="mt-[120px] scroll-mt-10">
-                <h2 className="text-body-lg font-medium text-foreground">
+              <div id="parallel" className="scroll-mt-10 pb-28">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
                   08. Parallel work streams
-                </h2>
+                </p>
                 <div className="mt-12 grid grid-cols-2 gap-6">
                   {[
                     {

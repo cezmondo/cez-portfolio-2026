@@ -158,10 +158,10 @@ function ContentSection() {
                   <MetaEntry label="Squad" value="Design System" />
                   <MetaEntry label="Team" value="Engineering (FE), QA" />
                 </div>
-                <h1 className="font-(family-name:--font-display) text-display-lg font-medium uppercase leading-none tracking-tight">
+                <h1 className="mb-6 font-(family-name:--font-body) text-[40px] font-semibold leading-[1.2] tracking-[-0.8px] text-foreground">
                   Boldin
                 </h1>
-                <p className="mt-4 max-w-[741px] text-body-lg text-foreground-muted">
+                <p className="max-w-[700px] text-[18px] leading-[1.4] text-foreground/50">
                   Boldin is a retirement and financial planning platform that
                   empowers users to make smarter decisions about their savings,
                   investments, and income strategies.
@@ -169,20 +169,17 @@ function ContentSection() {
               </div>
 
               {/* ===== 01. The system ===== */}
-              <div className="mb-12" id="the-system">
-                <p className="mb-2 text-body-sm uppercase tracking-wider text-foreground-muted">
-                  01
-                </p>
-                <p className="mb-8 text-body-lg font-medium text-foreground">
-                  The system
+              <div className="pb-28" id="the-system">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+                  01. The system
                 </p>
                 <div className="max-w-[740px]">
-                  <p className="text-body text-foreground-muted">
+                  <p className="text-[18px] leading-[1.4] text-foreground/50">
                     To support scale and consistency, I helped shape our design
                     system starting with typography, components, tokens, and
                     interaction patterns.
                   </p>
-                  <p className="mt-5 text-body text-foreground-muted">
+                  <p className="mt-5 text-[18px] leading-[1.4] text-foreground/50">
                     We built this system to be clear and modern but also flexible
                     enough to serve enterprise partners with their own brand
                     needs.
@@ -201,25 +198,22 @@ function ContentSection() {
               </div>
 
               {/* ===== 02. Enterprise solutions ===== */}
-              <div className="mb-12" id="enterprise-solutions">
-                <p className="mb-2 text-body-sm uppercase tracking-wider text-foreground-muted">
-                  02
-                </p>
-                <p className="mb-8 text-body-lg font-medium text-foreground">
-                  Enterprise Solutions
+              <div className="pb-28" id="enterprise-solutions">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+                  02. Enterprise Solutions
                 </p>
                 <div className="max-w-[740px]">
-                  <p className="text-body text-foreground-muted">
+                  <p className="text-[18px] leading-[1.4] text-foreground/50">
                     One of the most exciting challenges was designing for
                     enterprise scale, creating a white-label system that flexes
                     across brands while retaining Boldin&apos;s DNA.
                   </p>
-                  <p className="mt-5 text-body text-foreground-muted">
+                  <p className="mt-5 text-[18px] leading-[1.4] text-foreground/50">
                     The platform now adapts seamlessly for partners like Mercer,
                     RTX, and American Fidelity, preserving each brand&apos;s
                     visual identity while maintaining a unified experience.
                   </p>
-                  <p className="mt-5 text-body text-foreground-muted">
+                  <p className="mt-5 text-[18px] leading-[1.4] text-foreground/50">
                     These weren&apos;t just visual reskins. For example, the
                     Nationwide integration replaced their legacy MIRP platform
                     with Boldin&apos;s infrastructure, redesigned onboarding from
@@ -238,15 +232,12 @@ function ContentSection() {
               </div>
 
               {/* ===== 03. Documentation ===== */}
-              <div className="mb-12" id="documentation">
-                <p className="mb-2 text-body-sm uppercase tracking-wider text-foreground-muted">
-                  03
-                </p>
-                <p className="mb-8 text-body-lg font-medium text-foreground">
-                  Documentation
+              <div className="pb-28" id="documentation">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+                  03. Documentation
                 </p>
                 <div className="max-w-[740px]">
-                  <p className="text-body text-foreground-muted">
+                  <p className="text-[18px] leading-[1.4] text-foreground/50">
                     We established a strong foundation of semantic tokens,
                     scalable components, and consistent patterns across both B2B
                     and B2C products. With live documentation through Storybook

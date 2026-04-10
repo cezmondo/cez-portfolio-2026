@@ -191,10 +191,10 @@ function ContentSection() {
                     value={`Marketing director,\ngrowth marketing manager,\nhead of design`}
                   />
                 </div>
-                <h1 className="font-(family-name:--font-display) text-display-lg font-medium uppercase leading-none tracking-tight">
+                <h1 className="mb-6 font-(family-name:--font-body) text-[40px] font-semibold leading-[1.2] tracking-[-0.8px] text-foreground">
                   Boldin
                 </h1>
-                <p className="mt-4 max-w-[741px] text-body-lg text-foreground-muted">
+                <p className="max-w-[700px] text-[18px] leading-[1.4] text-foreground/50">
                   Boldin is a retirement and financial planning platform that
                   empowers users to make smarter decisions about their savings,
                   investments, and income strategies.
@@ -202,21 +202,18 @@ function ContentSection() {
               </div>
 
               {/* ===== 01. Introduction ===== */}
-              <div className="mb-12" id="introduction">
-                <p className="mb-2 text-body-sm uppercase tracking-wider text-foreground-muted">
-                  01
-                </p>
-                <p className="mb-8 text-body-lg font-medium text-foreground">
-                  Introduction
+              <div className="pb-28" id="introduction">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+                  01. Introduction
                 </p>
                 <div className="max-w-[740px]">
-                  <p className="text-body text-foreground-muted">
+                  <p className="text-[18px] leading-[1.4] text-foreground/50">
                     In 2024, NewRetirement took a bold step forward rebranding to
                     Boldin, a name and identity that better reflected the
                     company&apos;s mission: helping people live their financial
                     lives with confidence.
                   </p>
-                  <p className="mt-5 text-body text-foreground-muted">
+                  <p className="mt-5 text-[18px] leading-[1.4] text-foreground/50">
                     As part of the design team, I helped shape the rebrand
                     rollout, brand system, and marketing expressions that would
                     unify product, marketing, and enterprise experiences under
@@ -242,19 +239,16 @@ function ContentSection() {
               </div>
 
               {/* ===== 02. Rebrand and manifesto ===== */}
-              <div className="mb-12" id="rebrand">
-                <p className="mb-2 text-body-sm uppercase tracking-wider text-foreground-muted">
-                  02
-                </p>
-                <p className="mb-8 text-body-lg font-medium text-foreground">
-                  Rebrand and manifesto
+              <div className="pb-28" id="rebrand">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+                  02. Rebrand and manifesto
                 </p>
                 <div className="max-w-[740px]">
-                  <p className="text-body text-foreground-muted">
+                  <p className="text-[18px] leading-[1.4] text-foreground/50">
                     The rebrand wasn&apos;t just a new name &mdash; it was a
                     philosophical shift.
                   </p>
-                  <p className="mt-5 text-body text-foreground-muted">
+                  <p className="mt-5 text-[18px] leading-[1.4] text-foreground/50">
                     The original name tied the company to one stage of life.
                     Boldin was created to represent a lifelong journey of
                     financial confidence, empowering people to be bold in every
@@ -290,14 +284,11 @@ function ContentSection() {
               </div>
 
               {/* ===== 03. Brand system and assets ===== */}
-              <div className="mb-12" id="brand-system">
-                <p className="mb-2 text-body-sm uppercase tracking-wider text-foreground-muted">
-                  03
+              <div className="pb-28" id="brand-system">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+                  03. Brand system and assets
                 </p>
-                <p className="mb-8 text-body-lg font-medium text-foreground">
-                  Brand system and assets
-                </p>
-                <p className="mb-10 max-w-[740px] text-body text-foreground-muted">
+                <p className="mb-10 max-w-[740px] text-[18px] leading-[1.4] text-foreground/50">
                   Our team built a comprehensive brand system to ensure
                   consistency across every touchpoint &mdash; from advisor tools
                   and dashboards to enterprise partner sites.
@@ -313,7 +304,7 @@ function ContentSection() {
                       <p className="w-[200px] shrink-0 text-body font-semibold text-foreground">
                         {item.title}
                       </p>
-                      <p className="text-body text-foreground-muted">
+                      <p className="text-[18px] leading-[1.4] text-foreground/50">
                         {item.description}
                       </p>
                     </div>
@@ -340,26 +331,23 @@ function ContentSection() {
               </div>
 
               {/* ===== 04. Illustration and AI ===== */}
-              <div className="mb-12" id="illustration">
-                <p className="mb-2 text-body-sm uppercase tracking-wider text-foreground-muted">
-                  04
-                </p>
-                <p className="mb-8 text-body-lg font-medium text-foreground">
-                  Illustration and AI
+              <div className="pb-28" id="illustration">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+                  04. Illustration and AI
                 </p>
                 <div className="max-w-[740px]">
-                  <p className="text-body text-foreground-muted">
+                  <p className="text-[18px] leading-[1.4] text-foreground/50">
                     To humanize complex financial topics, we established a new
                     illustration style &mdash; warm, aspirational, and grounded
                     in real life.
                   </p>
-                  <p className="mt-5 text-body text-foreground-muted">
+                  <p className="mt-5 text-[18px] leading-[1.4] text-foreground/50">
                     We combined hand-crafted illustrations with AI-assisted
                     concepting to produce a style that fit our new aesthetic,
                     accelerating creative exploration while maintaining brand
                     authenticity.
                   </p>
-                  <p className="mt-5 text-body text-foreground-muted">
+                  <p className="mt-5 text-[18px] leading-[1.4] text-foreground/50">
                     Each illustration was built around narrative themes like
                     Confidence, not confusion.
                   </p>
@@ -385,12 +373,9 @@ function ContentSection() {
               </div>
 
               {/* ===== 05. Paid social ===== */}
-              <div className="mb-12" id="paid-social">
-                <p className="mb-2 text-body-sm uppercase tracking-wider text-foreground-muted">
-                  05
-                </p>
-                <p className="mb-8 text-body-lg font-medium text-foreground">
-                  Paid social
+              <div className="pb-28" id="paid-social">
+                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+                  05. Paid social
                 </p>
               </div>
 
