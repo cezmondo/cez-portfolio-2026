@@ -71,11 +71,11 @@ export default function BoldinBrandSocial() {
 
 function HeroSection() {
   return (
-    <section className="relative pt-[140px]">
+    <section className="relative pt-[80px] md:pt-[140px]">
       <div className="mx-auto w-full max-w-(--max-width-content) px-(--spacing-gutter)">
         <div className="flex">
           {/* Left sidebar spacer */}
-          <div className="w-(--spacing-sidebar) shrink-0" />
+          <div className="hidden w-(--spacing-sidebar) shrink-0 md:block" />
 
           <div className="flex-1">
             <div className="overflow-hidden rounded-[24px] bg-[#0d3f4a]">
@@ -120,7 +120,7 @@ function ContentSection() {
       <div className="mx-auto w-full max-w-(--max-width-content) px-(--spacing-gutter)">
         <div className="flex">
           {/* Left sidebar spacer */}
-          <div className="w-(--spacing-sidebar) shrink-0" />
+          <div className="hidden w-(--spacing-sidebar) shrink-0 md:block" />
 
           {/* Content area with sticky sidebar nav */}
           <div className="flex flex-1 gap-14">
@@ -173,7 +173,7 @@ function ContentSection() {
                     value={`Marketing director,\ngrowth marketing manager,\nhead of design`}
                   />
                 </div>
-                <h1 className="mb-6 font-(family-name:--font-body) text-[40px] font-semibold leading-[1.2] tracking-[-0.8px] text-foreground">
+                <h1 className="mb-6 font-(family-name:--font-body) text-[28px] font-semibold leading-[1.2] tracking-[-0.8px] text-foreground md:text-[40px]">
                   Boldin
                 </h1>
                 <p className="max-w-[700px] text-[18px] leading-[1.4] text-foreground/50">
@@ -184,8 +184,8 @@ function ContentSection() {
               </div>
 
               {/* ===== 01. Introduction ===== */}
-              <div className="pb-28" id="introduction">
-                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+              <div className="pb-16 md:pb-28" id="introduction">
+                <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
                   01. Introduction
                 </p>
                 <div className="max-w-[740px]">
@@ -221,8 +221,8 @@ function ContentSection() {
               </div>
 
               {/* ===== 02. Rebrand and manifesto ===== */}
-              <div className="pb-28" id="rebrand">
-                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+              <div className="pb-16 md:pb-28" id="rebrand">
+                <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
                   02. Rebrand and manifesto
                 </p>
                 <div className="max-w-[740px]">
@@ -266,8 +266,8 @@ function ContentSection() {
               </div>
 
               {/* ===== 03. Brand system and assets ===== */}
-              <div className="pb-28" id="brand-system">
-                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+              <div className="pb-16 md:pb-28" id="brand-system">
+                <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
                   03. Brand system and assets
                 </p>
                 <p className="mb-10 max-w-[740px] text-[18px] leading-[1.4] text-foreground/50">
@@ -313,8 +313,8 @@ function ContentSection() {
               </div>
 
               {/* ===== 04. Illustration and AI ===== */}
-              <div className="pb-28" id="illustration">
-                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+              <div className="pb-16 md:pb-28" id="illustration">
+                <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
                   04. Illustration and AI
                 </p>
                 <div className="max-w-[740px]">
@@ -355,14 +355,14 @@ function ContentSection() {
               </div>
 
               {/* ===== 05. Paid social ===== */}
-              <div className="pb-28" id="paid-social">
-                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+              <div className="pb-16 md:pb-28" id="paid-social">
+                <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
                   05. Paid social
                 </p>
               </div>
 
               {/* Image placeholders -- social campaign grid */}
-              <div className="mb-8 grid grid-cols-3 gap-6">
+              <div className="mb-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
                 <div className="aspect-square overflow-hidden rounded-2xl">
                   <div className="h-full w-full bg-foreground-muted/10" />
                 </div>
@@ -373,7 +373,7 @@ function ContentSection() {
                   <div className="h-full w-full bg-foreground-muted/10" />
                 </div>
               </div>
-              <div className="grid grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
                 <div className="aspect-square overflow-hidden rounded-2xl">
                   <div className="h-full w-full bg-foreground-muted/10" />
                 </div>

@@ -40,11 +40,11 @@ export default function BoldinDesignSystem() {
 
 function HeroSection() {
   return (
-    <section className="relative pt-[140px]">
+    <section className="relative pt-[80px] md:pt-[140px]">
       <div className="mx-auto w-full max-w-(--max-width-content) px-(--spacing-gutter)">
         <div className="flex">
           {/* Left sidebar spacer */}
-          <div className="w-(--spacing-sidebar) shrink-0" />
+          <div className="hidden w-(--spacing-sidebar) shrink-0 md:block" />
 
           <div className="flex-1">
             <div className="overflow-hidden rounded-[24px] bg-[#0d3f4a]">
@@ -89,7 +89,7 @@ function ContentSection() {
       <div className="mx-auto w-full max-w-(--max-width-content) px-(--spacing-gutter)">
         <div className="flex">
           {/* Left sidebar spacer */}
-          <div className="w-(--spacing-sidebar) shrink-0" />
+          <div className="hidden w-(--spacing-sidebar) shrink-0 md:block" />
 
           {/* Content area with sticky sidebar nav */}
           <div className="flex flex-1 gap-14">
@@ -139,7 +139,7 @@ function ContentSection() {
                   <MetaEntry label="Squad" value="Design System" />
                   <MetaEntry label="Team" value="Engineering (FE), QA" />
                 </div>
-                <h1 className="mb-6 font-(family-name:--font-body) text-[40px] font-semibold leading-[1.2] tracking-[-0.8px] text-foreground">
+                <h1 className="mb-6 font-(family-name:--font-body) text-[28px] font-semibold leading-[1.2] tracking-[-0.8px] text-foreground md:text-[40px]">
                   Boldin
                 </h1>
                 <p className="max-w-[700px] text-[18px] leading-[1.4] text-foreground/50">
@@ -150,8 +150,8 @@ function ContentSection() {
               </div>
 
               {/* ===== 01. The system ===== */}
-              <div className="pb-28" id="the-system">
-                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+              <div className="pb-16 md:pb-28" id="the-system">
+                <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
                   01. The system
                 </p>
                 <div className="max-w-[740px]">
@@ -179,8 +179,8 @@ function ContentSection() {
               </div>
 
               {/* ===== 02. Enterprise solutions ===== */}
-              <div className="pb-28" id="enterprise-solutions">
-                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+              <div className="pb-16 md:pb-28" id="enterprise-solutions">
+                <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
                   02. Enterprise Solutions
                 </p>
                 <div className="max-w-[740px]">
@@ -213,8 +213,8 @@ function ContentSection() {
               </div>
 
               {/* ===== 03. Documentation ===== */}
-              <div className="pb-28" id="documentation">
-                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+              <div className="pb-16 md:pb-28" id="documentation">
+                <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
                   03. Documentation
                 </p>
                 <div className="max-w-[740px]">

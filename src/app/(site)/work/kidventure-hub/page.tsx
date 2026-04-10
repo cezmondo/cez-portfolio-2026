@@ -38,10 +38,10 @@ export default function KidventureHub() {
 
 function HeroSection() {
   return (
-    <section className="pt-[140px]">
+    <section className="pt-[80px] md:pt-[140px]">
       <div className="mx-auto max-w-(--max-width-content) px-(--spacing-gutter)">
         <div className="flex">
-          <div className="w-(--spacing-sidebar) shrink-0" />
+          <div className="hidden w-(--spacing-sidebar) shrink-0 md:block" />
           <div className="flex-1">
             <div className="aspect-[1704/864] w-full overflow-hidden rounded-3xl bg-kidventure-green/20" />
           </div>
@@ -64,11 +64,11 @@ function ContentSection() {
     <section className="pt-16 md:pt-24">
       <div className="mx-auto max-w-(--max-width-content) px-(--spacing-gutter)">
         <div className="flex">
-          <div className="w-(--spacing-sidebar) shrink-0" />
+          <div className="hidden w-(--spacing-sidebar) shrink-0 md:block" />
 
           <div className="flex flex-1 gap-14">
             {/* Sidebar nav */}
-            <nav className="sticky top-10 h-fit w-[307px] shrink-0">
+            <nav className="sticky top-10 hidden h-fit w-[307px] shrink-0 md:block">
               <p className="mb-2 text-body-sm font-semibold uppercase tracking-wide text-white/40">
                 on this page
               </p>
@@ -100,7 +100,7 @@ function ContentSection() {
                     <p className="text-[12px] font-semibold uppercase tracking-[-0.12px] text-foreground">Sole designer and builder</p>
                   </div>
                 </div>
-                <h1 className="mb-6 font-(family-name:--font-body) text-[40px] font-semibold leading-[1.2] tracking-[-0.8px] text-foreground">
+                <h1 className="mb-6 font-(family-name:--font-body) text-[28px] font-semibold leading-[1.2] tracking-[-0.8px] text-foreground md:text-[40px]">
                   Kidventure Hub
                 </h1>
                 <p className="max-w-[700px] text-[18px] leading-[1.4] text-foreground/50">
@@ -116,8 +116,8 @@ function ContentSection() {
               </div>
 
               {/* 02. The problem */}
-              <div id="problem" className="scroll-mt-10 pb-28">
-                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+              <div id="problem" className="scroll-mt-10 pb-16 md:pb-28">
+                <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
                   02. The problem
                 </p>
                 <p className="mt-8 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
@@ -132,8 +132,8 @@ function ContentSection() {
               </div>
 
               {/* 03. Vision */}
-              <div id="vision" className="scroll-mt-10 pb-28">
-                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+              <div id="vision" className="scroll-mt-10 pb-16 md:pb-28">
+                <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
                   03. Vision
                 </p>
                 <div className="mt-8 flex gap-4">
@@ -155,8 +155,8 @@ function ContentSection() {
               </div>
 
               {/* 04. Exploration process */}
-              <div id="exploration" className="scroll-mt-10 pb-28">
-                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+              <div id="exploration" className="scroll-mt-10 pb-16 md:pb-28">
+                <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
                   04. Exploration process
                 </p>
                 <p className="mt-8 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
@@ -166,15 +166,15 @@ function ContentSection() {
                   engineering.
                 </p>
                 {/* Image placeholders for moodboards */}
-                <div className="mt-12 grid grid-cols-2 gap-6">
+                <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
                   <div className="aspect-[4/3] rounded-2xl bg-kidventure-green/10" />
                   <div className="aspect-[4/3] rounded-2xl bg-kidventure-peach/10" />
                 </div>
               </div>
 
               {/* 05. System thinking */}
-              <div id="system" className="scroll-mt-10 pb-28">
-                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+              <div id="system" className="scroll-mt-10 pb-16 md:pb-28">
+                <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
                   05. System thinking
                 </p>
                 <p className="mt-8 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
@@ -196,8 +196,8 @@ function ContentSection() {
               </div>
 
               {/* 06. Brand identity */}
-              <div id="brand" className="scroll-mt-10 pb-28">
-                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+              <div id="brand" className="scroll-mt-10 pb-16 md:pb-28">
+                <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
                   06. Brand identity
                 </p>
                 <p className="mb-4 text-[18px] leading-[1.4] text-foreground/50">
@@ -208,7 +208,7 @@ function ContentSection() {
                   belonging.
                 </p>
                 {/* Image placeholders for brand colors, typography, UI components */}
-                <div className="mt-12 grid grid-cols-2 gap-6">
+                <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
                   <div className="aspect-[4/3] rounded-2xl bg-kidventure-green/10" />
                   <div className="aspect-[4/3] rounded-2xl bg-kidventure-peach/10" />
                 </div>
@@ -216,14 +216,14 @@ function ContentSection() {
               </div>
 
               {/* 07. Outcome and reflection */}
-              <div id="outcome" className="scroll-mt-10 pb-28">
-                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+              <div id="outcome" className="scroll-mt-10 pb-16 md:pb-28">
+                <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
                   07. Outcome and reflection
                 </p>
                 <p className="mt-8 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
                   The MVP prototype now includes:
                 </p>
-                <div className="mt-8 grid grid-cols-3 gap-6">
+                <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
                   {[
                     {
                       stat: "100+",

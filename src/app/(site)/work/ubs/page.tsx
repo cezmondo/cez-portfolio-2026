@@ -40,10 +40,10 @@ export default function UBS() {
 
 function HeroSection() {
   return (
-    <section className="pt-[140px]">
+    <section className="pt-[80px] md:pt-[140px]">
       <div className="mx-auto max-w-(--max-width-content) px-(--spacing-gutter)">
         <div className="flex">
-          <div className="w-(--spacing-sidebar) shrink-0" />
+          <div className="hidden w-(--spacing-sidebar) shrink-0 md:block" />
           <div className="flex-1">
             <div className="aspect-[1704/864] w-full overflow-hidden rounded-3xl bg-[#e8cfc0]">
               <div className="absolute inset-0 bg-foreground-muted/10" />
@@ -69,11 +69,11 @@ function ContentSection() {
     <section className="pt-16 md:pt-24">
       <div className="mx-auto max-w-(--max-width-content) px-(--spacing-gutter)">
         <div className="flex">
-          <div className="w-(--spacing-sidebar) shrink-0" />
+          <div className="hidden w-(--spacing-sidebar) shrink-0 md:block" />
 
           <div className="flex flex-1 gap-14">
             {/* Sidebar nav */}
-            <nav className="sticky top-10 h-fit w-[307px] shrink-0">
+            <nav className="sticky top-10 hidden h-fit w-[307px] shrink-0 md:block">
               <p className="mb-2 text-body-sm font-semibold uppercase tracking-wide text-white/40">
                 on this page
               </p>
@@ -112,7 +112,7 @@ function ContentSection() {
                     <p className="text-[12px] font-semibold uppercase tracking-[-0.12px] text-foreground">3 Workstreams, 3 Product Owners</p>
                   </div>
                 </div>
-                <h1 className="mb-6 font-(family-name:--font-body) text-[40px] font-semibold leading-[1.2] tracking-[-0.8px] text-foreground">
+                <h1 className="mb-6 font-(family-name:--font-body) text-[28px] font-semibold leading-[1.2] tracking-[-0.8px] text-foreground md:text-[40px]">
                   UBS
                 </h1>
                 <p className="max-w-[700px] text-[18px] leading-[1.4] text-foreground/50">
@@ -121,8 +121,8 @@ function ContentSection() {
               </div>
 
               {/* 01. The challenge */}
-              <div id="challenge" className="scroll-mt-10 pb-28">
-                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+              <div id="challenge" className="scroll-mt-10 pb-16 md:pb-28">
+                <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
                   01. The challenge
                 </p>
                 <p className="max-w-[700px] text-[18px] leading-[1.4] text-foreground/50">
@@ -139,11 +139,11 @@ function ContentSection() {
               </div>
 
               {/* 02. Metrics of success & impact */}
-              <div id="metrics" className="scroll-mt-10 pb-28">
-                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+              <div id="metrics" className="scroll-mt-10 pb-16 md:pb-28">
+                <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
                   02. Metrics of success &amp; impact
                 </p>
-                <div className="mt-8 grid grid-cols-3 gap-6">
+                <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
                   {[
                     {
                       metric: "34%",
@@ -182,8 +182,8 @@ function ContentSection() {
               </div>
 
               {/* 03. Personas */}
-              <div id="personas" className="scroll-mt-10 pb-28">
-                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+              <div id="personas" className="scroll-mt-10 pb-16 md:pb-28">
+                <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
                   03. Personas
                 </p>
                 <p className="mt-8 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
@@ -202,8 +202,8 @@ function ContentSection() {
               </div>
 
               {/* 04. Define MVP scope */}
-              <div id="mvp" className="scroll-mt-10 pb-28">
-                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+              <div id="mvp" className="scroll-mt-10 pb-16 md:pb-28">
+                <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
                   04. Defining the MVP scope
                 </p>
                 <p className="mt-8 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
@@ -217,8 +217,8 @@ function ContentSection() {
               </div>
 
               {/* 05. Design concepts */}
-              <div id="concepts" className="scroll-mt-10 pb-28">
-                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+              <div id="concepts" className="scroll-mt-10 pb-16 md:pb-28">
+                <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
                   05. Design concepts
                 </p>
 
@@ -232,7 +232,7 @@ function ContentSection() {
                     visualize wealth.
                   </p>
                   {/* Image placeholders for early concepts */}
-                  <div className="mt-6 grid grid-cols-2 gap-6">
+                  <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
                     <div className="aspect-[4/3] rounded-2xl bg-ubs-red/10" />
                     <div className="aspect-[4/3] rounded-2xl bg-ubs-red/10" />
                   </div>
@@ -267,7 +267,7 @@ function ContentSection() {
                   </p>
                   {/* Image placeholders for revised concepts */}
                   <div className="mt-6 aspect-[16/9] w-full rounded-2xl bg-ubs-red/10" />
-                  <div className="mt-6 grid grid-cols-2 gap-6">
+                  <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
                     <div className="aspect-[4/3] rounded-2xl bg-ubs-red/10" />
                     <div className="aspect-[4/3] rounded-2xl bg-ubs-red/10" />
                   </div>
@@ -275,15 +275,15 @@ function ContentSection() {
               </div>
 
               {/* 06. User testing dashboard */}
-              <div id="testing" className="scroll-mt-10 pb-28">
-                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+              <div id="testing" className="scroll-mt-10 pb-16 md:pb-28">
+                <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
                   06. User testing the dashboard
                 </p>
                 <p className="mt-8 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
                   Through user testing the dashboard experience resonated with
                   UBS clients on four key themes:
                 </p>
-                <div className="mt-8 grid grid-cols-2 gap-6">
+                <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
                   {[
                     {
                       title: "Financial snapshot",
@@ -322,8 +322,8 @@ function ContentSection() {
               </div>
 
               {/* 07. Final solution */}
-              <div id="solution" className="scroll-mt-10 pb-28">
-                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+              <div id="solution" className="scroll-mt-10 pb-16 md:pb-28">
+                <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
                   07. Final solution
                 </p>
                 <p className="mt-8 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
@@ -333,7 +333,7 @@ function ContentSection() {
                   clients held different aspects of wealth, each side
                   represented the following:
                 </p>
-                <div className="mt-8 grid grid-cols-3 gap-4">
+                <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
                   {[
                     "Mindsets and interests",
                     "Relationships",
@@ -359,7 +359,7 @@ function ContentSection() {
                 </p>
                 {/* Image placeholders */}
                 <div className="mt-12 aspect-[16/9] w-full rounded-2xl bg-ubs-red/10" />
-                <div className="mt-6 grid grid-cols-3 gap-6">
+                <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
                   <div className="aspect-[3/4] rounded-2xl bg-ubs-red/10" />
                   <div className="aspect-[3/4] rounded-2xl bg-ubs-red/10" />
                   <div className="aspect-[3/4] rounded-2xl bg-ubs-red/10" />
@@ -367,11 +367,11 @@ function ContentSection() {
               </div>
 
               {/* 08. Parallel work streams */}
-              <div id="parallel" className="scroll-mt-10 pb-28">
-                <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
+              <div id="parallel" className="scroll-mt-10 pb-16 md:pb-28">
+                <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
                   08. Parallel work streams
                 </p>
-                <div className="mt-12 grid grid-cols-2 gap-6">
+                <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
                   {[
                     {
                       title: "Set a milestone",
