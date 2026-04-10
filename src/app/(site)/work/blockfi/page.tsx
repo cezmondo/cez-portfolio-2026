@@ -26,7 +26,6 @@ export default function BlockFi() {
   return (
     <div>
       <HeroSection />
-      <InfoSection />
       <ContentSection />
       <NextSection />
       <Footer transparent />
@@ -58,67 +57,13 @@ function HeroSection() {
 /*  Info                                                                */
 /* ------------------------------------------------------------------ */
 
-function InfoSection() {
-  return (
-    <section className="pt-20">
-      <div className="mx-auto max-w-(--max-width-content) px-(--spacing-gutter)">
-        <div className="flex">
-          <div className="w-(--spacing-sidebar) shrink-0" />
-          <div className="flex-1">
-            {/* Title */}
-            <h1 className="font-(family-name:--font-display) text-display-lg font-medium uppercase leading-none tracking-tight">
-              BlockFi
-            </h1>
-
-            {/* Subtitle */}
-            <p className="mt-6 max-w-[720px] text-body-lg text-white/50">
-              BlockFi is a platform that redefines the future of banking where
-              users can earn interest, borrow cash, and trade crypto from
-              financial services providers.
-            </p>
-
-            {/* Meta */}
-            <div className="mt-16 flex gap-20">
-              <div>
-                <p className="text-body-sm font-semibold uppercase tracking-wide text-white/40">
-                  Role
-                </p>
-                <p className="mt-1 text-body-sm text-foreground">
-                  Design Lead
-                </p>
-              </div>
-              <div>
-                <p className="text-body-sm font-semibold uppercase tracking-wide text-white/40">
-                  Squad
-                </p>
-                <p className="mt-1 text-body-sm text-foreground">
-                  Onboarding &amp; Activations
-                </p>
-              </div>
-              <div>
-                <p className="text-body-sm font-semibold uppercase tracking-wide text-white/40">
-                  Team
-                </p>
-                <p className="mt-1 max-w-[400px] text-body-sm text-foreground">
-                  Product Manager, Engineering (FE &amp; BE) Research, Content
-                  Strategist, QA
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ------------------------------------------------------------------ */
 /*  Content — two-column: sticky sidebar + main                        */
 /* ------------------------------------------------------------------ */
 
 function ContentSection() {
   return (
-    <section className="pt-20">
+    <section className="pt-16 md:pt-24">
       <div className="mx-auto max-w-(--max-width-content) px-(--spacing-gutter)">
         <div className="flex">
           <div className="w-(--spacing-sidebar) shrink-0" />
@@ -146,6 +91,33 @@ function ContentSection() {
 
             {/* Main content */}
             <div className="flex-1">
+              {/* Page info */}
+              <div className="mb-16 pb-16">
+                <div className="mb-10 flex flex-wrap gap-x-16 gap-y-4">
+                  <div>
+                    <p className="mb-1 text-[12px] font-semibold uppercase tracking-[-0.12px] text-foreground/40">Role</p>
+                    <p className="text-[12px] font-semibold uppercase tracking-[-0.12px] text-foreground">Design Lead</p>
+                  </div>
+                  <div>
+                    <p className="mb-1 text-[12px] font-semibold uppercase tracking-[-0.12px] text-foreground/40">Squad</p>
+                    <p className="text-[12px] font-semibold uppercase tracking-[-0.12px] text-foreground">Onboarding &amp; Activations</p>
+                  </div>
+                  <div>
+                    <p className="mb-1 text-[12px] font-semibold uppercase tracking-[-0.12px] text-foreground/40">Team</p>
+                    <p className="text-[12px] font-semibold uppercase tracking-[-0.12px] text-foreground">Product Manager, Engineering (FE &amp; BE)</p>
+                    <p className="text-[12px] font-semibold uppercase tracking-[-0.12px] text-foreground">Research, Content Strategist, QA</p>
+                  </div>
+                </div>
+                <h1 className="font-(family-name:--font-display) text-display-lg font-medium uppercase leading-none tracking-tight">
+                  BlockFi
+                </h1>
+                <p className="mt-4 max-w-[720px] text-body-lg text-white/50">
+                  BlockFi is a platform that redefines the future of banking where
+                  users can earn interest, borrow cash, and trade crypto from
+                  financial services providers.
+                </p>
+              </div>
+
               {/* 01. The challenge */}
               <div id="challenge" className="scroll-mt-10">
                 <h2 className="text-body-lg font-medium text-foreground">

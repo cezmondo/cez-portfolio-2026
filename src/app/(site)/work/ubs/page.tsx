@@ -27,7 +27,6 @@ export default function UBS() {
   return (
     <div>
       <HeroSection />
-      <InfoSection />
       <ContentSection />
       <NextSection />
       <Footer transparent />
@@ -61,63 +60,13 @@ function HeroSection() {
 /*  Info                                                                */
 /* ------------------------------------------------------------------ */
 
-function InfoSection() {
-  return (
-    <section className="pt-20">
-      <div className="mx-auto max-w-(--max-width-content) px-(--spacing-gutter)">
-        <div className="flex">
-          <div className="w-(--spacing-sidebar) shrink-0" />
-          <div className="flex-1">
-            <h1 className="font-(family-name:--font-display) text-display-lg font-medium uppercase leading-none tracking-tight">
-              UBS
-            </h1>
-
-            <p className="mt-6 max-w-[720px] text-body-lg text-white/50">
-              UBS Wealthway is a wealth management product app for high net
-              worth individuals.
-            </p>
-
-            <div className="mt-16 flex gap-20">
-              <div>
-                <p className="text-body-sm font-semibold uppercase tracking-wide text-white/40">
-                  Role
-                </p>
-                <p className="mt-1 max-w-[400px] text-body-sm text-foreground">
-                  Design Lead (Managed remote Junior visual designers - Mumbai).
-                  Work produced at Deloitte Digital.
-                </p>
-              </div>
-              <div>
-                <p className="text-body-sm font-semibold uppercase tracking-wide text-white/40">
-                  Client
-                </p>
-                <p className="mt-1 text-body-sm text-foreground">UBS</p>
-              </div>
-              <div>
-                <p className="text-body-sm font-semibold uppercase tracking-wide text-white/40">
-                  Team
-                </p>
-                <p className="mt-1 max-w-[400px] text-body-sm text-foreground">
-                  GCD, CD, Snr Manager, Product Managers, UX/UI Designers,
-                  Research (Doblin), Development. 3 Separate Workstreams, 3
-                  Product Owners.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ------------------------------------------------------------------ */
 /*  Content                                                             */
 /* ------------------------------------------------------------------ */
 
 function ContentSection() {
   return (
-    <section className="pt-20">
+    <section className="pt-16 md:pt-24">
       <div className="mx-auto max-w-(--max-width-content) px-(--spacing-gutter)">
         <div className="flex">
           <div className="w-(--spacing-sidebar) shrink-0" />
@@ -144,6 +93,33 @@ function ContentSection() {
 
             {/* Main content */}
             <div className="flex-1">
+              {/* Page info */}
+              <div className="mb-16 pb-16">
+                <div className="mb-10 flex flex-wrap gap-x-16 gap-y-4">
+                  <div>
+                    <p className="mb-1 text-[12px] font-semibold uppercase tracking-[-0.12px] text-foreground/40">Role</p>
+                    <p className="text-[12px] font-semibold uppercase tracking-[-0.12px] text-foreground">Design Lead</p>
+                    <p className="text-[12px] font-semibold uppercase tracking-[-0.12px] text-foreground">Work produced at Deloitte Digital.</p>
+                  </div>
+                  <div>
+                    <p className="mb-1 text-[12px] font-semibold uppercase tracking-[-0.12px] text-foreground/40">Client</p>
+                    <p className="text-[12px] font-semibold uppercase tracking-[-0.12px] text-foreground">UBS</p>
+                  </div>
+                  <div>
+                    <p className="mb-1 text-[12px] font-semibold uppercase tracking-[-0.12px] text-foreground/40">Team</p>
+                    <p className="text-[12px] font-semibold uppercase tracking-[-0.12px] text-foreground">GCD, CD, Snr Manager, Product Managers</p>
+                    <p className="text-[12px] font-semibold uppercase tracking-[-0.12px] text-foreground">UX/UI Designers, Research (Doblin), Development</p>
+                    <p className="text-[12px] font-semibold uppercase tracking-[-0.12px] text-foreground">3 Workstreams, 3 Product Owners</p>
+                  </div>
+                </div>
+                <h1 className="font-(family-name:--font-display) text-display-lg font-medium uppercase leading-none tracking-tight">
+                  UBS
+                </h1>
+                <p className="mt-4 max-w-[720px] text-body-lg text-white/50">
+                  UBS Wealthway is a wealth management product app for high net worth individuals.
+                </p>
+              </div>
+
               {/* 01. The challenge */}
               <div id="challenge" className="scroll-mt-10">
                 <h2 className="text-body-lg font-medium text-foreground">

@@ -73,13 +73,7 @@ const nextProjects = [
 export default function BoldinBrandSocial() {
   return (
     <div>
-      {/* ========== HERO ========== */}
       <HeroSection />
-
-      {/* ========== INFO ========== */}
-      <InfoSection />
-
-      {/* ========== CONTENT ========== */}
       <ContentSection />
 
       {/* ========== NEXT PROJECTS ========== */}
@@ -101,74 +95,14 @@ function HeroSection() {
           {/* Left sidebar spacer */}
           <div className="w-(--spacing-sidebar) shrink-0" />
 
-          {/* Hero image placeholder */}
           <div className="flex-1">
-            <div className="relative aspect-[1704/864] w-full overflow-hidden rounded-2xl">
-              <div className="absolute inset-0 bg-foreground-muted/10" />
-              {/* Placeholder for hero image -- replaced in Phase 3 */}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ------------------------------------------------------------------ */
-/*  Info Section                                                       */
-/* ------------------------------------------------------------------ */
-
-function InfoSection() {
-  return (
-    <section className="relative py-20">
-      <div className="mx-auto w-full max-w-(--max-width-content) px-(--spacing-gutter)">
-        <div className="flex">
-          {/* Left sidebar spacer */}
-          <div className="w-(--spacing-sidebar) shrink-0" />
-
-          {/* Main content */}
-          <div className="flex-1">
-            {/* Title */}
-            <h1 className="font-(family-name:--font-display) text-display-lg font-medium uppercase leading-none tracking-tight">
-              Boldin
-            </h1>
-
-            {/* Subtitle */}
-            <p className="mt-0 max-w-[741px] text-body-lg text-foreground-muted">
-              Boldin is a retirement and financial planning platform that
-              empowers users to make smarter decisions about their savings,
-              investments, and income strategies.
-            </p>
-
-            {/* Meta row */}
-            <div className="mt-12 flex gap-16">
-              <MetaEntry label="Role" value="Design Lead" />
-              <MetaEntry label="Squad" value="Marketing" />
-              <MetaEntry
-                label="Team"
-                value={`Marketing director,\ngrowth marketing manager,\nhead of design`}
+            <div className="overflow-hidden rounded-[24px] bg-[#0d3f4a]">
+              <img
+                src="/images/boldin-wo/hero-header.png"
+                alt="Boldin Brand & Social"
+                className="w-full block"
+                fetchPriority="high"
               />
-            </div>
-
-            {/* Related case studies */}
-            <div className="mt-10">
-              <p className="text-body-xs font-semibold uppercase tracking-wide text-boldin-orange">
-                Related case studies
-              </p>
-              <div className="mt-2 flex gap-4">
-                <Link
-                  href="/work/boldin-design-system"
-                  className="text-body-sm text-foreground transition-colors hover:text-foreground-muted"
-                >
-                  Design system &rarr;
-                </Link>
-                <Link
-                  href="/work/boldin-withdrawal-order"
-                  className="text-body-sm text-foreground transition-colors hover:text-foreground-muted"
-                >
-                  Withdrawal order feature &rarr;
-                </Link>
-              </div>
             </div>
           </div>
         </div>
@@ -184,10 +118,10 @@ function InfoSection() {
 function MetaEntry({ label, value }: { label: string; value: string }) {
   return (
     <div>
-      <p className="text-body-xs font-semibold uppercase tracking-wide text-foreground-muted/40">
+      <p className="mb-1 text-[12px] font-semibold uppercase tracking-[-0.12px] text-foreground/40">
         {label}
       </p>
-      <p className="mt-1 whitespace-pre-line text-body-xs font-semibold uppercase tracking-wide text-foreground">
+      <p className="whitespace-pre-line text-[12px] font-semibold uppercase tracking-[-0.12px] text-foreground">
         {value}
       </p>
     </div>
@@ -200,7 +134,7 @@ function MetaEntry({ label, value }: { label: string; value: string }) {
 
 function ContentSection() {
   return (
-    <section className="relative pb-24">
+    <section className="relative pt-16 pb-24 md:pt-24">
       <div className="mx-auto w-full max-w-(--max-width-content) px-(--spacing-gutter)">
         <div className="flex">
           {/* Left sidebar spacer */}
@@ -209,28 +143,62 @@ function ContentSection() {
           {/* Content area with sticky sidebar nav */}
           <div className="flex flex-1 gap-14">
             {/* Sticky sidebar nav */}
-            <nav className="sticky top-[140px] h-fit w-[259px] shrink-0">
-              <p className="text-body-xs font-semibold uppercase tracking-wide text-foreground-muted/40">
+            <nav className="sticky top-10 hidden h-fit w-[307px] shrink-0 md:block">
+              <p className="mb-2 text-body-sm font-semibold uppercase tracking-wide text-white/40">
                 on this page
               </p>
-              <ul className="mt-2 flex flex-col gap-2">
+              <ul className="flex flex-col gap-2">
                 {navSections.map((s) => (
                   <li key={s.id}>
-                    <span className="text-body-sm text-foreground">
+                    <a
+                      href={`#${s.id}`}
+                      className="text-[14px] leading-[16.8px] text-foreground transition-colors hover:text-white/60"
+                    >
                       {s.label}
-                    </span>
+                    </a>
                   </li>
                 ))}
               </ul>
+
+              <div className="mt-10">
+                <p className="mb-3 text-body-sm font-semibold uppercase tracking-wide text-[#ff6a00]">
+                  Related case studies
+                </p>
+                <ul className="flex flex-col gap-2">
+                  <li>
+                    <Link href="/work/boldin-withdrawal-order" className="flex items-center gap-1 text-[14px] leading-[16.8px] text-foreground transition-colors hover:text-white/60">
+                      Withdrawal order <span aria-hidden>→</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/work/boldin-design-system" className="flex items-center gap-1 text-[14px] leading-[16.8px] text-foreground transition-colors hover:text-white/60">
+                      Design system <span aria-hidden>→</span>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </nav>
 
             {/* Main content sections */}
             <div className="flex-1">
-              {/* Section title heading */}
-              <div className="mb-16">
-                <h2 className="font-(family-name:--font-display) text-display-sm font-medium uppercase leading-tight tracking-tight text-foreground">
-                  Evolving the Boldin brand
-                </h2>
+              {/* Page info */}
+              <div className="mb-16 pb-16">
+                <div className="mb-10 flex flex-wrap gap-x-16 gap-y-4">
+                  <MetaEntry label="Role" value="Design Lead" />
+                  <MetaEntry label="Squad" value="Marketing" />
+                  <MetaEntry
+                    label="Team"
+                    value={`Marketing director,\ngrowth marketing manager,\nhead of design`}
+                  />
+                </div>
+                <h1 className="font-(family-name:--font-display) text-display-lg font-medium uppercase leading-none tracking-tight">
+                  Boldin
+                </h1>
+                <p className="mt-4 max-w-[741px] text-body-lg text-foreground-muted">
+                  Boldin is a retirement and financial planning platform that
+                  empowers users to make smarter decisions about their savings,
+                  investments, and income strategies.
+                </p>
               </div>
 
               {/* ===== 01. Introduction ===== */}

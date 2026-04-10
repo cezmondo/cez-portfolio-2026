@@ -11,9 +11,8 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: "Home", href: "/" },
+  { label: "Select Work", href: "/#projects" },
   { label: "Profile", href: "/profile" },
-  { label: "Select Work", href: "/work" },
   { label: "Archive", href: "/archive" },
   { label: "Say G'day", href: "/contact" },
 ];
@@ -45,8 +44,8 @@ function NavHeader({ isLight = false }: { isLight?: boolean }) {
           key={item.href}
           href={item.href}
           isActive={
-            item.href === "/"
-              ? pathname === "/"
+            item.href === "/#projects"
+              ? pathname === "/" || pathname.startsWith("/work")
               : pathname.startsWith(item.href)
           }
           isHovered={hoveredHref === item.href}

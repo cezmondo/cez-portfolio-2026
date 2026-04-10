@@ -25,7 +25,6 @@ export default function KidventureHub() {
   return (
     <div>
       <HeroSection />
-      <InfoSection />
       <ContentSection />
       <NextSection />
       <Footer transparent />
@@ -56,65 +55,13 @@ function HeroSection() {
 /*  Info                                                                */
 /* ------------------------------------------------------------------ */
 
-function InfoSection() {
-  return (
-    <section className="pt-20">
-      <div className="mx-auto max-w-(--max-width-content) px-(--spacing-gutter)">
-        <div className="flex">
-          <div className="w-(--spacing-sidebar) shrink-0" />
-          <div className="flex-1">
-            <h1 className="font-(family-name:--font-display) text-display-lg font-medium uppercase leading-none tracking-tight">
-              Kidventure Hub
-            </h1>
-
-            <p className="mt-6 max-w-[720px] text-body-lg text-white/50">
-              An evergreen guide for families, designed and vibe-coded to
-              reimagine how parents find, filter, and enjoy city adventures
-              with their kids.
-            </p>
-
-            <div className="mt-16 flex gap-20">
-              <div>
-                <p className="text-body-sm font-semibold uppercase tracking-wide text-white/40">
-                  Role
-                </p>
-                <p className="mt-1 text-body-sm text-foreground">Founder</p>
-              </div>
-              <div>
-                <p className="text-body-sm font-semibold uppercase tracking-wide text-white/40">
-                  Team
-                </p>
-                <p className="mt-1 text-body-sm text-foreground">
-                  Sole designer and builder
-                </p>
-              </div>
-            </div>
-
-            {/* Tech stack badges */}
-            <div className="mt-8 flex gap-3">
-              {["Loveable.dev", "Supabase", "Figma tokens"].map((tech) => (
-                <span
-                  key={tech}
-                  className="rounded-full border border-kidventure-green/30 px-4 py-2 text-body-sm font-medium text-kidventure-green"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ------------------------------------------------------------------ */
 /*  Content                                                             */
 /* ------------------------------------------------------------------ */
 
 function ContentSection() {
   return (
-    <section className="pt-20">
+    <section className="pt-16 md:pt-24">
       <div className="mx-auto max-w-(--max-width-content) px-(--spacing-gutter)">
         <div className="flex">
           <div className="w-(--spacing-sidebar) shrink-0" />
@@ -141,11 +88,31 @@ function ContentSection() {
 
             {/* Main content */}
             <div className="flex-1">
-              {/* Section title */}
-              <div className="scroll-mt-10">
-                <h2 className="text-body-lg font-medium text-foreground">
-                  A personal exploration in vibe-coded design
-                </h2>
+              {/* Page info */}
+              <div className="mb-16 pb-16">
+                <div className="mb-10 flex flex-wrap gap-x-16 gap-y-4">
+                  <div>
+                    <p className="mb-1 text-[12px] font-semibold uppercase tracking-[-0.12px] text-foreground/40">Role</p>
+                    <p className="text-[12px] font-semibold uppercase tracking-[-0.12px] text-foreground">Founder</p>
+                  </div>
+                  <div>
+                    <p className="mb-1 text-[12px] font-semibold uppercase tracking-[-0.12px] text-foreground/40">Team</p>
+                    <p className="text-[12px] font-semibold uppercase tracking-[-0.12px] text-foreground">Sole designer and builder</p>
+                  </div>
+                </div>
+                <h1 className="font-(family-name:--font-display) text-display-lg font-medium uppercase leading-none tracking-tight">
+                  Kidventure Hub
+                </h1>
+                <p className="mt-4 max-w-[720px] text-body-lg text-white/50">
+                  An evergreen guide for families, designed and vibe-coded to reimagine how parents find, filter, and enjoy city adventures with their kids.
+                </p>
+                <div className="mt-6 flex gap-3">
+                  {["Loveable.dev", "Supabase", "Figma tokens"].map((tech) => (
+                    <span key={tech} className="rounded-full border border-kidventure-green/30 px-4 py-2 text-body-sm font-medium text-kidventure-green">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
 
               {/* 02. The problem */}

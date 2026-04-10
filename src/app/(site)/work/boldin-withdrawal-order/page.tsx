@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Footer from "../../../components/Footer";
 
 export const metadata: Metadata = {
@@ -11,18 +12,25 @@ export const metadata: Metadata = {
 /*  Page                                                               */
 /* ------------------------------------------------------------------ */
 
+const sections = [
+  { id: "challenge", label: "01.  The challenge" },
+  { id: "results", label: "02.  The results" },
+  { id: "pain-points", label: "03.  User pain points" },
+  { id: "concept-1a", label: "04.  Design concepts" },
+  { id: "testing", label: "05.  User testing" },
+  { id: "final", label: "06.  Final solution" },
+];
+
+const relatedCaseStudies = [
+  { label: "Design system", href: "/work/boldin-design-system" },
+  { label: "Brand and social", href: "/work/boldin-brand-social" },
+];
+
 export default function BoldinWithdrawalOrder() {
   return (
     <div>
       <HeroSection />
-      <DescriptionSection />
-      <ResultsSection />
-      <PainPointsSection />
-      <ConceptSection1a />
-      <ConceptSection1b />
-      <ConceptSection2 />
-      <UserTestingSection />
-      <FinalSolutionSection />
+      <ContentSection />
       <NextMarquee />
       <Footer transparent />
     </div>
@@ -30,16 +38,68 @@ export default function BoldinWithdrawalOrder() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  Shared layout wrapper                                              */
+/*  Content — two-column: sticky sidebar + main                        */
 /* ------------------------------------------------------------------ */
 
-function SectionWrap({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+function ContentSection() {
   return (
-    <section className={`relative ${className}`}>
+    <section className="relative pt-16 md:pt-24">
       <div className="mx-auto max-w-(--max-width-content) px-(--spacing-gutter)">
         <div className="flex">
           <div className="hidden w-(--spacing-sidebar) shrink-0 md:block" />
-          <div className="flex-1">{children}</div>
+
+          {/* Two-column layout */}
+          <div className="flex flex-1 gap-14">
+            {/* Sidebar nav */}
+            <nav className="sticky top-10 hidden h-fit w-[307px] shrink-0 md:block">
+              <p className="mb-2 text-body-sm font-semibold uppercase tracking-wide text-white/40">
+                on this page
+              </p>
+              <ul className="flex flex-col gap-2">
+                {sections.map((s) => (
+                  <li key={s.id}>
+                    <a
+                      href={`#${s.id}`}
+                      className="text-[14px] leading-[16.8px] text-foreground transition-colors hover:text-white/60"
+                    >
+                      {s.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-10">
+                <p className="mb-3 text-body-sm font-semibold uppercase tracking-wide text-[#ff6a00]">
+                  Related case studies
+                </p>
+                <ul className="flex flex-col gap-2">
+                  {relatedCaseStudies.map((r) => (
+                    <li key={r.href}>
+                      <Link
+                        href={r.href}
+                        className="flex items-center gap-1 text-[14px] leading-[16.8px] text-foreground transition-colors hover:text-white/60"
+                      >
+                        {r.label} <span aria-hidden>→</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </nav>
+
+            {/* Main content */}
+            <div className="flex-1">
+              <DescriptionSection />
+              <ResultsSection />
+              <PainPointsSection />
+              <ConceptSection1a />
+              <ConceptSection1b />
+              <ConceptSection2 />
+              <UserTestingSection />
+              <FinalSolutionSection />
+              <div className="h-40" />
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -52,14 +112,21 @@ function SectionWrap({ children, className = "" }: { children: React.ReactNode; 
 
 function HeroSection() {
   return (
-    <section className="relative -mt-20 bg-[#0f0e0e] px-6 pb-6 pt-24 md:px-10 md:pb-10 md:pt-28">
-      <div className="overflow-hidden rounded-[24px] bg-[#0d3f4a]">
-        <img
-          src="/images/boldin-wo/hero-card.png"
-          alt="Boldin Withdrawal Order feature"
-          className="w-full block"
-          fetchPriority="high"
-        />
+    <section className="relative pt-[140px]">
+      <div className="mx-auto w-full max-w-(--max-width-content) px-(--spacing-gutter)">
+        <div className="flex">
+          <div className="w-(--spacing-sidebar) shrink-0" />
+          <div className="flex-1">
+            <div className="overflow-hidden rounded-[24px] bg-[#0d3f4a]">
+              <img
+                src="/images/boldin-wo/hero-header.png"
+                alt="Boldin Withdrawal Order feature"
+                className="w-full block"
+                fetchPriority="high"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -71,7 +138,7 @@ function HeroSection() {
 
 function DescriptionSection() {
   return (
-    <SectionWrap className="pt-16 pb-20 md:pt-24 md:pb-28">
+    <div id="challenge" className="scroll-mt-10 pb-20 md:pb-28">
       {/* Meta labels row */}
       <div className="mb-10 flex flex-wrap gap-x-16 gap-y-4">
         <MetaEntry label="Role" value="Design Lead" />
@@ -99,7 +166,7 @@ function DescriptionSection() {
         drawn down. I set out to give them personalized, flexible withdrawal
         strategies aligned to their goals.
       </p>
-    </SectionWrap>
+    </div>
   );
 }
 
@@ -125,7 +192,7 @@ function MetaEntry({ label, value }: { label: string; value: string | string[] }
 
 function ResultsSection() {
   return (
-    <SectionWrap className="pb-28">
+    <div id="results" className="scroll-mt-10 pb-28">
       {/* Section label */}
       <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
         02. The results: Impact at a glance
@@ -153,7 +220,7 @@ function ResultsSection() {
           description="Drop in monthly cancellations after launch"
         />
       </div>
-    </SectionWrap>
+    </div>
   );
 }
 
@@ -176,7 +243,7 @@ function StatCard({ value, description }: { value: string; description: string }
 
 function PainPointsSection() {
   return (
-    <SectionWrap className="pb-28">
+    <div id="pain-points" className="scroll-mt-10 pb-28">
       {/* Section label */}
       <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
         03. Persona and identifying user painpoints
@@ -228,7 +295,7 @@ function PainPointsSection() {
           stars={5}
         />
       </div>
-    </SectionWrap>
+    </div>
   );
 }
 
@@ -266,7 +333,7 @@ function StarRow({ count }: { count: number }) {
 
 function ConceptSection1a() {
   return (
-    <SectionWrap className="pb-28">
+    <div id="concept-1a" className="scroll-mt-10 pb-28">
       {/* Section label */}
       <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
         04. Design concept 1a: Dynamic Solver
@@ -359,7 +426,7 @@ function ConceptSection1a() {
           </div>
         </div>
       </div>
-    </SectionWrap>
+    </div>
   );
 }
 
@@ -369,7 +436,7 @@ function ConceptSection1a() {
 
 function ConceptSection1b() {
   return (
-    <SectionWrap className="pb-28">
+    <div id="concept-1b" className="scroll-mt-10 pb-28">
       {/* Section label */}
       <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
         04. Design concept 1b: Explorer
@@ -498,7 +565,7 @@ function ConceptSection1b() {
           </div>
         </div>
       </div>
-    </SectionWrap>
+    </div>
   );
 }
 
@@ -508,7 +575,7 @@ function ConceptSection1b() {
 
 function ConceptSection2() {
   return (
-    <SectionWrap className="pb-28">
+    <div id="concept-2" className="scroll-mt-10 pb-28">
       {/* Section label */}
       <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
         04. Design concept 2: User control
@@ -583,7 +650,7 @@ function ConceptSection2() {
           </div>
         </div>
       </div>
-    </SectionWrap>
+    </div>
   );
 }
 
@@ -593,7 +660,7 @@ function ConceptSection2() {
 
 function UserTestingSection() {
   return (
-    <SectionWrap className="pb-28">
+    <div id="testing" className="scroll-mt-10 pb-28">
       <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
         05. Insights from user testing
       </p>
@@ -625,7 +692,7 @@ function UserTestingSection() {
           transparency and education in the withdrawal experience.
         </p>
       </div>
-    </SectionWrap>
+    </div>
   );
 }
 
@@ -635,7 +702,7 @@ function UserTestingSection() {
 
 function FinalSolutionSection() {
   return (
-    <SectionWrap className="pb-28">
+    <div id="final" className="scroll-mt-10 pb-28">
       <p className="mb-6 text-[28px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground">
         06. Final solution
       </p>
@@ -716,7 +783,7 @@ function FinalSolutionSection() {
           </div>
         </div>
       </div>
-    </SectionWrap>
+    </div>
   );
 }
 
