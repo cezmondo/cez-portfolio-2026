@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Footer from "../../components/Footer";
 
 export const metadata: Metadata = { title: "Say G'day — Cez Corpus" };
 
@@ -18,6 +19,7 @@ export default function Contact() {
 
       {/* ========== LOCATION ========== */}
       <LocationSection />
+      <Footer transparent />
     </div>
   );
 }
@@ -67,10 +69,10 @@ function ContactInfoSection() {
               Email
             </p>
             <a
-              href="mailto:hello@cesarcorpus.com"
+              href="mailto:cesar@cesarcorpus.com"
               className="font-(family-name:--font-display) text-display-sm font-medium uppercase tracking-tight transition-colors hover:text-accent-yellow"
             >
-              hello@cesarcorpus.com
+              cesar@cesarcorpus.com
             </a>
           </div>
 

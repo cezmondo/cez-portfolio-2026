@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Footer from "../../../components/Footer";
 
 export const metadata: Metadata = {
   title: "Boldin — Withdrawal Order — Cez Corpus",
@@ -56,6 +57,7 @@ export default function BoldinWithdrawalOrder() {
 
       {/* ========== NEXT PROJECTS ========== */}
       <NextProjectsSection />
+      <Footer transparent />
     </div>
   );
 }

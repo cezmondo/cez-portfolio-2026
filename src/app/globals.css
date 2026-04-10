@@ -5,6 +5,15 @@
   50% { opacity: 0; }
 }
 
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@theme inline {
+  --animate-marquee: marquee 35s linear infinite;
+}
+
 :root {
   --color-bg: #0f0e0e;
   --color-fg: #f7f7f7;

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Footer from "../../components/Footer";
 
 export const metadata: Metadata = { title: "Select Work — Cez Corpus" };
 
@@ -103,6 +104,7 @@ export default function Work() {
 
       {/* ========== PROJECT LIST ========== */}
       <ProjectListSection />
+      <Footer transparent />
     </div>
   );
 }

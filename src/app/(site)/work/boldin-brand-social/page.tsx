@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Footer from "../../../components/Footer";
 
 export const metadata: Metadata = {
   title: "Boldin — Brand & Social — Cez Corpus",
@@ -83,6 +84,7 @@ export default function BoldinBrandSocial() {
 
       {/* ========== NEXT PROJECTS ========== */}
       <NextProjectsSection />
+      <Footer transparent />
     </div>
   );
 }

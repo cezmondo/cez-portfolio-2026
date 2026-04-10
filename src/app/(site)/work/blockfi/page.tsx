@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Footer from "../../../components/Footer";
 
 export const metadata: Metadata = { title: "BlockFi — Cez Corpus" };
 
@@ -28,6 +29,7 @@ export default function BlockFi() {
       <InfoSection />
       <ContentSection />
       <NextSection />
+      <Footer transparent />
     </div>
   );
 }

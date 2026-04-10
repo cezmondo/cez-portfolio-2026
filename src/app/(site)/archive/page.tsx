@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Footer from "../../components/Footer";
 
 export const metadata: Metadata = { title: "Archive — Cez Corpus" };
 
@@ -33,6 +34,7 @@ export default function Archive() {
 
       {/* ========== ARCHIVE LIST ========== */}
       <ArchiveListSection />
+      <Footer transparent />
     </div>
   );
 }

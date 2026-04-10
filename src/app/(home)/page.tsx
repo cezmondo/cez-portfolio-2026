@@ -391,27 +391,64 @@ function ServicesTopSection() {
             </div>
           </div>
 
-          {/* Brands I've partnered with — logo strip */}
+          {/* Brands I've partnered with — logo marquee */}
           <div className="mb-16 md:mb-32">
             <p className="mb-6 font-(family-name:--font-body) text-body-lg font-medium text-[#0032eb] md:pl-20">
               Brands i&apos;ve partnered with
             </p>
-            <div className="flex flex-wrap items-center gap-6 opacity-40 md:gap-12 md:pl-20">
-              {[
-                "M1",
-                "UBS",
-                "JetBlue",
-                "BlockFi",
-                "Inspire",
-                "Boldin",
-              ].map((brand) => (
-                <span
-                  key={brand}
-                  className="font-(family-name:--font-display) text-body-lg font-medium uppercase tracking-wide opacity-50"
-                >
-                  {brand}
-                </span>
-              ))}
+            <div
+              className="overflow-hidden pl-6 md:pl-32"
+              style={{
+                maskImage:
+                  "linear-gradient(to right, transparent 0%, black 8%, black 88%, transparent 100%)",
+                WebkitMaskImage:
+                  "linear-gradient(to right, transparent 0%, black 8%, black 88%, transparent 100%)",
+              }}
+            >
+              <div className="flex animate-marquee items-center gap-12 whitespace-nowrap">
+                {[
+                  { src: "/logos/Boldin.svg", alt: "Boldin" },
+                  { src: "/logos/UBS.svg", alt: "UBS" },
+                  { src: "/logos/JetBlue.svg", alt: "JetBlue" },
+                  { src: "/logos/Blockfi 1.svg", alt: "BlockFi" },
+                  { src: "/logos/Inspire.svg", alt: "Inspire" },
+                  { src: "/logos/BOA.svg", alt: "Bank of America" },
+                  { src: "/logos/Bose.svg", alt: "Bose" },
+                  { src: "/logos/Novartis.svg", alt: "Novartis" },
+                  { src: "/logos/Tiffanyco.svg", alt: "Tiffany & Co" },
+                  { src: "/logos/aetna.svg", alt: "Aetna" },
+                  { src: "/logos/cisco.svg", alt: "Cisco" },
+                  { src: "/logos/Newscorp.svg", alt: "News Corp" },
+                  { src: "/logos/Payflex.svg", alt: "Payflex" },
+                  { src: "/logos/TeamUSA.svg", alt: "Team USA" },
+                  { src: "/logos/All In to go.svg", alt: "All In To Go" },
+                  { src: "/logos/Merivale_Logo.png", alt: "Merivale" },
+                  /* duplicate set for seamless loop */
+                  { src: "/logos/Boldin.svg", alt: "Boldin2" },
+                  { src: "/logos/UBS.svg", alt: "UBS2" },
+                  { src: "/logos/JetBlue.svg", alt: "JetBlue2" },
+                  { src: "/logos/Blockfi 1.svg", alt: "BlockFi2" },
+                  { src: "/logos/Inspire.svg", alt: "Inspire2" },
+                  { src: "/logos/BOA.svg", alt: "Bank of America2" },
+                  { src: "/logos/Bose.svg", alt: "Bose2" },
+                  { src: "/logos/Novartis.svg", alt: "Novartis2" },
+                  { src: "/logos/Tiffanyco.svg", alt: "Tiffany & Co2" },
+                  { src: "/logos/aetna.svg", alt: "Aetna2" },
+                  { src: "/logos/cisco.svg", alt: "Cisco2" },
+                  { src: "/logos/Newscorp.svg", alt: "News Corp2" },
+                  { src: "/logos/Payflex.svg", alt: "Payflex2" },
+                  { src: "/logos/TeamUSA.svg", alt: "Team USA2" },
+                  { src: "/logos/All In to go.svg", alt: "All In To Go2" },
+                  { src: "/logos/Merivale_Logo.png", alt: "Merivale2" },
+                ].map((logo) => (
+                  <img
+                    key={logo.alt}
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="h-7 w-auto flex-shrink-0 brightness-0 md:h-9"
+                  />
+                ))}
+              </div>
             </div>
           </div>
 
