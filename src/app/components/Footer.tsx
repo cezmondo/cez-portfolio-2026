@@ -12,7 +12,8 @@ export default function Footer({ transparent = false }: { transparent?: boolean 
       </div>
 
       {/* Links row */}
-      <div className="flex items-center gap-6 px-(--spacing-gutter) py-8">
+      <div className="flex items-center justify-between px-(--spacing-gutter) py-8">
+        <div className="flex items-center gap-6">
         <a
           href="https://linkedin.com/in/cesarcorpus"
           target="_blank"
@@ -35,6 +36,10 @@ export default function Footer({ transparent = false }: { transparent?: boolean 
             <path d="M1 7L7 1M7 1H2M7 1V6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </a>
+        </div>
+        <p className="text-[11px] font-medium uppercase tracking-wide opacity-40">
+          &copy; Corpus. 2026
+        </p>
       </div>
     </footer>
   );
