@@ -52,13 +52,15 @@ function SectionWrap({ children, className = "" }: { children: React.ReactNode; 
 
 function HeroSection() {
   return (
-    <section className="relative -mt-20">
-      <img
-        src="/images/boldin-wo/hero-app.png"
-        alt="Boldin Withdrawal Order feature"
-        className="w-full h-auto block"
-        fetchPriority="high"
-      />
+    <section className="relative -mt-20 bg-[#0f0e0e] px-6 pb-6 pt-24 md:px-10 md:pb-10 md:pt-28">
+      <div className="overflow-hidden rounded-[24px] bg-[#0d3f4a]">
+        <img
+          src="/images/boldin-wo/hero-card.png"
+          alt="Boldin Withdrawal Order feature"
+          className="w-full block"
+          fetchPriority="high"
+        />
+      </div>
     </section>
   );
 }
