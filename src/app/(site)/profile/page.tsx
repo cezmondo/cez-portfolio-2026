@@ -86,11 +86,11 @@ function HeroSection() {
 
           <div className="flex-1">
             {/* Spacer — pushes text below the image */}
-            <div className="h-[480px] md:h-[720px]" />
+            <div className="h-[240px] md:h-[480px]" />
 
             {/* Profile label */}
             <div className="mb-8 md:mb-12">
-              <p className="font-(family-name:--font-body) text-body-sm font-medium uppercase tracking-wider text-foreground-muted">
+              <p className="font-(family-name:--font-body) text-body-lg font-medium text-white">
                 Profile <span className="ml-1">&#x21B4;</span>
               </p>
             </div>
