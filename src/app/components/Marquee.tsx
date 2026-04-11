@@ -18,7 +18,7 @@ export default function Marquee({
     <div className="overflow-hidden whitespace-nowrap">
       <motion.div
         className={`inline-block ${className}`}
-        animate={{ x: ["0%", "-50%"] }}
+        animate={{ x: ["-50%", "0%"] }}
         transition={{
           x: {
             repeat: Infinity,

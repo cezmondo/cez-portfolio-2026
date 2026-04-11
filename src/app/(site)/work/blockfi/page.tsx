@@ -46,7 +46,7 @@ function HeroSection() {
           <div className="flex-1">
             <div className="overflow-hidden rounded-3xl">
               <img
-                src="/images/blockfi/hero-header.png"
+                src="/images/blockfi/hero-header.avif"
                 alt="BlockFi mobile app screens"
                 className="w-full block"
                 fetchPriority="high"
@@ -419,8 +419,7 @@ function NextMarquee() {
     <Link href="/work/jetblue" className="block">
       <section className="relative overflow-hidden bg-[#0d0d0d] py-12 cursor-pointer transition-opacity hover:opacity-90">
         <div
-          className="flex items-center gap-8 whitespace-nowrap"
-          style={{ animation: "marquee-ltr 30s linear infinite" }}
+          className="flex items-center gap-8 whitespace-nowrap w-max animate-marquee-ltr"
         >
           {items.map((_, i) => <MarqueeItem key={i} />)}
           {items.map((_, i) => <MarqueeItem key={`dup-${i}`} />)}

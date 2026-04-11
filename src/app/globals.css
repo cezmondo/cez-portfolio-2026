@@ -17,6 +17,7 @@
 
 @theme inline {
   --animate-marquee: marquee 35s linear infinite;
+  --animate-marquee-ltr: marquee-ltr 30s linear infinite;
 }
 
 :root {
@@ -44,6 +45,8 @@
   --color-blockfi-midnight: #001435;
   --color-jetblue-blue: #0d99ff;
   --color-jetblue-light: #d7f6ff;
+  --color-jetblue-navy: #00205c;
+  --color-jetblue-orange: #ff6a00;
   --color-ubs-red: #c70039;
   --color-kidventure-green: #d4edc8;
   --color-kidventure-peach: #fce7d6;

@@ -45,9 +45,12 @@ function HeroSection() {
         <div className="flex">
           <div className="hidden w-(--spacing-sidebar) shrink-0 md:block" />
           <div className="flex-1">
-            <div className="aspect-[1704/864] w-full overflow-hidden rounded-3xl bg-[#e8cfc0]">
-              <div className="absolute inset-0 bg-foreground-muted/10" />
-              {/* Placeholder for hero image -- replaced in Phase 3 */}
+            <div className="aspect-[1704/864] w-full overflow-hidden rounded-3xl">
+              <img
+                src="/images/ubs/hero-header.avif"
+                alt="UBS — case study hero"
+                className="h-full w-full object-cover"
+              />
             </div>
           </div>
         </div>
@@ -94,7 +97,7 @@ function ContentSection() {
             {/* Main content */}
             <div className="flex-1">
               {/* Page info */}
-              <div className="mb-16 pb-16">
+              <div className="mb-16 pb-4">
                 <div className="mb-10 flex flex-wrap gap-x-16 gap-y-4">
                   <div>
                     <p className="mb-1 text-[12px] font-semibold uppercase tracking-[-0.12px] text-foreground/40">Role</p>
@@ -134,8 +137,23 @@ function ContentSection() {
                   discovery, planning, and advice, empowering them to thrive
                   while driving organic growth.
                 </p>
-                {/* Image placeholder */}
-                <div className="mt-12 aspect-[16/9] w-full rounded-2xl bg-ubs-red/10" />
+                <div className="mt-12 overflow-hidden rounded-2xl">
+                  <video
+                    src="/images/ubs/challenge.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full object-cover"
+                  />
+                </div>
+                <div className="mt-6 overflow-hidden rounded-2xl">
+                  <img
+                    src="/images/ubs/header-scaled.jpg"
+                    alt="UBS Wealthway — family on a beach"
+                    className="w-full object-cover"
+                  />
+                </div>
               </div>
 
               {/* 02. Metrics of success & impact */}
@@ -143,31 +161,21 @@ function ContentSection() {
                 <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
                   02. Metrics of success &amp; impact
                 </p>
-                <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
+                <div className="mt-8 flex flex-col gap-[24px] sm:flex-row">
                   {[
-                    {
-                      metric: "34%",
-                      label:
-                        "high net worth individuals was conducted",
-                    },
-                    {
-                      metric: "94%",
-                      label:
-                        "indicated the app appeared easy & intuitive to use",
-                    },
-                    {
-                      metric: "76%",
-                      label: "indicated they would download the app",
-                    },
+                    { metric: "34%", label: "high net worth individuals was conducted" },
+                    { metric: "94%", label: "indicated the app appeared easy & intuitive to use" },
+                    { metric: "76%", label: "indicated they would download the app" },
                   ].map((item) => (
                     <div
                       key={item.metric}
-                      className="rounded-2xl bg-ubs-red/10 p-8"
+                      className="flex flex-1 flex-col rounded-2xl p-[60px]"
+                      style={{ backgroundColor: "#fbf7f0" }}
                     >
-                      <p className="font-(family-name:--font-display) text-display-sm font-medium uppercase leading-none tracking-tight">
+                      <p className="text-[52px] font-medium leading-[1.2] tracking-[-1.04px]" style={{ color: "#0f0e0e" }}>
                         {item.metric}
                       </p>
-                      <p className="mt-3 text-body-sm text-white/60">
+                      <p className="mt-5 text-[32px] font-medium leading-[1.2] tracking-[-0.64px]" style={{ color: "#0f0e0e" }}>
                         {item.label}
                       </p>
                     </div>
@@ -197,8 +205,13 @@ function ContentSection() {
                   retirement planning, helping the team humanize data-driven
                   features and design for empathy, not just efficiency.
                 </p>
-                {/* Persona card image placeholder */}
-                <div className="mt-12 aspect-[16/9] w-full rounded-2xl bg-ubs-red/10" />
+                <div className="mt-12 overflow-hidden rounded-2xl">
+                  <img
+                    src="/images/ubs/persona.png"
+                    alt="UBS persona — Jim"
+                    className="w-full object-cover"
+                  />
+                </div>
               </div>
 
               {/* 04. Define MVP scope */}
@@ -212,8 +225,20 @@ function ContentSection() {
                   the particular areas of the MVP that was most feasible for
                   tech and for the client&apos;s launch date.
                 </p>
-                {/* Site map / feature matrix image placeholder */}
-                <div className="mt-12 aspect-[16/9] w-full rounded-2xl bg-ubs-red/10" />
+                <div className="mt-12 overflow-hidden rounded-2xl bg-white p-10">
+                  <img
+                    src="/images/ubs/mvp-scope.png"
+                    alt="UBS MVP scope — navigation icons"
+                    className="w-full object-contain"
+                  />
+                </div>
+                <div className="mt-6 overflow-hidden rounded-2xl bg-white p-10">
+                  <img
+                    src="/images/ubs/mvp-sitemap.png"
+                    alt="UBS MVP sitemap"
+                    className="w-full object-contain"
+                  />
+                </div>
               </div>
 
               {/* 05. Design concepts */}
@@ -231,10 +256,12 @@ function ContentSection() {
                     The early concepts relied heavily on charts and graphs to
                     visualize wealth.
                   </p>
-                  {/* Image placeholders for early concepts */}
-                  <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
-                    <div className="aspect-[4/3] rounded-2xl bg-ubs-red/10" />
-                    <div className="aspect-[4/3] rounded-2xl bg-ubs-red/10" />
+                  <div className="mt-6 overflow-hidden rounded-2xl bg-white p-10">
+                    <img
+                      src="/images/ubs/design-concepts.avif"
+                      alt="UBS design concepts — dashboard iterations"
+                      className="w-full object-contain"
+                    />
                   </div>
                 </div>
 
@@ -265,11 +292,17 @@ function ContentSection() {
                     user to think about their wealth, and relevant statistics
                     are also surfaced to the client.
                   </p>
-                  {/* Image placeholders for revised concepts */}
-                  <div className="mt-6 aspect-[16/9] w-full rounded-2xl bg-ubs-red/10" />
-                  <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
-                    <div className="aspect-[4/3] rounded-2xl bg-ubs-red/10" />
-                    <div className="aspect-[4/3] rounded-2xl bg-ubs-red/10" />
+                  <div className="mt-6 flex flex-col gap-[24px] sm:flex-row">
+                    {[
+                      { src: "/images/ubs/revised-dashboard-1.webp", alt: "UBS revised dashboard — personalised wealth view" },
+                      { src: "/images/ubs/revised-dashboard-2.webp", alt: "UBS revised dashboard — action cards and insights" },
+                    ].map((img) => (
+                      <div key={img.src} className="flex flex-1 items-center justify-center rounded-2xl p-10" style={{ backgroundColor: "#bababa" }}>
+                        <div className="w-full overflow-hidden rounded-lg bg-white shadow-[0px_1px_12px_2px_rgba(0,0,0,0.1)]">
+                          <img src={img.src} alt={img.alt} className="w-full object-contain" />
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -280,43 +313,19 @@ function ContentSection() {
                   06. User testing the dashboard
                 </p>
                 <p className="mt-8 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
-                  Through user testing the dashboard experience resonated with
-                  UBS clients on four key themes:
+                  Through user testing the dashboard experience resonated with UBS clients on four key themes:
                 </p>
-                <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+                <div className="mt-5 flex flex-col gap-0">
                   {[
-                    {
-                      title: "Financial snapshot",
-                      description:
-                        "Seeing the numbers behind their wealth",
-                    },
-                    {
-                      title: "Holistic wealth view",
-                      description:
-                        "Thinking about wealth in a human way",
-                    },
-                    {
-                      title: "Relevant content",
-                      description:
-                        "Getting personalized, actionable insights",
-                    },
-                    {
-                      title: "Integration with FAs",
-                      description:
-                        "Enhancing highly-valued FA relationships",
-                    },
-                  ].map((theme) => (
-                    <div
-                      key={theme.title}
-                      className="rounded-2xl bg-white/5 p-8"
-                    >
-                      <h3 className="text-body font-semibold text-foreground">
-                        {theme.title}
-                      </h3>
-                      <p className="mt-2 text-body-sm text-white/50">
-                        {theme.description}
-                      </p>
-                    </div>
+                    { title: "Financial snapshot:", desc: "Seeing the numbers behind their wealth" },
+                    { title: "Holistic wealth view:", desc: "Thinking about wealth in a human way" },
+                    { title: "Relevant content:", desc: "Getting personalized, actionable insights" },
+                    { title: "Integration with FAs:", desc: "Enhancing highly-valued FA relationships" },
+                  ].map((item) => (
+                    <p key={item.title} className="text-[18px] leading-[1.4] tracking-[-0.18px]">
+                      <span className="text-foreground">{item.title}</span>
+                      <span className="text-foreground/50"> {item.desc}</span>
+                    </p>
                   ))}
                 </div>
               </div>
@@ -326,43 +335,52 @@ function ContentSection() {
                 <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
                   07. Final solution
                 </p>
-                <p className="mt-8 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
-                  What is total wealth? The digital experience evolved from a
-                  transactional app to a compelling and engaging digital
-                  conversation. A cube was created to embody the idea that
-                  clients held different aspects of wealth, each side
-                  represented the following:
-                </p>
-                <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
-                  {[
-                    "Mindsets and interests",
-                    "Relationships",
-                    "Milestones",
-                    "Planning and advice",
-                    "Cashflow",
-                    "Net Worth",
-                  ].map((side) => (
-                    <div
-                      key={side}
-                      className="rounded-xl bg-ubs-red/10 px-6 py-4 text-center"
-                    >
-                      <p className="text-body-sm font-medium text-foreground">
-                        {side}
+                <div className="mt-8 max-w-[800px]">
+                  <p className="text-[18px] leading-[1.4] tracking-[-0.18px] text-foreground">
+                    What is total wealth?
+                  </p>
+                  <p className="text-[18px] leading-[1.4] tracking-[-0.18px] text-foreground/50">
+                    The digital experience evolved from a transactional app to a compelling and engaging digital conversation. A cube was created to embody the idea that client held different aspects of wealth, each side represented the following:
+                  </p>
+
+                  <div className="mt-5 flex flex-col gap-0">
+                    {[
+                      { title: "Mindsets and interests:", desc: "How clients view wealth and their interests" },
+                      { title: "Relationships:", desc: "Important people in your life" },
+                      { title: "Milestones:", desc: "Life timeline" },
+                      { title: "Planning and advice:", desc: "How UBS helps clients reach their goals" },
+                      { title: "Cashflow:", desc: "Client's income and spending" },
+                      { title: "Net Worth:", desc: "Client's assets and liabilities" },
+                    ].map((item) => (
+                      <p key={item.title} className="text-[18px] leading-[1.4] tracking-[-0.18px]">
+                        <span className="text-foreground">{item.title}</span>
+                        <span className="text-foreground/50"> {item.desc}</span>
                       </p>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
+
+                  <p className="mt-5 text-[18px] leading-[1.4] tracking-[-0.18px] text-foreground/50">
+                    The features enabled clients to share different aspects of their financial life with UBS and the advisors, while using engaging and intuitive tools to define their goals in the short-term and long-term.
+                  </p>
                 </div>
-                <p className="mt-8 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
-                  The features enabled clients to share different aspects of
-                  their financial life with UBS and the advisors, while using
-                  engaging and intuitive tools to define their goals.
-                </p>
-                {/* Image placeholders */}
-                <div className="mt-12 aspect-[16/9] w-full rounded-2xl bg-ubs-red/10" />
-                <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
-                  <div className="aspect-[3/4] rounded-2xl bg-ubs-red/10" />
-                  <div className="aspect-[3/4] rounded-2xl bg-ubs-red/10" />
-                  <div className="aspect-[3/4] rounded-2xl bg-ubs-red/10" />
+                <div className="mt-12 flex flex-col gap-[24px] sm:flex-row">
+                  <div className="flex flex-1 items-center justify-center rounded-2xl p-10" style={{ backgroundColor: "#bababa" }}>
+                    <img
+                      src="/images/ubs/final-solution-ipad.webp"
+                      alt="UBS final solution — iPad app"
+                      className="w-full max-w-[463px] object-contain"
+                    />
+                  </div>
+                  <div className="flex flex-1 items-center justify-center overflow-hidden rounded-2xl" style={{ backgroundColor: "#fbf7f0" }}>
+                    <video
+                      src="/images/ubs/final-solution-cube.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full object-contain"
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -416,6 +434,195 @@ function ContentSection() {
                 </div>
               </div>
 
+              {/* Set a milestone — video */}
+              <div className="mt-8 overflow-hidden rounded-3xl">
+                <video
+                  src="/images/ubs/milestone.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full"
+                />
+              </div>
+
+              {/* Set a milestone — two-card row */}
+              <div className="mt-6 flex flex-col gap-6 md:flex-row">
+                {/* Left: text card */}
+                <div
+                  className="flex flex-1 flex-col items-center justify-center rounded-2xl px-10 py-[168px] text-center"
+                  style={{ backgroundColor: "#fbf7f0" }}
+                >
+                  <p className="text-[32px] font-medium leading-[38.4px] tracking-[-0.64px] text-[#0f0e0e]">
+                    Set a milestone
+                  </p>
+                  <p className="mt-5 text-[28px] font-normal leading-[33.6px] tracking-[-0.56px] text-[#0f0e0e]">
+                    This feature allows users to set<br />up goals in the future.
+                  </p>
+                </div>
+                {/* Right: image card */}
+                <div
+                  className="flex flex-1 items-center justify-center rounded-3xl p-10"
+                  style={{ backgroundColor: "#bababa" }}
+                >
+                  <img
+                    src="/images/ubs/milestone.png"
+                    alt="Set a milestone screen"
+                    className="w-full rounded-2xl object-contain"
+                  />
+                </div>
+              </div>
+
+              {/* Milestones timeline — video */}
+              <div className="mt-6 overflow-hidden rounded-3xl">
+                <video
+                  src="/images/ubs/milestones-timeline.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full"
+                />
+              </div>
+
+              {/* Milestones timeline — two-card row (image left, text right) */}
+              <div className="mt-6 flex flex-col gap-6 md:flex-row">
+                {/* Left: image card */}
+                <div
+                  className="flex flex-1 items-center justify-center rounded-2xl p-10"
+                  style={{ backgroundColor: "#bababa" }}
+                >
+                  <img
+                    src="/images/ubs/milestones-timeline.png"
+                    alt="Milestones timeline screen"
+                    className="w-full rounded-2xl object-contain"
+                  />
+                </div>
+                {/* Right: text card */}
+                <div
+                  className="flex flex-1 flex-col items-center justify-center rounded-2xl px-10 py-[152px] text-center"
+                  style={{ backgroundColor: "#fbf7f0" }}
+                >
+                  <p className="text-[32px] font-medium leading-[38.4px] tracking-[-0.64px] text-[#0f0e0e]">
+                    Milestones timeline
+                  </p>
+                  <p className="mt-5 text-[28px] font-normal leading-[33.6px] tracking-[-0.56px] text-[#0f0e0e]">
+                    This feature allows users to see<br />all their planned goals from the<br />past and future.
+                  </p>
+                </div>
+              </div>
+
+              {/* Mindset and Interests — video */}
+              <div className="mt-6 overflow-hidden rounded-3xl">
+                <video
+                  src="/images/ubs/mindset-interests.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full"
+                />
+              </div>
+
+              {/* Mindset and Interests — two-card row (text left, image right) */}
+              <div className="mt-6 flex flex-col gap-6 md:flex-row">
+                {/* Left: text card */}
+                <div
+                  className="flex flex-1 flex-col items-center justify-center rounded-2xl px-10 py-[140px] text-center"
+                  style={{ backgroundColor: "#fbf7f0" }}
+                >
+                  <p className="text-[32px] font-medium leading-[38.4px] tracking-[-0.64px] text-[#0f0e0e]">
+                    Mindset and Interests –<br />Perspective questions
+                  </p>
+                  <p className="mt-5 text-[28px] font-normal leading-[33.6px] tracking-[-0.56px] text-[#0f0e0e]">
+                    Lets UBS clients share their goals<br />and interests to receive<br />personalized insights and<br />advisor guidance.
+                  </p>
+                </div>
+                {/* Right: image card */}
+                <div
+                  className="flex flex-1 items-center justify-center rounded-2xl p-10"
+                  style={{ backgroundColor: "#bababa" }}
+                >
+                  <img
+                    src="/images/ubs/mindset-interests.png"
+                    alt="Mindset and Interests screen"
+                    className="w-full rounded-2xl object-contain"
+                  />
+                </div>
+              </div>
+
+              {/* Account balances — video */}
+              <div className="mt-6 overflow-hidden rounded-3xl">
+                <video
+                  src="/images/ubs/account-balances.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full"
+                />
+              </div>
+
+              {/* Understanding your account balances — two-card row (image left, text right) */}
+              <div className="mt-6 flex flex-col gap-6 md:flex-row">
+                {/* Left: image card (placeholder) */}
+                <div
+                  className="flex flex-1 items-center justify-center rounded-2xl p-10 min-h-[400px]"
+                  style={{ backgroundColor: "#bababa" }}
+                />
+                {/* Right: text card */}
+                <div
+                  className="flex flex-1 flex-col items-center justify-center rounded-2xl px-10 py-[152px] text-center"
+                  style={{ backgroundColor: "#fbf7f0" }}
+                >
+                  <p className="text-[32px] font-medium leading-[38.4px] tracking-[-0.64px] text-[#0f0e0e]">
+                    Understanding your<br />account balances
+                  </p>
+                  <p className="mt-5 text-[28px] font-normal leading-[33.6px] tracking-[-0.56px] text-[#0f0e0e]">
+                    Clients are able to view all their<br />assets and liabilities. They are<br />able to pay bills and transfer<br />funds.
+                  </p>
+                </div>
+              </div>
+
+              {/* Educational cube — video */}
+              <div className="mt-6 overflow-hidden rounded-3xl">
+                <video
+                  src="/images/ubs/educational-cube.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full"
+                />
+              </div>
+
+              {/* Educational cube — two-card row (text left, image right) */}
+              <div className="mt-6 flex flex-col gap-6 md:flex-row">
+                {/* Left: text card */}
+                <div
+                  className="flex flex-1 flex-col items-center justify-center rounded-2xl px-10 py-[118px] text-center"
+                  style={{ backgroundColor: "#fbf7f0" }}
+                >
+                  <p className="text-[32px] font-medium leading-[38.4px] tracking-[-0.64px] text-[#0f0e0e]">
+                    Educational cube
+                  </p>
+                  <p className="mt-5 text-[28px] font-normal leading-[33.6px] tracking-[-0.56px] text-[#0f0e0e]">
+                    This feature allows users to<br />explore the different parts of<br />their wealth. It educates and<br />poses actions for them to<br />complete.
+                  </p>
+                </div>
+                {/* Right: image card */}
+                <div
+                  className="flex flex-1 items-center justify-center rounded-2xl p-10"
+                  style={{ backgroundColor: "#bababa" }}
+                >
+                  <img
+                    src="/images/ubs/educational-cube.png"
+                    alt="Educational cube screen"
+                    className="w-full rounded-2xl object-contain"
+                  />
+                </div>
+              </div>
+
               <div className="h-40" />
             </div>
           </div>
@@ -435,8 +642,7 @@ function NextMarquee() {
     <Link href="/work/kidventure-hub" className="block">
       <section className="relative overflow-hidden bg-[#0d0d0d] py-12 cursor-pointer transition-opacity hover:opacity-90">
         <div
-          className="flex items-center gap-8 whitespace-nowrap"
-          style={{ animation: "marquee-ltr 30s linear infinite" }}
+          className="flex items-center gap-8 whitespace-nowrap w-max animate-marquee-ltr"
         >
           {items.map((_, i) => <MarqueeItem key={i} />)}
           {items.map((_, i) => <MarqueeItem key={`dup-${i}`} />)}
@@ -449,7 +655,7 @@ function NextMarquee() {
 function MarqueeItem() {
   return (
     <>
-      <div className="h-[80px] w-[80px] flex-shrink-0 rounded-2xl bg-kidventure-green" />
+      <img src="/images/kidventure-next-logo.png" alt="Kidventure Hub" className="h-[80px] w-[80px] flex-shrink-0 rounded-2xl object-cover" />
       <span className="flex-shrink-0 font-(family-name:--font-display) text-[80px] font-medium uppercase leading-none tracking-tight text-foreground md:text-[120px]">
         NEXT
       </span>
