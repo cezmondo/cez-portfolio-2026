@@ -43,7 +43,13 @@ function HeroSection() {
         <div className="flex">
           <div className="hidden w-(--spacing-sidebar) shrink-0 md:block" />
           <div className="flex-1">
-            <div className="aspect-[1704/864] w-full overflow-hidden rounded-3xl bg-kidventure-green/20" />
+            <div className="aspect-[1704/864] w-full overflow-hidden rounded-3xl">
+                <img
+                  src="/images/kidventure/hero-header.webp"
+                  alt="Kidventure Hub"
+                  className="h-full w-full object-cover"
+                />
+              </div>
           </div>
         </div>
       </div>
@@ -106,12 +112,40 @@ function ContentSection() {
                 <p className="max-w-[700px] text-[18px] leading-[1.4] text-foreground/50">
                   An evergreen guide for families, designed and vibe-coded to reimagine how parents find, filter, and enjoy city adventures with their kids.
                 </p>
-                <div className="mt-6 flex gap-3">
-                  {["Loveable.dev", "Supabase", "Figma tokens"].map((tech) => (
-                    <span key={tech} className="rounded-full border border-kidventure-green/30 px-4 py-2 text-body-sm font-medium text-kidventure-green">
-                      {tech}
-                    </span>
-                  ))}
+                <h2 className="mt-8 font-(family-name:--font-body) text-[32px] font-medium leading-[1.2] tracking-[-0.8px] text-foreground md:text-[40px]">
+                  A personal exploration in vibe-coded design
+                </h2>
+                <p className="mt-4 text-[28px] font-normal leading-[33.6px] tracking-[-0.56px] text-foreground">
+                  01 . Overview &amp; intent
+                </p>
+                <p className="mt-6 max-w-[800px] text-[18px] leading-[25.2px] tracking-[-0.18px] text-foreground/50">
+                  KidVenture Hub NYC began as a side experiment — part playground guide, part design sandbox. I wanted to build something that solved a real problem in my daily life as a Brooklyn parent, while letting me experiment freely with emerging design-to-dev workflows like{" "}
+                  <strong className="font-bold text-foreground/50">Loveable.dev</strong>,{" "}
+                  <strong className="font-bold text-foreground/50">Supabase</strong>, and{" "}
+                  <strong className="font-bold text-foreground/50">Figma tokens</strong>.
+                </p>
+                {/* Overview — two-card row */}
+                <div className="mt-8 flex flex-col gap-[10px] md:flex-row">
+                  {/* Left: logo card */}
+                  <div
+                    className="flex flex-1 items-center justify-center rounded-2xl p-8"
+                    style={{ backgroundColor: "#fbf7f0" }}
+                  >
+                    <img
+                      src="/images/kidventure/overview-logo.svg"
+                      alt="Kidventure Hub logo"
+                      className="max-w-[280px] shrink-0"
+                      style={{ width: "auto", height: "auto" }}
+                    />
+                  </div>
+                  {/* Right: photo */}
+                  <div className="flex-1 overflow-hidden rounded-2xl">
+                    <img
+                      src="/images/kidventure/overview-photo.jpg"
+                      alt="Kidventure Hub overview"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -127,8 +161,13 @@ function ContentSection() {
                   a curated, trustworthy, and visually clear directory of
                   kid-friendly spots that&apos;s inspiring, not overwhelming.
                 </p>
-                {/* Image placeholder */}
-                <div className="mt-12 aspect-[16/9] w-full rounded-2xl bg-kidventure-green/10" />
+                <div className="mt-12 overflow-hidden rounded-2xl">
+                  <img
+                    src="/images/kidventure/problem-photo.jpg"
+                    alt="Brooklyn stroll club"
+                    className="w-full object-cover"
+                  />
+                </div>
               </div>
 
               {/* 03. Vision */}
@@ -136,22 +175,19 @@ function ContentSection() {
                 <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
                   03. Vision
                 </p>
-                <div className="mt-8 flex gap-4">
-                  {["design clarity", "curation", "delight"].map((word) => (
-                    <span
-                      key={word}
-                      className="rounded-full bg-kidventure-green/10 px-5 py-2 text-body-sm font-medium text-kidventure-green"
-                    >
-                      {word}
-                    </span>
-                  ))}
-                </div>
-                <p className="mt-6 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
-                  Like a modern kids&apos; museum &mdash; alive, with timeless
-                  listings and minimal upkeep.
+                <p className="mt-8 max-w-[800px] text-[18px] leading-[25.2px] tracking-[-0.18px] text-foreground/50">
+                  Create a digital companion for NYC parents that blends design clarity, curation, and delight.
                 </p>
-                {/* Image placeholder */}
-                <div className="mt-12 aspect-[16/9] w-full rounded-2xl bg-kidventure-green/10" />
+                <p className="mt-6 max-w-[800px] text-[18px] leading-[25.2px] tracking-[-0.18px] text-foreground/50">
+                  A web app that feels like a modern kids&apos; museum — tactile, bold, and beautifully organized. Not another feed — but a space that feels alive, with timeless listings and minimal upkeep.
+                </p>
+                <div className="mt-12 overflow-hidden rounded-2xl">
+                  <img
+                    src="/images/kidventure/vision-prd.webp"
+                    alt="Kidventure Hub PRD"
+                    className="w-full object-cover"
+                  />
+                </div>
               </div>
 
               {/* 04. Exploration process */}
@@ -165,10 +201,15 @@ function ContentSection() {
                   the entry point to precision, blending artistry and
                   engineering.
                 </p>
-                {/* Image placeholders for moodboards */}
-                <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
-                  <div className="aspect-[4/3] rounded-2xl bg-kidventure-green/10" />
-                  <div className="aspect-[4/3] rounded-2xl bg-kidventure-peach/10" />
+                <div className="mt-12 overflow-hidden rounded-3xl">
+                  <video
+                    src="/images/kidventure/exploration.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full"
+                  />
                 </div>
               </div>
 
@@ -191,8 +232,27 @@ function ContentSection() {
                   The result: a playground-finder that feels effortless on the
                   surface but scalable underneath.
                 </p>
-                {/* Image placeholder */}
-                <div className="mt-12 aspect-[16/9] w-full rounded-2xl bg-kidventure-green/10" />
+                <div className="mt-12 overflow-hidden rounded-2xl">
+                  <img
+                    src="/images/kidventure/system-supabase.webp"
+                    alt="Supabase dashboard"
+                    className="w-full object-cover"
+                  />
+                </div>
+                <div className="mt-6 overflow-hidden rounded-2xl">
+                  <img
+                    src="/images/kidventure/system-cms.webp"
+                    alt="Activity CMS"
+                    className="w-full object-cover"
+                  />
+                </div>
+                <div className="mt-6 overflow-hidden rounded-2xl">
+                  <img
+                    src="/images/kidventure/system-cms-edit.webp"
+                    alt="Activity CMS edit modal"
+                    className="w-full object-cover"
+                  />
+                </div>
               </div>
 
               {/* 06. Brand identity */}
@@ -207,12 +267,20 @@ function ContentSection() {
                   Neo-Brutalism aesthetic conveying confidence, discovery, and
                   belonging.
                 </p>
-                {/* Image placeholders for brand colors, typography, UI components */}
-                <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
-                  <div className="aspect-[4/3] rounded-2xl bg-kidventure-green/10" />
-                  <div className="aspect-[4/3] rounded-2xl bg-kidventure-peach/10" />
+                <div className="mt-12 overflow-hidden rounded-2xl">
+                  <img
+                    src="/images/kidventure/brand-identity.avif"
+                    alt="Kidventure Hub brand identity"
+                    className="w-full object-cover"
+                  />
                 </div>
-                <div className="mt-6 aspect-[16/9] w-full rounded-2xl bg-kidventure-green/10" />
+                <div className="mt-6 overflow-hidden rounded-2xl">
+                  <img
+                    src="/images/kidventure/brand-identity-2.avif"
+                    alt="Kidventure Hub brand identity"
+                    className="w-full object-cover"
+                  />
+                </div>
               </div>
 
               {/* 07. Outcome and reflection */}
@@ -220,45 +288,27 @@ function ContentSection() {
                 <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
                   07. Outcome and reflection
                 </p>
-                <p className="mt-8 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
+                <p className="mt-8 text-[18px] leading-[25.2px] tracking-[-0.18px] text-foreground/50">
                   The MVP prototype now includes:
                 </p>
-                <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
-                  {[
-                    {
-                      stat: "100+",
-                      label:
-                        "curated spots across Brooklyn and Manhattan",
-                    },
-                    {
-                      stat: "Quick-scan",
-                      label:
-                        "cards showing essentials (bathrooms, playground type, nearby food)",
-                    },
-                    {
-                      stat: "Mobile-first",
-                      label: "responsive design",
-                    },
-                  ].map((item) => (
-                    <div
-                      key={item.stat}
-                      className="rounded-2xl bg-kidventure-green/10 p-8"
-                    >
-                      <p className="font-(family-name:--font-display) text-display-sm font-medium uppercase leading-none tracking-tight text-kidventure-green">
-                        {item.stat}
-                      </p>
-                      <p className="mt-3 text-body-sm text-white/60">
-                        {item.label}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-                <p className="mt-10 max-w-[700px] text-[18px] leading-[1.4] font-medium text-foreground/70">
-                  AI + design workflow &mdash; following instinct to reveal
-                  structure.
+                <ul className="mt-5 space-y-0 text-[18px] leading-[25.2px] tracking-[-0.18px] text-foreground/50">
+                  <li className="flex gap-3"><span>·</span><span>100+ curated spots across Brooklyn and Manhattan</span></li>
+                  <li className="flex gap-3"><span>·</span><span>Quick-scan cards showing essentials (bathrooms, playground type, nearby food)</span></li>
+                  <li className="flex gap-3"><span>·</span><span>Mobile-first responsive design</span></li>
+                </ul>
+                <p className="mt-8 max-w-[800px] text-[18px] leading-[25.2px] tracking-[-0.18px] text-foreground/50">
+                  While not yet public, the app has become a living testbed for my{" "}
+                  <strong className="font-bold text-foreground/50">AI + design workflow</strong>{" "}
+                  — blending intuitive visual design with real data systems. KidVenture Hub NYC reminded me why I love design — the intersection of creativity, clarity, and real-world usefulness. It taught me that &ldquo;vibe coding&rdquo; isn&apos;t about chaos — it&apos;s about{" "}
+                  <strong className="font-bold text-foreground/50">following instinct to reveal structure.</strong>
                 </p>
-                {/* Image placeholder */}
-                <div className="mt-12 aspect-[16/9] w-full rounded-2xl bg-kidventure-green/10" />
+                <div className="mt-12 overflow-hidden rounded-2xl">
+                  <img
+                    src="/images/kidventure/outcome.avif"
+                    alt="Kidventure Hub outcome"
+                    className="w-full object-cover"
+                  />
+                </div>
               </div>
 
               <div className="h-40" />
@@ -293,7 +343,7 @@ function NextMarquee() {
 function MarqueeItem() {
   return (
     <>
-      <div className="h-[80px] w-[80px] flex-shrink-0 rounded-2xl bg-boldin-green" />
+      <img src="/images/boldin-next-logo.webp" alt="Boldin" className="h-[80px] w-[80px] flex-shrink-0 rounded-2xl object-cover" />
       <span className="flex-shrink-0 font-(family-name:--font-display) text-[80px] font-medium uppercase leading-none tracking-tight text-foreground md:text-[120px]">
         NEXT
       </span>

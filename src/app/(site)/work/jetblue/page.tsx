@@ -131,9 +131,21 @@ function ContentSection() {
                 <p className="mt-5 max-w-[700px] text-[18px] leading-[1.4] font-medium text-foreground">
                   Business value: To increase booking conversion.
                 </p>
-                <div className="mt-12 flex flex-col gap-6">
+                <div className="mt-12 overflow-hidden rounded-3xl">
+                  <video
+                    src="/images/jetblue/booking-conversion.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full"
+                  />
+                </div>
+                <div className="mt-6 flex flex-col gap-6">
                   <img src="/images/jetblue/photoshoot.png" alt="JetBlue passengers on a flight" className="w-full rounded-2xl object-cover" />
-                  <img src="/images/jetblue/areas.png" alt="JetBlue booking flow areas and drop-off rates" className="w-full rounded-2xl object-cover bg-white" />
+                  <div className="rounded-2xl bg-white p-8">
+                    <img src="/images/jetblue/areas.avif" alt="JetBlue booking flow areas and drop-off rates" className="w-full object-contain" />
+                  </div>
                   <img src="/images/jetblue/ds.png" alt="JetBlue app screens" className="w-full rounded-2xl object-cover" />
                 </div>
               </div>
@@ -202,11 +214,11 @@ function ContentSection() {
                 <p className="mt-8 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
                   Flight results was optimized to include overall UX best practices. Through research and observing recorded videos of customers using the platform (Full story) we were able to get more insight and create a streamlined experience. Below is the legacy system and some highlighted pain points.
                 </p>
-                <div className="mt-10">
+                <div className="mt-10 rounded-2xl border-4 overflow-hidden" style={{ borderColor: "#0d99ff" }}>
                   <img
-                    src="/images/jetblue/reimagine-flight-results.png"
+                    src="/images/jetblue/reimagine-flight-results.avif"
                     alt="JetBlue reimagined flight results UI"
-                    className="w-full rounded-2xl object-cover"
+                    className="w-full object-cover"
                   />
                 </div>
               </div>
@@ -241,6 +253,14 @@ function ContentSection() {
                       <p className="text-[14px] font-semibold leading-[1.2] text-foreground">{c.label}</p>
                     </div>
                   ))}
+                </div>
+
+                <div className="mt-6 overflow-hidden rounded-2xl">
+                  <img
+                    src="/images/jetblue/concept-subcopy.avif"
+                    alt="JetBlue design concept"
+                    className="w-full object-cover"
+                  />
                 </div>
               </div>
 
@@ -332,8 +352,8 @@ function ContentSection() {
                 <div className="mt-6 flex flex-col gap-[24px] sm:flex-row">
                   <div className="flex h-[464px] shrink-0 items-start justify-center rounded-2xl bg-white p-10 sm:w-[30%]">
                     <img
-                      src="/images/jetblue/solution-phone.gif"
-                      alt="JetBlue filter navigation — animated phone demo"
+                      src="/images/jetblue/solution-phone.webp"
+                      alt="JetBlue filter navigation — phone demo"
                       className="h-full w-auto object-contain"
                     />
                   </div>
