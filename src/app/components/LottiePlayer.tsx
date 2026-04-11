@@ -1,6 +1,7 @@
 "use client";
 
 import Lottie from "lottie-react";
+import { useEffect, useState } from "react";
 
 export default function LottiePlayer({
   src,
@@ -9,9 +10,19 @@ export default function LottiePlayer({
   src: string;
   className?: string;
 }) {
+  const [animationData, setAnimationData] = useState<unknown>(null);
+
+  useEffect(() => {
+    fetch(src)
+      .then((res) => res.json())
+      .then(setAnimationData);
+  }, [src]);
+
+  if (!animationData) return null;
+
   return (
     <Lottie
-      path={src}
+      animationData={animationData}
       loop
       autoplay
       className={className}
