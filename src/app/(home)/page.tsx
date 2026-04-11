@@ -111,7 +111,7 @@ function HeroSection() {
         {/* Hero headline */}
         <div className="flex flex-col items-center gap-6 pt-[28vh]">
           <LiveClock />
-          <h1 className="text-center font-(family-name:--font-display) text-display-sm font-medium uppercase leading-[0.85] tracking-tight md:text-display-md lg:text-display-lg">
+          <h1 className="text-center font-(family-name:--font-display) text-display-sm font-medium uppercase leading-[1] tracking-tight md:text-display-md lg:text-display-lg">
             I turn messy{" "}
             <img
               src="/images/home/inline-messy.gif"

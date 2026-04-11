@@ -354,7 +354,7 @@ function ContentSection() {
 function NextMarquee() {
   const items = Array.from({ length: 6 });
   return (
-    <Link href="/work/blockfi" className="block">
+    <Link href="/work/blockfi" className="block group">
       <section className="relative overflow-hidden bg-[#0d0d0d] py-12 cursor-pointer transition-opacity hover:opacity-90">
         <div
           className="flex items-center gap-8 whitespace-nowrap w-max animate-marquee-ltr"
@@ -370,11 +370,16 @@ function NextMarquee() {
 function MarqueeItem() {
   return (
     <>
-      <img
-        src="/images/boldin-wo/blockfi-icon.png"
-        alt="BlockFi"
-        className="h-[80px] w-[80px] flex-shrink-0 rounded-2xl"
-      />
+      <div className="flex-shrink-0 flex flex-col items-center gap-2">
+        <img
+          src="/images/boldin-wo/blockfi-icon.png"
+          alt="BlockFi"
+          className="h-[80px] w-[80px] rounded-2xl"
+        />
+        <span className="text-[13px] font-medium text-white opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 whitespace-nowrap">
+          BlockFi Onboarding →
+        </span>
+      </div>
       <span className="flex-shrink-0 font-(family-name:--font-display) text-[80px] font-medium uppercase leading-none tracking-tight text-foreground md:text-[120px]">
         NEXT
       </span>

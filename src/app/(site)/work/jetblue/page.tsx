@@ -214,11 +214,11 @@ function ContentSection() {
                 <p className="mt-8 max-w-[800px] text-[18px] leading-[1.4] text-foreground/50">
                   Flight results was optimized to include overall UX best practices. Through research and observing recorded videos of customers using the platform (Full story) we were able to get more insight and create a streamlined experience. Below is the legacy system and some highlighted pain points.
                 </p>
-                <div className="mt-10 rounded-2xl border-4 overflow-hidden" style={{ borderColor: "#0d99ff" }}>
+                <div className="mt-10 rounded-2xl p-8 md:p-12" style={{ backgroundColor: "#0d99ff" }}>
                   <img
                     src="/images/jetblue/reimagine-flight-results.avif"
                     alt="JetBlue reimagined flight results UI"
-                    className="w-full object-cover"
+                    className="w-full rounded-xl object-contain"
                   />
                 </div>
               </div>
@@ -232,14 +232,6 @@ function ContentSection() {
                   Users could enter through the homepage or enter through an OTA
                   (online travel agency, Kayak, Google Flights).
                 </p>
-
-                <div className="mt-6 rounded-2xl bg-white p-10">
-                  <img
-                    src="/images/jetblue/flow-diagram.png"
-                    alt="JetBlue booking flow diagram"
-                    className="w-full object-contain"
-                  />
-                </div>
 
                 <div className="mt-6 flex flex-col gap-[24px] sm:flex-row">
                   {[
@@ -341,9 +333,9 @@ function ContentSection() {
                   </ol>
                 </div>
 
-                <div className="mt-6 rounded-2xl bg-white p-10">
+                <div className="mt-6 rounded-2xl p-10" style={{ backgroundColor: "#6A7D8A" }}>
                   <img
-                    src="/images/jetblue/solution-desktop.png"
+                    src="/images/jetblue/solution-desktop.avif"
                     alt="JetBlue final solution — desktop flight results"
                     className="w-full object-contain"
                   />
@@ -378,7 +370,7 @@ function ContentSection() {
                 <div className="mt-12 flex flex-col gap-[24px] sm:flex-row">
                   <div className="flex flex-1 items-center justify-center rounded-2xl p-10" style={{ backgroundColor: "#9e9e9e" }}>
                     <img
-                      src="/images/jetblue/parallel-shopping-cart.png"
+                      src="/images/jetblue/parallel-shopping-cart.avif"
                       alt="JetBlue shopping cart"
                       className="w-full max-w-[479px] object-contain"
                     />
@@ -394,17 +386,17 @@ function ContentSection() {
                 </div>
 
                 <div className="mt-[24px] flex flex-col gap-[24px] sm:flex-row">
-                  <div className="flex flex-1 flex-col items-center justify-center rounded-2xl p-10 text-center" style={{ backgroundColor: "#f7f7f7" }}>
+                  <div className="flex flex-1 flex-col items-center justify-center rounded-2xl px-10 py-[102px] text-center" style={{ backgroundColor: "#f7f7f7" }}>
                     <p className="text-[32px] font-medium leading-[1.2] tracking-[-0.64px]" style={{ color: "#0f0e0e" }}>
                       Checkout
                     </p>
-                    <p className="mt-5 text-[28px] font-normal leading-[1.2] tracking-[-0.56px]" style={{ color: "#0f0e0e" }}>
+                    <p className="mt-5 max-w-[403px] text-[28px] font-normal leading-[33.6px] tracking-[-0.56px]" style={{ color: "#0f0e0e" }}>
                       A more seamless path to completion. Reducing cognitive load minimized friction and improved recognition, leading to fewer drop-offs and higher conversion.
                     </p>
                   </div>
                   <div className="flex flex-1 items-center justify-center rounded-2xl p-10" style={{ backgroundColor: "#9e9e9e" }}>
                     <img
-                      src="/images/jetblue/parallel-checkout.png"
+                      src="/images/jetblue/parallel-checkout.avif"
                       alt="JetBlue checkout"
                       className="w-full max-w-[230px] object-contain"
                     />
@@ -440,7 +432,7 @@ function ContentSection() {
                   </div>
                   <div className="flex flex-1 items-center justify-center rounded-2xl p-10" style={{ backgroundColor: "#9e9e9e" }}>
                     <img
-                      src="/images/jetblue/parallel-payment.png"
+                      src="/images/jetblue/solution-wireflow.webp"
                       alt="JetBlue payment and confirmation"
                       className="w-full max-w-[445px] object-contain"
                     />
@@ -465,7 +457,7 @@ function ContentSection() {
 function NextMarquee() {
   const items = Array.from({ length: 6 });
   return (
-    <Link href="/work/ubs" className="block">
+    <Link href="/work/ubs" className="block group">
       <section className="relative overflow-hidden bg-[#0d0d0d] py-12 cursor-pointer transition-opacity hover:opacity-90">
         <div
           className="flex items-center gap-8 whitespace-nowrap w-max animate-marquee-ltr"
@@ -481,7 +473,12 @@ function NextMarquee() {
 function MarqueeItem() {
   return (
     <>
-      <img src="/images/ubs-next-logo.png" alt="UBS" className="h-[80px] w-[80px] flex-shrink-0 rounded-2xl object-contain bg-white" />
+      <div className="flex-shrink-0 flex flex-col items-center gap-2">
+        <img src="/images/ubs-next-logo.png" alt="UBS" className="h-[80px] w-[80px] rounded-2xl object-contain bg-white" />
+        <span className="text-[13px] font-medium text-white opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 whitespace-nowrap">
+          UBS →
+        </span>
+      </div>
       <span className="flex-shrink-0 font-(family-name:--font-display) text-[80px] font-medium uppercase leading-none tracking-tight text-foreground md:text-[120px]">
         NEXT
       </span>

@@ -172,56 +172,26 @@ function ContentSection() {
                   verification flows, improving both user experience and
                   operational efficiency.
                 </p>
-                <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
+                {/* Metrics summary row */}
+                <div className="mt-6 grid grid-cols-2 gap-4 xl:grid-cols-5">
                   {[
-                    {
-                      label: "Efficiency",
-                      value:
-                        "Decrease number of pages and required fields.",
-                    },
-                    {
-                      label: "KYC Success",
-                      value:
-                        "Improve coverage and accuracy with new data partners.",
-                    },
-                    {
-                      label: "Conversion",
-                      value:
-                        "10%+ increase in conversion for US customers.",
-                    },
+                    { label: "Efficiency", value: "Decrease number of pages and required fields." },
+                    { label: "KYC Success", value: "Improve coverage and accuracy w/new data partners." },
+                    { label: "Conversion", value: "10%+ increase in conversion for US customers." },
+                    { label: "Revenue", value: "$1.5M in additional revenue for newly acquired US clients." },
+                    { label: "Operational", value: "Headcount savings by removing manual kyc review." },
                   ].map((item) => (
                     <div
                       key={item.label}
-                      className="rounded-2xl bg-blockfi-blue p-8"
+                      className="flex flex-col items-center justify-center rounded-2xl px-10 py-[68px] text-center"
+                      style={{ backgroundColor: "#0f5bfc" }}
                     >
-                      <p className="mb-2 font-(family-name:--font-display) text-body-sm font-medium uppercase tracking-wide text-white/60">
+                      <p className="text-[28px] font-normal leading-[33.6px] tracking-[-0.56px] text-[#f7f7f7]">
                         {item.label}
                       </p>
-                      <p className="text-body text-white">{item.value}</p>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
-                  {[
-                    {
-                      label: "Revenue",
-                      value:
-                        "$1.5M in additional revenue for newly acquired US clients.",
-                    },
-                    {
-                      label: "Operational",
-                      value:
-                        "Headcount savings by removing manual KYC review.",
-                    },
-                  ].map((item) => (
-                    <div
-                      key={item.label}
-                      className="rounded-2xl bg-blockfi-blue p-8"
-                    >
-                      <p className="mb-2 font-(family-name:--font-display) text-body-sm font-medium uppercase tracking-wide text-white/60">
-                        {item.label}
+                      <p className="mt-5 text-[18px] leading-[25.2px] tracking-[-0.18px] text-[#f7f7f7]">
+                        {item.value}
                       </p>
-                      <p className="text-body text-white">{item.value}</p>
                     </div>
                   ))}
                 </div>
@@ -270,10 +240,19 @@ function ContentSection() {
                   a detailed map documenting all the different touchpoints in the
                   customer journey.
                 </p>
-                {/* UX audit + journey map image placeholders */}
-                <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
-                  <div className="aspect-[4/3] rounded-2xl bg-blockfi-blue/10" />
-                  <div className="aspect-[4/3] rounded-2xl bg-blockfi-blue/10" />
+                <div className="mt-12 overflow-hidden rounded-2xl bg-white p-8">
+                  <img
+                    src="/images/blockfi/approach.avif"
+                    alt="BlockFi approach"
+                    className="w-full h-auto block"
+                  />
+                </div>
+                <div className="mt-6 overflow-hidden rounded-2xl bg-white p-8">
+                  <img
+                    src="/images/blockfi/approach-2.avif"
+                    alt="BlockFi approach"
+                    className="w-full h-auto block"
+                  />
                 </div>
               </div>
 
@@ -312,8 +291,13 @@ function ContentSection() {
                     ))}
                   </ul>
 
-                  {/* Happy path image placeholder */}
-                  <div className="mt-8 aspect-[16/9] w-full rounded-2xl bg-blockfi-blue/10" />
+                  <div className="mt-8 overflow-hidden rounded-2xl p-10" style={{ backgroundColor: "#9e9e9e" }}>
+                    <img
+                      src="/images/blockfi/concept.avif"
+                      alt="BlockFi design concept"
+                      className="w-full h-auto block"
+                    />
+                  </div>
                 </div>
 
                 {/* Unhappy path */}
@@ -328,8 +312,20 @@ function ContentSection() {
                     the unhappy path.
                   </p>
 
-                  {/* Unhappy path image placeholder */}
-                  <div className="mt-8 aspect-[16/9] w-full rounded-2xl bg-blockfi-blue/10" />
+                  <div className="mt-8 overflow-hidden rounded-2xl bg-white p-8">
+                    <img
+                      src="/images/blockfi/unhappy-flow.svg"
+                      alt="BlockFi unhappy path flow"
+                      className="w-full h-auto block"
+                    />
+                  </div>
+                  <div className="mt-6 overflow-hidden rounded-2xl p-8" style={{ backgroundColor: "#9e9e9e" }}>
+                    <img
+                      src="/images/blockfi/unhappy-flow-2.avif"
+                      alt="BlockFi unhappy path screens"
+                      className="w-full h-auto block"
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -359,43 +355,80 @@ function ContentSection() {
                 <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
                   07. Parallel work streams
                 </p>
-                <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
-                  {[
-                    {
-                      title: "Home redesigned",
-                      description:
-                        "Snapshot of a client's financial health with insights, quick actions, and tailored suggestions driving engagement.",
-                    },
-                    {
-                      title: "Quick Actions",
-                      description:
-                        "Easy access to most relevant actions from anywhere in the app.",
-                    },
-                    {
-                      title: "Portfolio",
-                      description:
-                        "A clear overview of crypto assets, showing cross-portfolio data and detailed balances.",
-                    },
-                    {
-                      title: "Credit Card",
-                      description:
-                        "A clear, scannable snapshot of a client's credit card health with balance, payment due, and rewards tracking.",
-                    },
-                  ].map((stream) => (
-                    <div
-                      key={stream.title}
-                      className="flex flex-col rounded-2xl bg-white/5 p-8"
-                    >
-                      <h3 className="text-body font-semibold text-foreground">
-                        {stream.title}
-                      </h3>
-                      <p className="mt-2 text-body-sm text-white/50">
-                        {stream.description}
-                      </p>
-                      {/* Image placeholder */}
-                      <div className="mt-6 aspect-[4/3] w-full rounded-xl bg-blockfi-blue/10" />
-                    </div>
-                  ))}
+                {/* Parallel work stream rows */}
+                <div className="mt-6 flex flex-col gap-6 md:flex-row">
+                  <div className="flex flex-1 items-center justify-center rounded-2xl p-10" style={{ backgroundColor: "#9e9e9e" }}>
+                    <img
+                      src="/images/blockfi/parallel-home.png"
+                      alt="Home redesigned screen"
+                      className="w-full max-w-[213px] object-contain"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col items-center justify-center rounded-2xl px-10 py-[135px] text-center" style={{ backgroundColor: "#f7f7f7" }}>
+                    <p className="text-[32px] font-medium leading-[38.4px] tracking-[-0.64px]" style={{ color: "#0f0e0e" }}>
+                      Home redesigned
+                    </p>
+                    <p className="mt-5 max-w-[403px] text-[28px] font-normal leading-[33.6px] tracking-[-0.56px]" style={{ color: "#0f0e0e" }}>
+                      Snapshot of a client&apos;s financial health with insights, quick actions, and tailored suggestions driving engagement.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Quick Actions */}
+                <div className="mt-6 flex flex-col gap-6 md:flex-row">
+                  <div className="flex flex-1 flex-col items-center justify-center rounded-2xl px-10 py-[151px] text-center" style={{ backgroundColor: "#f7f7f7" }}>
+                    <p className="text-[32px] font-medium leading-[38.4px] tracking-[-0.64px]" style={{ color: "#0f0e0e" }}>
+                      Quick Actions
+                    </p>
+                    <p className="mt-5 max-w-[403px] text-[28px] font-normal leading-[33.6px] tracking-[-0.56px]" style={{ color: "#0f0e0e" }}>
+                      Easy access to most relevant actions from anywhere in the app.
+                    </p>
+                  </div>
+                  <div className="flex flex-1 items-center justify-center rounded-2xl p-10" style={{ backgroundColor: "#9e9e9e" }}>
+                    <img
+                      src="/images/blockfi/parallel-quick-actions.png"
+                      alt="Quick Actions screen"
+                      className="w-full max-w-[213px] object-contain"
+                    />
+                  </div>
+                </div>
+
+                {/* Portfolio */}
+                <div className="mt-6 flex flex-col gap-6 md:flex-row">
+                  <div className="flex flex-1 items-center justify-center rounded-2xl p-10" style={{ backgroundColor: "#9e9e9e" }}>
+                    <img
+                      src="/images/blockfi/parallel-portfolio.png"
+                      alt="Portfolio screen"
+                      className="w-full max-w-[213px] object-contain"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col items-center justify-center rounded-2xl px-10 py-[135px] text-center" style={{ backgroundColor: "#f7f7f7" }}>
+                    <p className="text-[32px] font-medium leading-[38.4px] tracking-[-0.64px]" style={{ color: "#0f0e0e" }}>
+                      Portfolio
+                    </p>
+                    <p className="mt-5 max-w-[403px] text-[28px] font-normal leading-[33.6px] tracking-[-0.56px]" style={{ color: "#0f0e0e" }}>
+                      A clear overview of crypto assets, showing cross-portfolio data and detailed balances to guide key actions.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Credit Card */}
+                <div className="mt-6 flex flex-col gap-6 md:flex-row">
+                  <div className="flex flex-1 flex-col items-center justify-center rounded-2xl px-10 py-[135px] text-center" style={{ backgroundColor: "#f7f7f7" }}>
+                    <p className="text-[32px] font-medium leading-[38.4px] tracking-[-0.64px]" style={{ color: "#0f0e0e" }}>
+                      Credit Card
+                    </p>
+                    <p className="mt-5 max-w-[403px] text-[28px] font-normal leading-[33.6px] tracking-[-0.56px]" style={{ color: "#0f0e0e" }}>
+                      A clear, scannable snapshot of a client&apos;s credit card health with balance, payment due, and rewards tracking.
+                    </p>
+                  </div>
+                  <div className="flex flex-1 items-center justify-center rounded-2xl p-10" style={{ backgroundColor: "#9e9e9e" }}>
+                    <img
+                      src="/images/blockfi/parallel-credit-card.png"
+                      alt="Credit Card screen"
+                      className="w-full max-w-[213px] object-contain"
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -416,7 +449,7 @@ function ContentSection() {
 function NextMarquee() {
   const items = Array.from({ length: 6 });
   return (
-    <Link href="/work/jetblue" className="block">
+    <Link href="/work/jetblue" className="block group">
       <section className="relative overflow-hidden bg-[#0d0d0d] py-12 cursor-pointer transition-opacity hover:opacity-90">
         <div
           className="flex items-center gap-8 whitespace-nowrap w-max animate-marquee-ltr"
@@ -432,11 +465,16 @@ function NextMarquee() {
 function MarqueeItem() {
   return (
     <>
-      <img
-        src="/images/blockfi/jetblue-icon.png"
-        alt="JetBlue"
-        className="h-[80px] w-[80px] flex-shrink-0 rounded-2xl"
-      />
+      <div className="flex-shrink-0 flex flex-col items-center gap-2">
+        <img
+          src="/images/blockfi/jetblue-icon.png"
+          alt="JetBlue"
+          className="h-[80px] w-[80px] rounded-2xl"
+        />
+        <span className="text-[13px] font-medium text-white opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 whitespace-nowrap">
+          JetBlue →
+        </span>
+      </div>
       <span className="flex-shrink-0 font-(family-name:--font-display) text-[80px] font-medium uppercase leading-none tracking-tight text-foreground md:text-[120px]">
         NEXT
       </span>
