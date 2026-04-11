@@ -389,49 +389,6 @@ function ContentSection() {
                 <p className="mb-6 text-[20px] font-normal leading-[1.2] tracking-[-0.56px] text-foreground md:text-[28px]">
                   08. Parallel work streams
                 </p>
-                <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
-                  {[
-                    {
-                      title: "Set a milestone",
-                      description:
-                        "This feature allows users to set up goals in the future.",
-                    },
-                    {
-                      title: "Milestones timeline",
-                      description:
-                        "This feature allows users to see all their planned goals from the past and future.",
-                    },
-                    {
-                      title: "Mindset and Interests",
-                      description:
-                        "Perspective questions: Lets UBS clients share their goals and interests to receive personalized insights.",
-                    },
-                    {
-                      title: "Understanding your account balances",
-                      description:
-                        "Clients are able to view all their assets and liabilities.",
-                    },
-                    {
-                      title: "Educational cube",
-                      description:
-                        "This feature allows users to explore the different parts of their wealth.",
-                    },
-                  ].map((stream) => (
-                    <div
-                      key={stream.title}
-                      className="flex flex-col rounded-2xl bg-white/5 p-8"
-                    >
-                      <h3 className="text-body font-semibold text-foreground">
-                        {stream.title}
-                      </h3>
-                      <p className="mt-2 text-body-sm text-white/50">
-                        {stream.description}
-                      </p>
-                      {/* Image placeholder */}
-                      <div className="mt-6 aspect-[4/3] w-full rounded-xl bg-ubs-red/10" />
-                    </div>
-                  ))}
-                </div>
               </div>
 
               {/* Set a milestone — video */}
@@ -495,7 +452,7 @@ function ContentSection() {
                   <img
                     src="/images/ubs/milestones-timeline.png"
                     alt="Milestones timeline screen"
-                    className="w-full rounded-2xl object-contain"
+                    className="w-full max-w-[464px] object-contain"
                   />
                 </div>
                 {/* Right: text card */}
@@ -565,11 +522,17 @@ function ContentSection() {
 
               {/* Understanding your account balances — two-card row (image left, text right) */}
               <div className="mt-6 flex flex-col gap-6 md:flex-row">
-                {/* Left: image card (placeholder) */}
+                {/* Left: image card */}
                 <div
-                  className="flex flex-1 items-center justify-center rounded-2xl p-10 min-h-[400px]"
+                  className="flex flex-1 items-center justify-center rounded-2xl p-10"
                   style={{ backgroundColor: "#bababa" }}
-                />
+                >
+                  <img
+                    src="/images/ubs/account-balances-ipad.png"
+                    alt="Account Balances screen on tablet"
+                    className="w-full max-w-[434px] object-contain"
+                  />
+                </div>
                 {/* Right: text card */}
                 <div
                   className="flex flex-1 flex-col items-center justify-center rounded-2xl px-10 py-[152px] text-center"
