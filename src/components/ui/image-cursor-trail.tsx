@@ -1,7 +1,6 @@
 "use client"
 
 import React, { createRef, useRef, type ReactNode } from "react"
-import { SparklesIcon } from "lucide-react"
 
 function cn(...classes: (string | undefined | null | false)[]) {
   return classes.filter(Boolean).join(" ")
