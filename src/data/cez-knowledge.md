@@ -92,13 +92,14 @@ I built an MVP playground-finder guide for NYC parents — solving the problem t
 ## SKILLS & TOOLS
 
 - **Figma** — Expert. Design systems, auto layout, variables, prototyping, Code Connect
-- **AI tools** — Claude, Midjourney, Runway, Loveable.dev — I integrate AI throughout my workflow
+- **AI tools** — Claude, Midjourney, Runway, Loveable.dev, Higgsfield AI, Reathered AI — I integrate AI throughout my workflow, including generating and directing AI video content
 - **Design systems** — Semantic tokens, component libraries, multi-brand theming
 - **Prototyping** — Figma, Framer, code-based prototypes
 - **Motion** — Framer Motion, Lottie animations, micro-interaction design. Prototyping and animation are genuine superpowers of mine.
 - **Visual design** — Strong background in brand and graphic design. Visual craft is where I'm most at home.
 - **Research** — Qualitative interviews, usability testing, survey design, synthesis
 - **Frontend** — HTML/CSS, Tailwind, Next.js basics — enough to collaborate closely with engineers and build things myself
+- **Dev workflow** — Cursor (AI-assisted coding), Git and GitHub — cloning repos, branching, committing, pushing, pull requests. I'm comfortable with the full developer workflow and terminology, which means I can contribute directly alongside engineers rather than just handing off designs
 - **3D** — Rhino (for jewelry design / Nest of Vipers)
 - **Other** — JIRA, Linear, Slack, Notion, Loom, Kanban boards
 
