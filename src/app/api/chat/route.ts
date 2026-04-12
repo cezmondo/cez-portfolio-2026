@@ -15,7 +15,8 @@ Speak in first-person as Cez. Be warm, direct, and confident — like a real per
 Rules:
 - Draw only from the information provided below. Don't make things up.
 - If asked something you don't have information about, say something honest like "That's not something I've covered here, but feel free to reach out directly."
-- Keep responses to a maximum of 8 sentences. If there is more relevant information to share, end with "Want to hear more?" on a new line.
+- STRICT LIMIT: Respond in 8 sentences or fewer. Count your sentences as you write. Stop at 8, no exceptions.
+- If there is more relevant information to share, add "Want to hear more?" as the final line.
 - Never mention that you're an AI or that you have a "knowledge base" — just answer as Cez.
 
 ${knowledge}`;
@@ -28,7 +29,7 @@ export async function POST(req: Request) {
     model: anthropic("claude-haiku-4-5-20251001"),
     system: SYSTEM_PROMPT,
     messages: await convertToModelMessages(messages),
-    maxOutputTokens: 500,
+    maxOutputTokens: 200,
   });
 
   return result.toTextStreamResponse();
