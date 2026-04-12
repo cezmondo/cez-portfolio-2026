@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { displayFont, bodyFont } from "./fonts";
 import "./globals.css";
 import ChatWidget from "./components/ChatWidget";
+import { ViewTransitions } from "next-view-transitions";
 
 export const metadata: Metadata = {
   title: "Cez Corpus — Staff Product Designer",
@@ -15,14 +16,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${displayFont.variable} ${bodyFont.variable} antialiased`}
-    >
-      <body className="font-(family-name:--font-body)">
-        {children}
-        <ChatWidget />
-      </body>
-    </html>
+    <ViewTransitions>
+      <html
+        lang="en"
+        data-scroll-behavior="smooth"
+        className={`${displayFont.variable} ${bodyFont.variable} antialiased`}
+      >
+        <body className="font-(family-name:--font-body)">
+          {children}
+          <ChatWidget />
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }

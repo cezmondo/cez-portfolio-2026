@@ -1,8 +1,9 @@
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import ScrollFade, { ScrollTrigger } from "../components/ScrollFade";
 import ScrollFadeBlue, { BlueTrigger } from "../components/ScrollFadeBlue";
 import Footer from "../components/Footer";
 import LiveClock from "../components/LiveClock";
+import SpotlightHeadline from "../components/SpotlightHeadline";
 
 /* ------------------------------------------------------------------ */
 /*  Project card data enriched with homepage-specific fields           */
@@ -111,31 +112,7 @@ function HeroSection() {
         {/* Hero headline */}
         <div className="flex flex-col items-center gap-6 pt-[28vh]">
           <LiveClock />
-          <h1 className="text-center font-(family-name:--font-display) text-display-sm font-medium uppercase leading-[1] tracking-tight md:text-display-md lg:text-display-lg">
-            I turn messy{" "}
-            <img
-              src="/images/home/inline-messy.gif"
-              alt=""
-              className="inline-block h-[0.6em] w-auto rounded-md object-cover align-middle"
-            />{" "}
-            problems into simple,
-            <br />
-            delightful{" "}
-            <img
-              src="/images/home/inline-delightful.gif"
-              alt=""
-              className="inline-block h-[0.6em] w-auto rounded-md object-cover align-middle"
-            />
-            , and
-            <br />
-            useful{" "}
-            <img
-              src="/images/home/inline-useful.gif"
-              alt=""
-              className="inline-block h-[0.6em] w-auto rounded-md object-cover align-middle"
-            />{" "}
-            designs.
-          </h1>
+          <SpotlightHeadline />
         </div>
 
         {/* Info row below headline */}

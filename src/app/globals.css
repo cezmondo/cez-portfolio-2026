@@ -1,5 +1,39 @@
 @import "tailwindcss";
 
+/* ── View Transition animations ── */
+@keyframes view-transition-exit {
+  0%   { opacity: 1; transform: translate(0px, 0px) scale(1); }
+  100% { opacity: 0; transform: translate(0px, -25%) scale(1.2); }
+}
+
+@keyframes view-transition-enter {
+  0%   { opacity: 1; transform: translate(0px, 100%) scale(1); }
+  100% { opacity: 1; transform: translate(0px, 0px) scale(1); }
+}
+
+/* Only animate on transition routes */
+::view-transition-old(root) {
+  animation: 0.85s cubic-bezier(0.77, 0, 0.175, 1) both view-transition-exit;
+}
+
+::view-transition-new(root) {
+  animation: 0.85s cubic-bezier(0.77, 0, 0.175, 1) both view-transition-enter;
+}
+
+::view-transition-old(*),
+::view-transition-new(*) {
+  mix-blend-mode: normal;
+  backface-visibility: hidden;
+}
+
+@media (prefers-reduced-motion) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
 @keyframes flash {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
@@ -102,7 +136,7 @@
   --spacing-gutter: 60px;
 }
 
-html {
+html[data-scroll-behavior="smooth"] {
   scroll-behavior: smooth;
 }
 
