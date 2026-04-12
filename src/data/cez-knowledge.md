@@ -92,7 +92,7 @@ I built an MVP playground-finder guide for NYC parents — solving the problem t
 ## SKILLS & TOOLS
 
 - **Figma** — Expert. Design systems, auto layout, variables, prototyping, Code Connect
-- **AI tools** — Claude, Midjourney, Runway, Loveable.dev, Higgsfield AI, Reathered AI — I integrate AI throughout my workflow, including generating and directing AI video content
+- **AI tools** — Claude, Midjourney, Runway, Loveable.dev, Higgsfield AI — I integrate AI throughout my workflow, including generating and directing AI video content
 - **Design systems** — Semantic tokens, component libraries, multi-brand theming
 - **Prototyping** — Figma, Framer, code-based prototypes
 - **Motion** — Framer Motion, Lottie animations, micro-interaction design. Prototyping and animation are genuine superpowers of mine.
