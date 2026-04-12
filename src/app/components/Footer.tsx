@@ -15,7 +15,7 @@ export default function Footer({ transparent = false }: { transparent?: boolean 
       <div className="flex items-center justify-between px-(--spacing-gutter) py-8">
         <div className="flex items-center gap-6">
         <a
-          href="https://linkedin.com/in/cesarcorpus"
+          href="https://www.linkedin.com/in/cesar-corpus-b4905013/"
           target="_blank"
           rel="noopener noreferrer"
           className="group inline-flex items-center gap-1.5 font-(family-name:--font-body) text-body-sm font-medium uppercase tracking-wide opacity-60 transition-opacity hover:opacity-100"
@@ -26,7 +26,7 @@ export default function Footer({ transparent = false }: { transparent?: boolean 
           </svg>
         </a>
         <a
-          href="https://instagram.com/cezcorpus"
+          href="https://www.instagram.com/ccorpusjnr"
           target="_blank"
           rel="noopener noreferrer"
           className="group inline-flex items-center gap-1.5 font-(family-name:--font-body) text-body-sm font-medium uppercase tracking-wide opacity-60 transition-opacity hover:opacity-100"
