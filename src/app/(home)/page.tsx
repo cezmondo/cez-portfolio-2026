@@ -159,14 +159,7 @@ function ProjectsSection() {
             </div>
           ))}
 
-          {/* Explore All Projects card */}
-          <div
-            className="sticky pb-4 md:pb-10"
-            style={{ top: `${40 + homeProjects.length * 20}px` }}
-          >
-            <ScrollTrigger />
-            <ExploreAllCard />
-          </div>
+          <ScrollTrigger />
         </div>
       </div>
     </section>
@@ -258,70 +251,6 @@ function ProjectCard({ project }: { project: HomeProject }) {
                 className={`absolute inset-0 ${isDark ? "bg-background/5" : "bg-foreground/5"}`}
               />
             )}
-          </div>
-        </div>
-      </div>
-    </Link>
-  );
-}
-
-/* ------------------------------------------------------------------ */
-/*  Explore All Projects Card                                          */
-/* ------------------------------------------------------------------ */
-
-function ExploreAllCard() {
-  return (
-    <Link href="/work" className="group block">
-      <div className="overflow-hidden rounded-2xl bg-background text-foreground ring-1 ring-white/10">
-        <div className="grid grid-cols-1 gap-0 md:grid-cols-2">
-          {/* Left side */}
-          <div className="flex flex-col justify-between p-6 md:p-12">
-            {/* Tags */}
-            <div className="flex flex-wrap gap-2">
-              {["Product Design", "Design Systems", "Branding and social"].map(
-                (tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full border border-foreground/30 px-4 py-2 text-body-xs font-medium uppercase tracking-wide"
-                  >
-                    {tag}
-                  </span>
-                )
-              )}
-            </div>
-
-            {/* Title */}
-            <div className="mt-6 md:mt-auto">
-              <h3 className="font-(family-name:--font-display) text-heading font-medium uppercase leading-tight">
-                Explore all
-                <br />
-                projects
-              </h3>
-
-              {/* Lets go link */}
-              <div className="mt-8">
-                <span className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-2.5 text-body-sm font-medium uppercase tracking-wide text-background">
-                  Lets go
-                  <svg
-                    width="8"
-                    height="8"
-                    viewBox="0 0 8 8"
-                    fill="none"
-                    className="inline-block"
-                  >
-                    <circle cx="4" cy="4" r="3" fill="currentColor" />
-                  </svg>
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Right side — abstract visual placeholder */}
-          <div className="relative min-h-[200px] bg-background md:min-h-[500px]">
-            <div className="absolute inset-0 flex items-center justify-center">
-              {/* Glowing orb placeholder — replaced in Phase 3 */}
-              <div className="h-64 w-64 rounded-full bg-gradient-to-br from-blue-600 to-blue-900 opacity-80 blur-xl" />
-            </div>
           </div>
         </div>
       </div>
