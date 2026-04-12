@@ -47,10 +47,10 @@ const TOPIC_CARDS = [
 /* ------------------------------------------------------------------ */
 
 const QUICK_PROMPTS = [
-  { emoji: "🎵", label: "music taste", prompt: "What music are you into?" },
-  { emoji: "🛠", label: "favorite tools", prompt: "What are your favorite design tools?" },
-  { emoji: "✈️", label: "how I work", prompt: "How do you like to work and collaborate?" },
-  { emoji: "💡", label: "design process", prompt: "Walk me through your design process." },
+  { emoji: "🎵", label: "Music taste", prompt: "What music are you into?" },
+  { emoji: "🛠", label: "Favorite tools", prompt: "What are your favorite design tools?" },
+  { emoji: "✈️", label: "How I work", prompt: "How do you like to work and collaborate?" },
+  { emoji: "💡", label: "Design process", prompt: "Walk me through your design process." },
   { emoji: "📍", label: "Brooklyn life", prompt: "What's it like living in Brooklyn?" },
   { emoji: "🤖", label: "AI + design", prompt: "How do you use AI in your design work?" },
 ];
@@ -160,7 +160,7 @@ export default function ChatWidget() {
               whileTap={{ scale: 0.97 }}
               transition={{ type: "spring", stiffness: 400, damping: 28 }}
               onClick={() => setChatState("welcome")}
-              className="relative flex items-center gap-2.5 rounded-full bg-background px-5 py-3 font-(family-name:--font-body) text-body-sm font-medium text-foreground backdrop-blur-sm transition-colors hover:text-accent-yellow"
+              className="relative flex items-center gap-3 rounded-full bg-background px-7 py-4 font-(family-name:--font-body) text-base font-medium text-foreground backdrop-blur-sm transition-colors hover:text-accent-yellow"
               aria-label="Open AI chat"
             >
               <span className="text-accent-yellow">✦</span>
@@ -247,7 +247,7 @@ export default function ChatWidget() {
                   >
                     {/* Heading */}
                     <div className="px-5 pb-4 pt-5">
-                      <h2 className="font-(family-name:--font-display) text-[28px] font-medium uppercase leading-none tracking-tight text-foreground">
+                      <h2 className="font-(family-name:--font-body) text-[28px] font-medium leading-none tracking-tight text-foreground">
                         What do you want to know?
                       </h2>
                     </div>
