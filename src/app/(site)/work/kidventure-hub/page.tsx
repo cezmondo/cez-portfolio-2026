@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Link } from "next-view-transitions";
 import Footer from "../../../components/Footer";
+import CaseStudyHero from "../../../components/CaseStudyHero";
 
 export const metadata: Metadata = { title: "Kidventure Hub — Cez Corpus" };
 
@@ -24,7 +25,13 @@ const sections = [
 export default function KidventureHub() {
   return (
     <div>
-      <HeroSection />
+      <CaseStudyHero
+        src="/images/kidventure/hero-header.webp"
+        alt="Kidventure Hub"
+        sectionClassName="pt-[80px] md:pt-[140px]"
+        containerClassName="aspect-[1704/864] w-full overflow-hidden rounded-3xl"
+        imgClassName="h-full w-full object-cover"
+      />
       <ContentSection />
       <NextMarquee />
       <Footer transparent />

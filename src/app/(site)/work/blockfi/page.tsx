@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Link } from "next-view-transitions";
 import Footer from "../../../components/Footer";
+import CaseStudyHero from "../../../components/CaseStudyHero";
 
 export const metadata: Metadata = { title: "BlockFi — Cez Corpus" };
 
@@ -25,7 +26,13 @@ const sections = [
 export default function BlockFi() {
   return (
     <div>
-      <HeroSection />
+      <CaseStudyHero
+        src="/images/blockfi/hero-header.avif"
+        alt="BlockFi mobile app screens"
+        sectionClassName="pt-[80px] md:pt-[140px]"
+        containerClassName="overflow-hidden rounded-3xl"
+        imgClassName="w-full block"
+      />
       <ContentSection />
       <NextMarquee />
       <Footer transparent />

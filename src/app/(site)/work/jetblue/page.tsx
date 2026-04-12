@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Link } from "next-view-transitions";
 import Footer from "../../../components/Footer";
+import CaseStudyHero from "../../../components/CaseStudyHero";
 
 export const metadata: Metadata = { title: "JetBlue — Cez Corpus" };
 
@@ -26,7 +27,13 @@ const sections = [
 export default function JetBlue() {
   return (
     <div>
-      <HeroSection />
+      <CaseStudyHero
+        src="/images/jetblue/hero-header.avif"
+        alt="JetBlue — Select your departing flight"
+        sectionClassName="pt-[80px] md:pt-[140px]"
+        containerClassName="aspect-[1704/864] w-full overflow-hidden rounded-3xl bg-jetblue-blue/20"
+        imgClassName="h-full w-full object-cover"
+      />
       <ContentSection />
       <NextMarquee />
       <Footer transparent />

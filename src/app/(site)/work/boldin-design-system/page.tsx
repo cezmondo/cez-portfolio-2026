@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Link } from "next-view-transitions";
 import Footer from "../../../components/Footer";
+import CaseStudyHero from "../../../components/CaseStudyHero";
 
 export const metadata: Metadata = {
   title: "Boldin — Design System — Cez Corpus",
@@ -25,7 +26,13 @@ const navSections = [
 export default function BoldinDesignSystem() {
   return (
     <div>
-      <HeroSection />
+      <CaseStudyHero
+        src="/images/boldin-wo/hero-header.png"
+        alt="Boldin Design System"
+        sectionClassName="relative pt-[80px] md:pt-[140px]"
+        containerClassName="overflow-hidden rounded-[24px] bg-[#0d3f4a]"
+        imgClassName="w-full block"
+      />
       <ContentSection />
 
       <NextMarquee />

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Link } from "next-view-transitions";
 import Footer from "../../../components/Footer";
+import CaseStudyHero from "../../../components/CaseStudyHero";
 
 export const metadata: Metadata = {
   title: "Boldin — Brand & Social — Cez Corpus",
@@ -55,7 +56,13 @@ const brandSystemItems = [
 export default function BoldinBrandSocial() {
   return (
     <div>
-      <HeroSection />
+      <CaseStudyHero
+        src="/images/boldin-wo/hero-header.png"
+        alt="Boldin Brand & Social"
+        sectionClassName="relative pt-[80px] md:pt-[140px]"
+        containerClassName="overflow-hidden rounded-[24px] bg-[#0d3f4a]"
+        imgClassName="w-full block"
+      />
       <ContentSection />
 
       {/* ========== NEXT PROJECTS ========== */}
