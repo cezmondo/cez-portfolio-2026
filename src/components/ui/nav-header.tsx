@@ -2,7 +2,7 @@
 
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "next-view-transitions";
+import { Link, useTransitionRouter } from "next-view-transitions";
 import { usePathname } from "next/navigation";
 
 interface NavItem {
@@ -26,6 +26,37 @@ function NavHeader({ isLight = false }: { isLight?: boolean }) {
   const [hoveredHref, setHoveredHref] = useState<string | null>(null);
 
   const pathname = usePathname();
+  const router = useTransitionRouter();
+
+  const handleHashClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    const id = href.split("#")[1];
+    if (!id) return;
+
+    if (pathname === "/") {
+      // Already on home page — jump instantly, no smooth scroll
+      e.preventDefault();
+      const el = document.getElementById(id);
+      if (el) {
+        const top = el.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({ top, behavior: "instant" });
+      }
+    } else {
+      // Navigate to home page, then jump to the section
+      e.preventDefault();
+      router.push("/");
+      // After navigation resolves, scroll instantly to target
+      const poll = setInterval(() => {
+        const el = document.getElementById(id);
+        if (el) {
+          clearInterval(poll);
+          const top = el.getBoundingClientRect().top + window.scrollY;
+          window.scrollTo({ top, behavior: "instant" });
+        }
+      }, 50);
+      // Give up after 2s
+      setTimeout(() => clearInterval(poll), 2000);
+    }
+  };
 
   return (
     <ul
@@ -52,6 +83,7 @@ function NavHeader({ isLight = false }: { isLight?: boolean }) {
           isLight={isLight}
           setPosition={setPosition}
           setHoveredHref={setHoveredHref}
+          onHashClick={item.href.startsWith("/#") ? (e) => handleHashClick(e, item.href) : undefined}
         >
           {item.label}
         </Tab>
@@ -70,6 +102,7 @@ const Tab = ({
   isLight,
   setPosition,
   setHoveredHref,
+  onHashClick,
 }: {
   children: React.ReactNode;
   href: string;
@@ -80,6 +113,7 @@ const Tab = ({
     React.SetStateAction<{ left: number; width: number; opacity: number }>
   >;
   setHoveredHref: React.Dispatch<React.SetStateAction<string | null>>;
+  onHashClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 }) => {
   const ref = useRef<HTMLLIElement>(null);
 
@@ -104,20 +138,38 @@ const Tab = ({
           : ""
       }`}
     >
-      <Link
-        href={href}
-        className={`block cursor-pointer px-3 py-1.5 text-body-xs font-medium uppercase tracking-wide transition-colors duration-150 md:px-5 md:py-3 ${
-          isHovered
-            ? isLight
-              ? "text-white"
-              : "text-black"
-            : isLight
-              ? "text-black"
-              : "text-foreground"
-        }`}
-      >
-        {children}
-      </Link>
+      {href.startsWith("/#") ? (
+        <a
+          href={href}
+          onClick={onHashClick}
+          className={`block cursor-pointer px-3 py-1.5 text-body-xs font-medium uppercase tracking-wide transition-colors duration-150 md:px-5 md:py-3 ${
+            isHovered
+              ? isLight
+                ? "text-white"
+                : "text-black"
+              : isLight
+                ? "text-black"
+                : "text-foreground"
+          }`}
+        >
+          {children}
+        </a>
+      ) : (
+        <Link
+          href={href}
+          className={`block cursor-pointer px-3 py-1.5 text-body-xs font-medium uppercase tracking-wide transition-colors duration-150 md:px-5 md:py-3 ${
+            isHovered
+              ? isLight
+                ? "text-white"
+                : "text-black"
+              : isLight
+                ? "text-black"
+                : "text-foreground"
+          }`}
+        >
+          {children}
+        </Link>
+      )}
     </li>
   );
 };

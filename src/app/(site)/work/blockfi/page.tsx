@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Link } from "next-view-transitions";
 import Footer from "../../../components/Footer";
 import CaseStudyHero from "../../../components/CaseStudyHero";
+import SectionNavLink from "../../../components/SectionNavLink";
 
 export const metadata: Metadata = { title: "BlockFi — Cez Corpus" };
 
@@ -91,12 +92,12 @@ function ContentSection() {
               <ul className="flex flex-col gap-2">
                 {sections.map((s) => (
                   <li key={s.id}>
-                    <a
+                    <SectionNavLink
                       href={`#${s.id}`}
                       className="text-[14px] leading-[16.8px] text-foreground transition-colors hover:text-white/60"
                     >
                       {s.label}
-                    </a>
+                    </SectionNavLink>
                   </li>
                 ))}
               </ul>
