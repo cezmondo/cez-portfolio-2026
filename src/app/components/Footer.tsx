@@ -26,6 +26,17 @@ export default function Footer({ transparent = false }: { transparent?: boolean 
           </svg>
         </a>
         <a
+          href="https://github.com/cezmondo"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group inline-flex items-center gap-1.5 font-(family-name:--font-body) text-body-sm font-medium uppercase tracking-wide opacity-60 transition-opacity hover:opacity-100"
+        >
+          GitHub
+          <svg width="8" height="8" viewBox="0 0 8 8" fill="none" className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+            <path d="M1 7L7 1M7 1H2M7 1V6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </a>
+        <a
           href="https://www.instagram.com/ccorpusjnr"
           target="_blank"
           rel="noopener noreferrer"
