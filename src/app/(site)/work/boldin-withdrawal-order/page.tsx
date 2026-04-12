@@ -24,8 +24,8 @@ const sections = [
 ];
 
 const relatedCaseStudies = [
-  { label: "Design system", href: "/work/boldin-design-system" },
-  { label: "Brand and social", href: "/work/boldin-brand-social" },
+  { label: "Design system", href: "/work/boldin-design-system#content" },
+  { label: "Brand and social", href: "/work/boldin-brand-social#content" },
 ];
 
 export default function BoldinWithdrawalOrder() {
@@ -149,7 +149,7 @@ function DescriptionSection() {
   return (
     <div id="challenge" className="scroll-mt-10 pb-20 md:pb-28">
       {/* Meta labels row */}
-      <div className="mb-10 flex flex-wrap gap-x-16 gap-y-4">
+      <div id="content" className="mb-10 flex flex-wrap gap-x-16 gap-y-4">
         <MetaEntry label="Role" value="Design Lead" />
         <MetaEntry label="Squad" value="Consumer D2C" />
         <MetaEntry

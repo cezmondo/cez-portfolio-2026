@@ -124,12 +124,12 @@ function ContentSection() {
                 </p>
                 <ul className="flex flex-col gap-2">
                   <li>
-                    <Link href="/work/boldin-withdrawal-order" className="flex items-center gap-1 text-[14px] leading-[16.8px] text-foreground transition-colors hover:text-white/60">
+                    <Link href="/work/boldin-withdrawal-order#content" className="flex items-center gap-1 text-[14px] leading-[16.8px] text-foreground transition-colors hover:text-white/60">
                       Withdrawal order <span aria-hidden>→</span>
                     </Link>
                   </li>
                   <li>
-                    <Link href="/work/boldin-brand-social" className="flex items-center gap-1 text-[14px] leading-[16.8px] text-foreground transition-colors hover:text-white/60">
+                    <Link href="/work/boldin-brand-social#content" className="flex items-center gap-1 text-[14px] leading-[16.8px] text-foreground transition-colors hover:text-white/60">
                       Brand and social <span aria-hidden>→</span>
                     </Link>
                   </li>
@@ -140,7 +140,7 @@ function ContentSection() {
             {/* Main content sections */}
             <div className="flex-1">
               {/* Page info */}
-              <div className="mb-4 pb-4">
+              <div id="content" className="mb-4 pb-4">
                 <div className="mb-10 flex flex-wrap gap-x-16 gap-y-4">
                   <MetaEntry label="Role" value="Design Lead" />
                   <MetaEntry label="Squad" value="Design System" />

@@ -1,13 +1,17 @@
-export default function Footer({ transparent = false }: { transparent?: boolean }) {
+export default function Footer({ transparent = false, light = false }: { transparent?: boolean; light?: boolean }) {
+  const bgClass = light ? "bg-white" : transparent ? "" : "bg-[#0032eb]";
+  const textClass = light ? "text-black" : "text-white";
+  const wordmarkFilter = light ? undefined : transparent ? undefined : "brightness(0) invert(1)";
+
   return (
-    <footer className={`relative w-full overflow-hidden ${transparent ? "" : "bg-[#0032eb]"} text-white`}>
+    <footer className={`relative w-full overflow-hidden ${bgClass} ${textClass}`}>
       {/* CEZ. wordmark */}
       <div className="px-(--spacing-gutter) pt-16">
         <img
           src="/images/profile/cez-wordmark.svg"
           alt="CEZ."
           className="w-full h-auto"
-          style={{ filter: transparent ? undefined : "brightness(0) invert(1)" }}
+          style={{ filter: wordmarkFilter }}
         />
       </div>
 
