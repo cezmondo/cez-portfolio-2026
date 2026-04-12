@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { displayFont, bodyFont } from "./fonts";
 import "./globals.css";
+import ChatWidget from "./components/ChatWidget";
 
 export const metadata: Metadata = {
   title: "Cez Corpus — Staff Product Designer",
@@ -18,7 +19,10 @@ export default function RootLayout({
       lang="en"
       className={`${displayFont.variable} ${bodyFont.variable} antialiased`}
     >
-      <body className="font-(family-name:--font-body)">{children}</body>
+      <body className="font-(family-name:--font-body)">
+        {children}
+        <ChatWidget />
+      </body>
     </html>
   );
 }
